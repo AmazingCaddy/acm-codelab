@@ -1,4 +1,4 @@
-// ·µ»ØÒ»×é½â£¬²»ÊÇ×îÓÅ½â
+// è¿”å›ä¸€ç»„è§£ï¼Œä¸æ˜¯æœ€ä¼˜è§£
 #include <stdio.h>
 #include <iostream>
 #include <cstring>
@@ -9,14 +9,14 @@ const int maxn = 800;
 const int maxm = 10;
 const int maxt = 800*4;
 
-int S[maxn], O[maxn]; // S[] ÁĞÁ´±íÖĞ½áµãµÄ×ÜÊı  O[] ¼ÇÂ¼ËÑË÷½á¹û
-int L[maxt], R[maxt], U[maxt], D[maxt];  // ËÄ¸ö·½Ïò
-int C[maxt], W[maxt];  // C[]ÁĞÖ¸ÕëÍ·  W[]ĞĞÖ¸ÕëÍ·
-int mat[maxn][maxm];  // Ï¡Êè¾ØÕó
+int S[maxn], O[maxn]; // S[] åˆ—é“¾è¡¨ä¸­ç»“ç‚¹çš„æ€»æ•°  O[] è®°å½•æœç´¢ç»“æœ
+int L[maxt], R[maxt], U[maxt], D[maxt];  // å››ä¸ªæ–¹å‘
+int C[maxt], W[maxt];  // C[]åˆ—æŒ‡é’ˆå¤´  W[]è¡ŒæŒ‡é’ˆå¤´
+int mat[maxn][maxm];  // ç¨€ç–çŸ©é˜µ
 int ANS;
 
 ///*
-void build( int n, int m )  // ÁÚ½Ó¾ØÕóµÄbuildº¯Êı
+void build( int n, int m )  // é‚»æ¥çŸ©é˜µçš„buildå‡½æ•°
 {
 	int i, j, t, tot = m, first;
 	R[0] = 1; L[0] = m;
@@ -162,5 +162,5 @@ int main( )
 		*/
 		//putchar('\n');
 	}
-	return 0;a
+	return 0;
 }

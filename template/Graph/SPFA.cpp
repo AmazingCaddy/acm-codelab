@@ -1,6 +1,8 @@
 // Shortest Path Faster Algorithm
+// hdu 2680
 #include <iostream>
 #include <queue>
+#include <cstdio>
 using namespace std;
 
 const int maxn = 1005;

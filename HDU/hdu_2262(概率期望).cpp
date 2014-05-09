@@ -3,7 +3,7 @@
 	time:   2011/10/28	0:06 
 	solve:	
 		Ex = ( Ey1 + Ey2 + ... + Eyn ) / n + 1
-		y ÊÇ x ÄÜÀ©Õ¹µ½µã
+		y æ˜¯ x èƒ½æ‰©å±•åˆ°ç‚¹
 */
 #include <cstdio>
 #include <cstdlib>

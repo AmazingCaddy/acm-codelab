@@ -1,7 +1,7 @@
 /*
 	author: AmazingCaddy
 	time:	2011-07-07 13:16:30 
-	学生和课程进行二分图匹配，匹配数等于课程数，那么YES，否则NO
+	瀛︾敓鍜岃绋嬭繘琛屼簩鍒嗗浘鍖归厤锛屽尮閰嶆暟绛変簬璇剧▼鏁帮紝閭ｄ箞YES锛屽惁鍒橬O
 */
 #include <iostream>
 #include <cstdio>

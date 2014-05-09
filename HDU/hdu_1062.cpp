@@ -24,9 +24,9 @@ int main( )
             k++;
             if( mn[ i ]==' '|| mn[ i ] == '\0' ) // *
             {
-                tem[ k - 1 ] = '\0'; // Ò»¸öµ¥´Ê½áÊø
+                tem[ k - 1 ] = '\0'; // ä¸€ä¸ªå•è¯ç»“æŸ
                 reverse( tem, tem + k - 1 );
-                printf( "%s", tem ); //* µ¹ÖÃ×Ö·û´®
+                printf( "%s", tem ); //* å€’ç½®å­—ç¬¦ä¸²
                 if( mn[ i ] == '\0' ) break;
                 else printf( " " );
                 k = 0;

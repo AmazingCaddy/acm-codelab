@@ -19,32 +19,32 @@ line L[maxn];
 bool vis[maxn];
 
 int dblcmp( double x ){ return ( x < -eps ? -1 : x > eps ); }
-double operator^( point p1, point p2 ){ return imag( conj( p1 ) * p2 ); }  // ²æ»ı
-double operator&( point p1, point p2 ){ return real( conj( p1 ) * p2 ); }  // µã»ı
-// Á½Ö±Ïß½»µã£¬Çó½»µãÖ®Ç°ÏÈÅĞ¶ÏÊÇ·ñÆ½ĞĞ
+double operator^( point p1, point p2 ){ return imag( conj( p1 ) * p2 ); }  // å‰ç§¯
+double operator&( point p1, point p2 ){ return real( conj( p1 ) * p2 ); }  // ç‚¹ç§¯
+// ä¸¤ç›´çº¿äº¤ç‚¹ï¼Œæ±‚äº¤ç‚¹ä¹‹å‰å…ˆåˆ¤æ–­æ˜¯å¦å¹³è¡Œ
 point operator*( line u, line v )
 {
 	double t = v.a - u.a ^ v.b - u.a;
 	double s = v.b - u.b ^ v.a - u.b;
 	return u.a + ( u.b - u.a ) * t / ( t + s );
 }
-// µãµ½Ö±ÏßµÄ¾àÀë
+// ç‚¹åˆ°ç›´çº¿çš„è·ç¦»
 double DisPointToLine( point p, line l ){ return fabs( l.a - p ^ l.b - p ) / abs( l.a - l.b ); }
-// ÅĞ¶ÏÁ½Ö±ÏßÆ½ĞĞ
+// åˆ¤æ–­ä¸¤ç›´çº¿å¹³è¡Œ
 bool LineParallel( line u, line v ) { return dblcmp( ( u.a - u.b ^ v.a - v.b ) ) == 0; }
-// Ö±ÏßÏò×ó²àÆ½ÒÆ 
+// ç›´çº¿å‘å·¦ä¾§å¹³ç§» 
 line Translation( line l )
 {
 	point p = ( l.b - l.a ) * point( 0.0, 1000.0 / abs( l.b - l.a ) );
 	return line( l.a + p, l.b + p );
 }
-// ÒÔl.aÎªÔ­µã£¬ÄæÊ±ÕëĞı×ª90¶È 
+// ä»¥l.aä¸ºåŸç‚¹ï¼Œé€†æ—¶é’ˆæ—‹è½¬90åº¦ 
 line Rotation( line l )
 {
 	point p = ( l.b - l.a ) * point( 0.0, 1.0 );
 	return line( l.a, l.a + p );
 }
-// Çó u Óë v µÄÒ»Ìõ½ÇÆ½·ÖÏß
+// æ±‚ u ä¸ v çš„ä¸€æ¡è§’å¹³åˆ†çº¿
 line GetLine( line u, line v )
 {
 	line l1 = Translation( u );

@@ -89,7 +89,7 @@ double dis( const point &a, const point &b )
     return sqrt( p.x * p.x + p.y * p.y );
 }
 
-// 这题每个圆的半径都是1
+// 杩欓姣忎釜鍦嗙殑鍗婂緞閮芥槸1
 void circle_cross( const circle &c1, const circle &c2, point &p1, point &p2 )
 {
     double d = dis( c1.o, c2.o );

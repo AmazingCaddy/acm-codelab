@@ -39,7 +39,7 @@ void AddMax( int idx, int val )
 		tree[idx] = max( tree[idx], val );
 }
 
-// »ñÈ¡ [ 1, idx ] ÖĞµÄ×î´óÖµ
+// è·å– [ 1, idx ] ä¸­çš„æœ€å¤§å€¼
 int GetMax( int idx )
 {
 	int ret = 0;

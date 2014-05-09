@@ -1,6 +1,6 @@
 //  ans = C( n, n - k ) * DP( n - k ) % m
 //  C( n, m ) = F[n] * Inv(F[m]) * Inv(F[n-m]) * p^cnt ( mod p^k )
-//  cnt ±íÊ¾C( n, m )·Ö½âÖÊÒòÊıÖ®ºópÖ¸Êı
+//  cnt è¡¨ç¤ºC( n, m )åˆ†è§£è´¨å› æ•°ä¹‹åpæŒ‡æ•°
 
 #include<iostream>
 #include<ctime>
@@ -14,20 +14,20 @@ bool ss[maxm] = {1,1};
 int pp[maxm >> 1],plen = 0;
 int fac[32][2],flen ;
 int F[maxn],Inv[maxn];
-int DP[maxn << 1];     // ¼ÇÂ¼È«´íÅÅµÄÊıÁ¿
+int DP[maxn << 1];     // è®°å½•å…¨é”™æ’çš„æ•°é‡
 int n, k, m;
 
 LL cnt_of_p;
 int p,P;
 
-// Ë¢Ò»¸ö±È½ÏĞ¡µÄËØÊı±í
+// åˆ·ä¸€ä¸ªæ¯”è¾ƒå°çš„ç´ æ•°è¡¨
 void mklist(){
 	int i,j;
 	for(i = 2; i * i < maxm; ++ i) if(! ss[i]) for(j = i; j * i < maxm; ++ j) ss[i * j] = 1;
 	for(i = 2; i < maxm; ++ i) if(! ss[i]) pp[plen ++]  =  i;
 }
 
-// ·Ö½âÖÊÒòÊı
+// åˆ†è§£è´¨å› æ•°
 void split(int n)
 {
 	flen= 0;
@@ -60,7 +60,7 @@ int mod(LL a,int b,int c)
 	return ret;
 }
 
-// Çó x mod P^k µÄÄæÔª, P = p^k, a^-1 = a^(pi(P)-1) = a^(P-P/p-1)
+// æ±‚ x mod P^k çš„é€†å…ƒ, P = p^k, a^-1 = a^(pi(P)-1) = a^(P-P/p-1)
 int InvMod( int x ){ return mod( x, P - P / p - 1, P ); }
 
 void init()
@@ -69,7 +69,7 @@ void init()
 	int i,tmp;
 	for(i = 1; i < P; ++ i)
 	{
-		// F[n]±íÊ¾(n!)ÖĞ³ıµôpµÄ±¶ÊıÖ®ºó mod p^k µÄÖµ
+		// F[n]è¡¨ç¤º(n!)ä¸­é™¤æ‰pçš„å€æ•°ä¹‹å mod p^k çš„å€¼
 		F[i] = F[i - 1];Inv[i] = Inv[ i - 1];
 		if(i % p) F[i] = (LL)F[i] * i % P,Inv[i] = (LL)Inv[i] * InvMod(i) % P;
 	}

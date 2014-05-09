@@ -28,7 +28,7 @@ bool Bellman_Ford( int S, double V )
 				dis[E[j].v]=t;
 			}
 		}
-		if( !f ) // 不能再更新了 
+		if( !f ) // 涓嶈兘鍐嶆洿鏂颁簡 
 			return( dis[S] > V+eps );
 	}
 	return true;

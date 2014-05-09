@@ -1,7 +1,7 @@
 /*
 	author : AmazingCaddy
 	time : 2011-06-01 13:50:56 
-	Tim[ x ][ y ][ tim ] ¼ÇÂ¼µ¹¼ÆÊ±Îª tim Ê±£¬×ßµ½( x, y ) ´¦
+	Tim[ x ][ y ][ tim ] è®°å½•å€’è®¡æ—¶ä¸º tim æ—¶ï¼Œèµ°åˆ°( x, y ) å¤„
 */
 #include <iostream>
 #include <cstdio>

@@ -1,4 +1,4 @@
-//¶þ·ÖËÑË÷
+//äºŒåˆ†æœç´¢
 
 #include<iostream>
 #include<algorithm>
@@ -12,7 +12,7 @@ int bin_search1( int k )
 	while( l<=r )
 	{
 		mid=(l+r)>>1;
-		if( a[mid]>=k ) r=mid-1;  //¾¡Á¿ÍùÇ°ÒÆ¶¯£¬È¡µ½ÏàÍ¬ÊýµÄµÚÒ»¸öÊý
+		if( a[mid]>=k ) r=mid-1;  //å°½é‡å¾€å‰ç§»åŠ¨ï¼Œå–åˆ°ç›¸åŒæ•°çš„ç¬¬ä¸€ä¸ªæ•°
 		else l=mid+1;
 	}
 	return l;
@@ -24,7 +24,7 @@ int bin_search2( int k )
 	while( l<=r )
 	{
 		mid=(l+r)>>1;
-		if( a[mid]<=k )l=mid+1;   //¾¡Á¿ÍùºóÒÆ¶¯£¬È¡µ½ÏàÍ¬ÊýµÄ×îºóÒ»¸öÊý
+		if( a[mid]<=k )l=mid+1;   //å°½é‡å¾€åŽç§»åŠ¨ï¼Œå–åˆ°ç›¸åŒæ•°çš„æœ€åŽä¸€ä¸ªæ•°
 		else r=mid-1;
 	}
 	return r;

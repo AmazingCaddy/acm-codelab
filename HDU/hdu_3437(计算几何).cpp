@@ -40,7 +40,7 @@ point operator*( line l0, line l1 )
     return l1.a + ( l1.b - l1.a ) * t / ( t + s );
 }
 
-//  不是逆时针，转化成逆时针的
+//  涓嶆槸閫嗘椂閽堬紝杞寲鎴愰�嗘椂閽堢殑
 void changeclockwise( POLY & P )
 {
     int pn = P.n;
@@ -100,7 +100,7 @@ void solve( )
     int n;
     double vx, vy, H, x, y,TIME;
     scanf("%lf%lf%lf",&vx,&vy,&H);
-    point v( vx, vy ), s( 0, 0 );  // v 速度矢量，s 位移矢量
+    point v( vx, vy ), s( 0, 0 );  // v 閫熷害鐭㈤噺锛宻 浣嶇Щ鐭㈤噺
     point s0;
     scanf("%d",&n);
     for( int i = 0; i < n; i++ )

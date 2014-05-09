@@ -37,7 +37,7 @@ bool same_point( point p1, point p2 )
 {
 	return dblcmp( imag( p1 ) - imag( p2 ) ) == 0 && dblcmp( real( p1 ) - real( p2 ) ) == 0;
 }
-// ÅĞ¶ÏµãÊÇ·ñÔÚÉäÏßÉÏ l.a ÎªÉäÏßµÄ¶Ëµã
+// åˆ¤æ–­ç‚¹æ˜¯å¦åœ¨å°„çº¿ä¸Š l.a ä¸ºå°„çº¿çš„ç«¯ç‚¹
 bool on_radial( point p, line l )
 {
 	if( dblcmp( l.a - p ^ l.b - p ) != 0 )return false;

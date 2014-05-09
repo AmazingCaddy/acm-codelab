@@ -1,7 +1,7 @@
 /*
     author: AmazingCaddy
     time:    2011/7/11  20:11
-    dp[ i ][ j ]±íÊ¾iÌõÖ±Ïß¿ÉÒÔÐÎ³Éj¸ö½»µã
+    dp[ i ][ j ]è¡¨ç¤ºiæ¡ç›´çº¿å¯ä»¥å½¢æˆjä¸ªäº¤ç‚¹
     dp[ i - r ][ j ] = 1 -> dp[ i ][ j + ( i - r ) * r ] = 1
 */
 #include <cstdio>

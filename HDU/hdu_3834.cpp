@@ -19,7 +19,7 @@ struct point{
     point( ) { }
     point( double _x, double _y ) : x( _x ), y( _y ) { }
     double len2( ){ return x * x + y * y; }
-    point normal( double k )//������Ϊ��������ģ����� k 
+    point normal( double k )//将他视为向量，将模长变成 k 
     {
         double dist = sqrt( x * x + y * y );
         return point( x * k / dist, y * k / dist );
@@ -50,7 +50,7 @@ double det( const point& a, const point& b, const point& c ){
     return ( b.x - a.x ) * ( c.y - a.y ) - ( c.x - a.x ) * ( b.y - a.y );
 }
 
-//��ֱ��ab��ֱ��cd�Ľ���
+//求直线ab和直线cd的交点
 point cross(const point &a, const point &b, const point &c, const point &d)
 {
     point ret = a;
@@ -61,7 +61,7 @@ point cross(const point &a, const point &b, const point &c, const point &d)
     return ret;
 }
 
-//����ֱ����Բ�Ľ���,��ֱ֤����Բ�н���
+//计算直线与圆的交点,保证直线与圆有交点
 void cross( const circle & b, const point &l1, const point &l2, point& p1, point &p2 ){
     point p=b.c;
     p.x+=l1.y-l2.y;
@@ -72,7 +72,7 @@ void cross( const circle & b, const point &l1, const point &l2, point& p1, point
     p2.y=p.y + (l2.y - l1.y) * t;
     p1.x=p.x - (l2.x - l1.x) * t;
     p1.y=p.y - (l2.y - l1.y) * t;
-    if( D( p1 - l1 & l2 - l1 ) > 0 ) swap( p1, p2 ); // ��֤������ p2 ��
+    if( D( p1 - l1 & l2 - l1 ) > 0 ) swap( p1, p2 ); // 保证正解在 p2 里
 }
 
 point rotate( const point &a, const point &b, double angle )
@@ -86,7 +86,7 @@ double vec_angle( const point &a, const point &b, const point &c )
 {
     double x = b - a & c - a;
     double y = b - a ^ c - a;
-    return atan2( y, x );        // > 0 ��ʱ�룬 < 0 ˳ʱ��
+    return atan2( y, x );        // > 0 逆时针， < 0 顺时针
 }
 
 int main( ) {
@@ -108,9 +108,9 @@ int main( ) {
         cross( table, ball, tmp, p1, p2 );
         
         //printf( "p1 = ( %lf, %lf )  p2 = ( %lf, %lf )\n", p1.x, p1.y, p2.x, p2.y );
-        double t1 = dis( ball, p2 ) / v;                    // ��ʼ��������һ�λ��ѵ�ʵ��
-        double t2 = dis( p1, p2 ) / v;                         // ÿ���ҳ����ѵ�ʱ��
-        double angle = 2 * vec_angle( p2, table.c, p1 );    // ÿ����ײת���ĽǶ�
+        double t1 = dis( ball, p2 ) / v;                    // 开始不完整的一段花费的实践
+        double t2 = dis( p1, p2 ) / v;                         // 每段弦长花费的时间
+        double angle = 2 * vec_angle( p2, table.c, p1 );    // 每次碰撞转过的角度
         
         if( angle < 0 ) angle = -pi - angle;
         else angle = pi - angle;

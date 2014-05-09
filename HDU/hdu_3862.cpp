@@ -43,7 +43,7 @@ point operator / ( const point &a, const double &scale ) { return point( a.x / s
 double operator ^ ( const point &a, const point &b ) { return ( a.x * b.y - a.y * b.x ); }
 double operator & ( const point &a, const point &b ) { return ( a.x * b.x + a.y * b.y ); }
 
-// ÄæÊ±ÕëÐý×ª
+// é€†æ—¶é’ˆæ—‹è½¬
 point rotate( const point &p, const double &angle )
 {
 	double sinx = sin( angle ), cosx = cos( angle );

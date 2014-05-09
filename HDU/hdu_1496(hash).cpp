@@ -28,9 +28,9 @@ struct Hash{
 
 int flg[ maxn ], top, idx;
 
-int f( int key ){//保证hash值在[0, maxn)之间
+int f( int key ){//淇濊瘉hash鍊煎湪[0, maxn)涔嬮棿
 	return ( key % P + P ) % P;
-	// hash函数
+	// hash鍑芥暟
 }
 void hashInit( ){
 	top = maxn; ++idx; 

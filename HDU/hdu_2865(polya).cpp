@@ -1,14 +1,14 @@
 /*
 	author: wwb
 	time: 2011/2/27  17:38
-	½â·¨£ºpolya  sum=sigma(Euler(n/i)*Gettr(i)){ i|n }
-	Ö÷ÒªÊÇ¼ÆËãGettr(i)µÄÎÊÌâ
-	ÎÒÃÇ°ÑmÖÖÑÕÉ«µÄ¹ØÏµ»­³ÉÒ»¸öÎÞÏòÍ¼£¬¶øGettr(i)¾ÍÊÇ³¤¶ÈÎª i µÄ»ØÂ·µÄ¸öÊý
-	°ÑÎÞÏòÍ¼±íÊ¾³ÉÁÚ½Ó¾ØÕó G[maxn][maxn]£¬
-	Gettr(i)¾ÍÊÇÕâ¸ö¾ØÕóµÄ i ´ÎÃÝµÄ¼££¬Ò²¾ÍÊÇ Tr(G^i)
-	ÏàÁÚÖé×ÓÑÕÉ«²»Í¬£¬ÔòÁÚ½ÓÕóGÎª¶Ô½ÇÏßÉÏÔªËØÈ«Îª0£¬ÆäÓàÔªËØÈ«Îª1¡£
+	è§£æ³•ï¼špolya  sum=sigma(Euler(n/i)*Gettr(i)){ i|n }
+	ä¸»è¦æ˜¯è®¡ç®—Gettr(i)çš„é—®é¢˜
+	æˆ‘ä»¬æŠŠmç§é¢œè‰²çš„å…³ç³»ç”»æˆä¸€ä¸ªæ— å‘å›¾ï¼Œè€ŒGettr(i)å°±æ˜¯é•¿åº¦ä¸º i çš„å›žè·¯çš„ä¸ªæ•°
+	æŠŠæ— å‘å›¾è¡¨ç¤ºæˆé‚»æŽ¥çŸ©é˜µ G[maxn][maxn]ï¼Œ
+	Gettr(i)å°±æ˜¯è¿™ä¸ªçŸ©é˜µçš„ i æ¬¡å¹‚çš„è¿¹ï¼Œä¹Ÿå°±æ˜¯ Tr(G^i)
+	ç›¸é‚»ç å­é¢œè‰²ä¸åŒï¼Œåˆ™é‚»æŽ¥é˜µGä¸ºå¯¹è§’çº¿ä¸Šå…ƒç´ å…¨ä¸º0ï¼Œå…¶ä½™å…ƒç´ å…¨ä¸º1ã€‚
 	Trace(G^n)=(p-1)^n+(-1)^n*(p-1)
-	ÆäÖÐpÊÇGµÄ½×Êý£¬Ò²¾ÍÊÇK-1
+	å…¶ä¸­pæ˜¯Gçš„é˜¶æ•°ï¼Œä¹Ÿå°±æ˜¯K-1
 */
 #include <cstdio>
 #include <complex>

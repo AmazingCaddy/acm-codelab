@@ -1,4 +1,4 @@
-//构造传递闭包，度为n-1的点可以确定位置
+//鏋勯�犱紶閫掗棴鍖咃紝搴︿负n-1鐨勭偣鍙互纭畾浣嶇疆
 
 #include<iostream>
 #define MAXN 102

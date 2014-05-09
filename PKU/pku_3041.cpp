@@ -1,14 +1,14 @@
 // poj 3041 Asteroids
-// ¶ş·ÖÍ¼×î´óÆ¥Åä=×îĞ¡µã¸²¸Ç
+// äºŒåˆ†å›¾æœ€å¤§åŒ¹é…=æœ€å°ç‚¹è¦†ç›–
 
 #include<iostream>
 #define MAXN 505
 using namespace std;
 bool map[MAXN][MAXN],vis[MAXN];
-int match[MAXN];       //¼ÇÂ¼Y¼¯ºÏÆ¥ÅäµÄµã
+int match[MAXN];       //è®°å½•Yé›†åˆåŒ¹é…çš„ç‚¹
 int n,k;
 
-bool DFS( int from )  //ÈôÎªn¡ÁmµÄ¾ØÕó£¬ÄÇÃ´ÏÂÃænÈ«²¿¸ÄÎªm
+bool DFS( int from )  //è‹¥ä¸ºnÃ—mçš„çŸ©é˜µï¼Œé‚£ä¹ˆä¸‹é¢nå…¨éƒ¨æ”¹ä¸ºm
 {
 	int i;
 	for( i=1; i<=n; i++ )

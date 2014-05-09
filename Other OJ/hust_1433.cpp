@@ -19,7 +19,7 @@ using namespace std;
 typedef long long ll;
 const int maxn = 100005;
 int tree[ maxn ];
-//int L[ maxn ], R[ maxn ]; // 左边比i大的个数，右边比i小的个数
+//int L[ maxn ], R[ maxn ]; // 宸﹁竟姣攊澶х殑涓暟锛屽彸杈规瘮i灏忕殑涓暟
 int n;
 
 void addtree( int x, int val )

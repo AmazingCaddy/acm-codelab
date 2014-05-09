@@ -1,8 +1,8 @@
-// ����������ҵ����ڵ�ǰ�߷�Χ�Ľڵ㣬cover+=flag��flag�Ǹ���־����ʾ�ǲ���߻�ɾ���ߡ�
-// ���²����Ƚϸ��ӡ�
-// ��ǰ�ڵ㱻�������λ����ϣ���ô�õ��once��moreֵ���ǽڵ��ʾ�ĳ��ȡ�
-// ��ǰ�ڵ㱻����һ�Σ���ôonce���ڽڵ�ĳ��ȣ���more������������������һ�����ϵĳ��ȵĺ͡�
-// ���ڵ�û�б����ǣ���ôonce��������������onceֵ�ĺͣ�more������������more��ֵ�ĺ͡�
+// 插入操作：找到属于当前边范围的节点，cover+=flag。flag是个标志，表示是插入边或删除边。
+// 更新操作比较复杂。
+// 当前节点被覆盖两次或以上，那么该点的once和more值都是节点表示的长度。
+// 当前节点被覆盖一次，那么once等于节点的长度，而more等于左右子树被覆盖一次以上的长度的和。
+// 当节点没有被覆盖，那么once等于左右子树的once值的和，more等于左右子树more的值的和。
 
 #include<iostream>
 #include<algorithm>
@@ -23,7 +23,7 @@ struct line
 struct segment_tree
 {
 	int L,R;
-	double once,more;    //once��ʾֻ������һ��,more��ʾ�����Ƕ��
+	double once,more;    //once表示只被覆盖一次,more表示被覆盖多次
 	int cover;
 };
 
@@ -37,7 +37,7 @@ struct point
 	}
 };
 segment_tree tree[MAXN*4];
-point Xpoint[MAXN],Ypoint[MAXN];  // Ypoint[MAXN]���ڴ洢Y����
+point Xpoint[MAXN],Ypoint[MAXN];  // Ypoint[MAXN]用于存储Y坐标
 line yline[MAXN];
 int Xpost[MAXN][2],Ypost[MAXN][2];
 

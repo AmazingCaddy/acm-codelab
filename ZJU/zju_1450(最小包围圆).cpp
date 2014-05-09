@@ -39,7 +39,7 @@ point operator *( const line &l1, const line &l2 )
 	return l1.a + ( l1.b - l1.a ) * t / ( t + s );
 }
 
-// ÄæÊ±ÕëĞı×ª 90¶È
+// é€†æ—¶é’ˆæ—‹è½¬ 90åº¦
 point ratate( point u, point v )
 {
 	return u + ( v - u ) * point( 0.0, 1.0 );
@@ -56,7 +56,7 @@ circle getcircle( point p1, point p2 )
 circle getcircle( point A, point B, point C )
 {
 	circle tmp;
-	//¸ù¾İ S = a * b * c / R / 4; Çó°ë¾¶R
+	//æ ¹æ® S = a * b * c / R / 4; æ±‚åŠå¾„R
 	double t = fabs( A - B ^ C - B ) / 2.0;
 	tmp.r = abs( A - B ) * abs( A - C ) * abs( B - C ) / t / 4.0;
 	point p1 = ( A + B ) / 2.0, p2 = ( A + C ) / 2.0;

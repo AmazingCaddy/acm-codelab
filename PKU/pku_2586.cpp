@@ -1,9 +1,9 @@
-//  每年只需要考虑以下四种情况就可以了
+//  姣忓勾鍙渶瑕佽�冭檻浠ヤ笅鍥涚鎯呭喌灏卞彲浠ヤ簡
 //  ssssdssssdss
 //  sssddsssddss
 //  ssdddssdddss
 //  sddddsddddsd
-//  注意最后的如果四个月都亏还不能满足题意，那么只能是5个月都亏了，也就是全年都是亏损的
+//  娉ㄦ剰鏈�鍚庣殑濡傛灉鍥涗釜鏈堥兘浜忚繕涓嶈兘婊¤冻棰樻剰锛岄偅涔堝彧鑳芥槸5涓湀閮戒簭浜嗭紝涔熷氨鏄叏骞撮兘鏄簭鎹熺殑
 
 #include<iostream>
 using namespace std;

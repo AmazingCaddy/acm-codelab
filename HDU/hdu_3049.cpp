@@ -15,17 +15,17 @@ LL mod_mul( LL a, int n )
 	}
 	return g;
 }
-int mod( int x, int n )  //可对负数进行调整
+int mod( int x, int n )  //鍙璐熸暟杩涜璋冩暣
 {
 	return (x%n+n)%n;
 }
-// 扩展欧几里德算法
+// 鎵╁睍娆у嚑閲屽痉绠楁硶
 void Extend_Eulid( int a, int b, int &d, int &x, int &y )// ax+by=gcd(a,b);
 {
 	if( !b ){ d=a; x=1; y=0; }
 	else { Extend_Eulid( b, a%b, d, y, x );	y-=x*(a/b); }
 }
-// 求a的逆元0～n-1之间
+// 姹俛鐨勯�嗗厓0锝瀗-1涔嬮棿
 int inverse_a( int a, int n ) 
 {
 	int d,x,y;

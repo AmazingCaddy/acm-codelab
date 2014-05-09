@@ -1,6 +1,6 @@
-//×÷Èı½ÇĞÎµÄÍâ½ÓÔ²£¨Ô²ĞÄÊÇO£©Éè½ÇAÊÇÈı½ÇĞÎABCÖĞ×î´óµÄÄÚ½Ç£¬×÷AD´¹Ö±BCÓÚD£¬
-//Á¬½ÓAO²¢ÑÓ³¤½»Ô²OÓÚE£¬Á¬½ÓBE£¬È»ºóÖ¤Ã÷Èı½ÇĞÎABEÓëÈı½ÇĞÎADCÏàËÆ£¬
-//µÃAB:AE=AD:AC,¼´AD=£¨AB*AC)/AE,ÓÖS=1/2BC*AD,AE=2R£¬ËùÒÔS=1/2BC*£¨AB*AC)/AE= abc/4R
+//ä½œä¸‰è§’å½¢çš„å¤–æ¥åœ†ï¼ˆåœ†å¿ƒæ˜¯Oï¼‰è®¾è§’Aæ˜¯ä¸‰è§’å½¢ABCä¸­æœ€å¤§çš„å†…è§’ï¼Œä½œADå‚ç›´BCäºDï¼Œ
+//è¿æ¥AOå¹¶å»¶é•¿äº¤åœ†OäºEï¼Œè¿æ¥BEï¼Œç„¶åè¯æ˜ä¸‰è§’å½¢ABEä¸ä¸‰è§’å½¢ADCç›¸ä¼¼ï¼Œ
+//å¾—AB:AE=AD:AC,å³AD=ï¼ˆAB*AC)/AE,åˆS=1/2BC*AD,AE=2Rï¼Œæ‰€ä»¥S=1/2BC*ï¼ˆAB*AC)/AE= abc/4R
 #include<cmath>
 #include<iostream>
 #define pi 3.141592653589793
@@ -47,7 +47,7 @@ double circle_R( const triangle & tr )
 
 circle circumcircle_of_triangle( const triangle & tr )
 {
-	//Èı½ÇĞÎµÄÍâ½ÓÔ²
+	//ä¸‰è§’å½¢çš„å¤–æ¥åœ†
 	circle tmp;
 	double a, b, c;
 	double c1, c2;
@@ -55,7 +55,7 @@ circle circumcircle_of_triangle( const triangle & tr )
 	a = Distance( tr.p[0], tr.p[1] );
 	b = Distance( tr.p[1], tr.p[2] );
 	c = Distance( tr.p[2], tr.p[0] );
-	//¸ù¾İS = a * b * c / R / 4;Çó°ë¾¶R 
+	//æ ¹æ®S = a * b * c / R / 4;æ±‚åŠå¾„R 
 	tmp.r = a * b * c / triangle_area(tr) / 4;
 	
 	xA = tr.p[0].x;  yA = tr.p[0].y;

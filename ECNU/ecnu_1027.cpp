@@ -1,4 +1,4 @@
-//¶àÖØ±³°ü
+//å¤šé‡èƒŒåŒ…
 #include<iostream>
 #define MAXN 40005
 using namespace std;

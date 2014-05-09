@@ -3,7 +3,7 @@ using namespace std;
 const int maxn = 500003;
 int a[maxn], d3[maxn];
 int len3;
-int search3( int len, int n ) //²»ÏÂ½µµÄ¶ş·Öº¯Êı
+int search3( int len, int n ) //ä¸ä¸‹é™çš„äºŒåˆ†å‡½æ•°
 {
 	int low = 1, high = len, mid;
 	while( low <= high )
@@ -15,7 +15,7 @@ int search3( int len, int n ) //²»ÏÂ½µµÄ¶ş·Öº¯Êı
 	return low;
 }
 
-void LNDS( int b[], int n ) //×î³¤²»ÏÂ½µ×ÓĞòÁĞ
+void LNDS( int b[], int n ) //æœ€é•¿ä¸ä¸‹é™å­åºåˆ—
 {
 	int i,t;
 	len3 = 1;

@@ -1,22 +1,22 @@
-//  ¸ÃÌâÌâÒâÊÇÎªÁËÇó³öÄÜ¹»¸²¸ÇËùÓÐµºÓìµÄ×îÐ¡À×´ïÊýÄ¿£¬Ã¿¸öÐ¡µº¶ÔÓ¦xÖáÉÏµÄÒ»¸öÇø¼ä£¬
-//  ÔÚÕâ¸öÇø¼äÄÚµÄÈÎºÎÒ»¸öµã·ÅÖÃÀ×´ï£¬Ôò¿ÉÒÔ¸²¸Ç¸ÃÐ¡µº£¬
-//  Çø¼ä·¶Î§µÄ¼ÆËãÓÃ[x-sqrt(d*d-y*y),x+sqrt(d*d-y*y)];
-//  ÕâÑù£¬ÎÊÌâ¼´×ª»¯ÎªÒÑÖªÒ»¶¨ÊýÁ¿µÄÇø¼ä£¬Çó×îÐ¡ÊýÁ¿µÄµã£¬Ê¹µÃÃ¿¸öÇø¼äÄÚ¶·ÖÁÉÙ´æÔÚÒ»¸öµã¡£
+//  è¯¥é¢˜é¢˜æ„æ˜¯ä¸ºäº†æ±‚å‡ºèƒ½å¤Ÿè¦†ç›–æ‰€æœ‰å²›å±¿çš„æœ€å°é›·è¾¾æ•°ç›®ï¼Œæ¯ä¸ªå°å²›å¯¹åº”xè½´ä¸Šçš„ä¸€ä¸ªåŒºé—´ï¼Œ
+//  åœ¨è¿™ä¸ªåŒºé—´å†…çš„ä»»ä½•ä¸€ä¸ªç‚¹æ”¾ç½®é›·è¾¾ï¼Œåˆ™å¯ä»¥è¦†ç›–è¯¥å°å²›ï¼Œ
+//  åŒºé—´èŒƒå›´çš„è®¡ç®—ç”¨[x-sqrt(d*d-y*y),x+sqrt(d*d-y*y)];
+//  è¿™æ ·ï¼Œé—®é¢˜å³è½¬åŒ–ä¸ºå·²çŸ¥ä¸€å®šæ•°é‡çš„åŒºé—´ï¼Œæ±‚æœ€å°æ•°é‡çš„ç‚¹ï¼Œä½¿å¾—æ¯ä¸ªåŒºé—´å†…æ–—è‡³å°‘å­˜åœ¨ä¸€ä¸ªç‚¹ã€‚
 
-//  ÀýÈçÕâ×éÊý¾Ý£º
+//  ä¾‹å¦‚è¿™ç»„æ•°æ®ï¼š
 //  3 2
 //  0 0
 //  1 2
 //  4 0
-//  ÎÒÃÇËã³öÇø¼ä²¢°´Çø¼äÆðÊ¼Î»ÖÃÅÅÐòºóÓÐ£º[-2£¬2],[1£¬1],[2£¬6]Èý¸öÇø¼ä¡£
-//  ÎÒÃÇÓÃÒ»¸ö±äÁ¿currentRight¼ÇÂ¼µ±Ç°µÄ×îÓÒµÄÀ×´ï£¨ÎªÁËÄÜ¹»ÕÕ¹Ëµ½ºóÃæµÄÀ×´ï£¬
-//  ÎÒÃÇ×ÜÊÇ¾¡¿ÉÄÜ°ÑÀ×´ï·ÅÖÃÔÚÓÒ¶Ë£©£¬Ê×ÏÈ³õÊ¼»¯currentRight=range[1].right;
-//  ÒòÎªrange[2].right<=currentRight£¬Òò´ËÇø¼ä1°üº¬Çø¼ä2£¬ÕâÊ±ºòÎÒÃÇ²»¸ø2Ôö¼ÓÀ×´ï,
-//  ¶øÊÇ°ÑcurrentRightÍù×óÒÆÖÁrange[2].right£¬¸üÐÂcurrentRight=1;¶ÔÓÚÇø¼ä3£¬
-//  ÒòÎªcurrentRight=1<range[3].left,ÕâÊ±¾ÍÒªÔö¼ÓÒ»¸öÀ×´ïÊý£¬
-//  È»ºó¸üÐÂcurrentRight=range[3].right¡£
-//  »¹ÓÐÒ»ÖÖ¿ÉÄÜÊÇrange[i].left<=currentRight<=range[i].right¡£
-//  ÕâÊ±currentRightÒÑ¾­¿ÉÒÔ¸²¸Ç¸ÃÇø¼ä£¬Ö±½ÓÌø¹ý¡£
+//  æˆ‘ä»¬ç®—å‡ºåŒºé—´å¹¶æŒ‰åŒºé—´èµ·å§‹ä½ç½®æŽ’åºåŽæœ‰ï¼š[-2ï¼Œ2],[1ï¼Œ1],[2ï¼Œ6]ä¸‰ä¸ªåŒºé—´ã€‚
+//  æˆ‘ä»¬ç”¨ä¸€ä¸ªå˜é‡currentRightè®°å½•å½“å‰çš„æœ€å³çš„é›·è¾¾ï¼ˆä¸ºäº†èƒ½å¤Ÿç…§é¡¾åˆ°åŽé¢çš„é›·è¾¾ï¼Œ
+//  æˆ‘ä»¬æ€»æ˜¯å°½å¯èƒ½æŠŠé›·è¾¾æ”¾ç½®åœ¨å³ç«¯ï¼‰ï¼Œé¦–å…ˆåˆå§‹åŒ–currentRight=range[1].right;
+//  å› ä¸ºrange[2].right<=currentRightï¼Œå› æ­¤åŒºé—´1åŒ…å«åŒºé—´2ï¼Œè¿™æ—¶å€™æˆ‘ä»¬ä¸ç»™2å¢žåŠ é›·è¾¾,
+//  è€Œæ˜¯æŠŠcurrentRightå¾€å·¦ç§»è‡³range[2].rightï¼Œæ›´æ–°currentRight=1;å¯¹äºŽåŒºé—´3ï¼Œ
+//  å› ä¸ºcurrentRight=1<range[3].left,è¿™æ—¶å°±è¦å¢žåŠ ä¸€ä¸ªé›·è¾¾æ•°ï¼Œ
+//  ç„¶åŽæ›´æ–°currentRight=range[3].rightã€‚
+//  è¿˜æœ‰ä¸€ç§å¯èƒ½æ˜¯range[i].left<=currentRight<=range[i].rightã€‚
+//  è¿™æ—¶currentRightå·²ç»å¯ä»¥è¦†ç›–è¯¥åŒºé—´ï¼Œç›´æŽ¥è·³è¿‡ã€‚
 
 #include<iostream>
 #include<cmath>

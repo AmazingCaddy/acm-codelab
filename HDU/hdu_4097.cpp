@@ -120,8 +120,8 @@ bool operator == ( const triangle &t1, const triangle &t2 ) {
 
 struct quadangle {
     point p[ 4 ];
-    int flag;    // 1 Í¹ËÄ±ßÐÎ  0 ÍË»¯ÎªÈý½ÇÐÎ  -1 °¼ËÄ±ßÐÎ
-    int pp;        // ¼ÇÂ¼ÍË»¯µÄ¶¥µã£¬»òÕß°¼µÄ¶¥µã
+    int flag;    // 1 å‡¸å››è¾¹å½¢  0 é€€åŒ–ä¸ºä¸‰è§’å½¢  -1 å‡¹å››è¾¹å½¢
+    int pp;        // è®°å½•é€€åŒ–çš„é¡¶ç‚¹ï¼Œæˆ–è€…å‡¹çš„é¡¶ç‚¹
     void couter_clockwise( ) {
         double area = 0;
         for( int i = 0; i < 4; i++ ) {

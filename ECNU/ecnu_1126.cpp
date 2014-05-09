@@ -2,28 +2,28 @@
 #include<algorithm>
 #include<cmath>
 using namespace std;
-/*      ´æ´¢µãµÄ½á¹¹    */
+/*      å­˜å‚¨ç‚¹çš„ç»“æž„    */
 typedef struct
 {
-	float x,y;      //    µãµÄx,y×ø±ê
+	float x,y;      //    ç‚¹çš„x,yåæ ‡
 }POINT;
-/* ¸¨ÖúµÄµã½á¹¹ */
+/* è¾…åŠ©çš„ç‚¹ç»“æž„ */
 typedef struct
 {
-	int index;      //    µãÔÚXÊý×éÖÐµÄÏÂ±ê
-	float x, y;     //   µãµÄx,y×ø±ê
+	int index;      //    ç‚¹åœ¨Xæ•°ç»„ä¸­çš„ä¸‹æ ‡
+	float x, y;     //   ç‚¹çš„x,yåæ ‡
 }A_POINT;
-/* ¶Ôµã½øÐÐµÝÔöË³ÐòÅÅÐòµÄ±È½Ï */
+/* å¯¹ç‚¹è¿›è¡Œé€’å¢žé¡ºåºæŽ’åºçš„æ¯”è¾ƒ */
 bool compareX(POINT a, POINT b)
 {
 	return b.x>a.x;
 }
-/* ¶Ô¸¨Öúµã½øÐÐµÝÔöÅÅÐòµÄ±È½Ï */
+/* å¯¹è¾…åŠ©ç‚¹è¿›è¡Œé€’å¢žæŽ’åºçš„æ¯”è¾ƒ */
 bool compareY(A_POINT a, A_POINT b)
 {
 	return b.y>a.y;
 }
-/* ¼ÆËãÁ½µã¾àÀëµÄÆ½·½ */
+/* è®¡ç®—ä¸¤ç‚¹è·ç¦»çš„å¹³æ–¹ */
 float dist(POINT a, POINT b)
 {
 	float dx, dy;
@@ -31,10 +31,10 @@ float dist(POINT a, POINT b)
 	return (dx*dx+dy*dy);
 }
 /************************************************************************
-* ÇóÆ½Ãæµã¼¯×î½üµã¶ÔµÄ·ÖÖÎËã·¨
+* æ±‚å¹³é¢ç‚¹é›†æœ€è¿‘ç‚¹å¯¹çš„åˆ†æ²»ç®—æ³•
 *
-* ÊäÈë£º´æ·ÅÆ½Ãæµã¼¯µãµÄÊý×éX[]¡¢¸¨ÖúµãÊý×éY[]£¬Êý×éÆðµãÏÂ±êlowÓëÖÕµãÏÂ±êhigh
-* Êä³ö£º×î½üµã¶Ôa,b¼°¾àÀëd
+* è¾“å…¥ï¼šå­˜æ”¾å¹³é¢ç‚¹é›†ç‚¹çš„æ•°ç»„X[]ã€è¾…åŠ©ç‚¹æ•°ç»„Y[]ï¼Œæ•°ç»„èµ·ç‚¹ä¸‹æ ‡lowä¸Žç»ˆç‚¹ä¸‹æ ‡high
+* è¾“å‡ºï¼šæœ€è¿‘ç‚¹å¯¹a,båŠè·ç¦»d
 **********************************************************************/
 void closest( POINT X[], A_POINT Y[], int low, int high, POINT &a, POINT &b, float &d )
 {
@@ -42,8 +42,8 @@ void closest( POINT X[], A_POINT Y[], int low, int high, POINT &a, POINT &b, flo
 	POINT al,bl,ar,br;
 	float dl,dr;
 	if( ( high-low ) == 1 )
-		a = X[low], b = X[high], d = dist( X[low], X[high] ); //    µ±n=2Ê±Ö±½Ó¼ÆËã
-	else if( ( high-low ) == 2 ) //    µ±n=3Ê±Ö±½Ó¼ÆËã
+		a = X[low], b = X[high], d = dist( X[low], X[high] ); //    å½“n=2æ—¶ç›´æŽ¥è®¡ç®—
+	else if( ( high-low ) == 2 ) //    å½“n=3æ—¶ç›´æŽ¥è®¡ç®—
 	{     
 		dl = dist( X[low], X[low+1] );
 		dr = dist( X[low], X[low+2] );
@@ -52,33 +52,33 @@ void closest( POINT X[], A_POINT Y[], int low, int high, POINT &a, POINT &b, flo
 		else if( dr<=d ) a = X[low], b = X[low+2], d= dr;
 		else a = X[low+1], b = X[low+2];
 	}
-	else   // µ±n>3Ê±½øÐÐ·ÖÖÎ
+	else   // å½“n>3æ—¶è¿›è¡Œåˆ†æ²»
 	{        
 		A_POINT *SL = new A_POINT[(high-low)/2+1];
 		A_POINT *SR = new A_POINT[(high-low)/2];
-		m = (high-low)/2 + low;                     //  °ÑxÊý×éÒÔmÎª½ç»®·ÖÎªÁ½°ë
+		m = (high-low)/2 + low;                     //  æŠŠxæ•°ç»„ä»¥mä¸ºç•Œåˆ’åˆ†ä¸ºä¸¤åŠ
 		j = k = 0;
 		for( i=0; i<=high-low; i++ )
 		{     
-			if(Y[i].index<=m) SL[j++] = Y[i];       //  ÊÕ¼¯×ó±ß×Ó¼¯ÖÐµÄ×î½üµã¶Ô
-			else SR[k++] = Y[i];                    //  ÊÕ¼¯ÓÒ±ß×Ó¼¯ÖÐµÄ×î½üµã¶Ô
+			if(Y[i].index<=m) SL[j++] = Y[i];       //  æ”¶é›†å·¦è¾¹å­é›†ä¸­çš„æœ€è¿‘ç‚¹å¯¹
+			else SR[k++] = Y[i];                    //  æ”¶é›†å³è¾¹å­é›†ä¸­çš„æœ€è¿‘ç‚¹å¯¹
 		}
-		closest( X, SL, low, m, al, bl, dl );       //  ¼ÆËã×ó±ß×Ó¼¯µÄ×î½üµã¶Ô
-		closest( X, SR, m+1, high, ar, br, dr );    //  ¼ÆËãÓÒ±ß×Ó¼¯µÄ×î½üµã¶Ô
-		if(dl<dr) a = al, b = bl, d = dl;           //  ×éºÏ²½µÃµ½×óÓÒ×Ó¼¯ÖÐµãµÄ×î¶Ì¾àÀëd
+		closest( X, SL, low, m, al, bl, dl );       //  è®¡ç®—å·¦è¾¹å­é›†çš„æœ€è¿‘ç‚¹å¯¹
+		closest( X, SR, m+1, high, ar, br, dr );    //  è®¡ç®—å³è¾¹å­é›†çš„æœ€è¿‘ç‚¹å¯¹
+		if(dl<dr) a = al, b = bl, d = dl;           //  ç»„åˆæ­¥å¾—åˆ°å·¦å³å­é›†ä¸­ç‚¹çš„æœ€çŸ­è·ç¦»d
 		else a = ar, b = br, d = dr;
 		POINT *Z = new POINT[high-low+1];
 		k = 0;
-		// ÊÕ¼¯¾àÀëÖÐÏß¾àÀëÐ¡ÓÚdµÄÔªËØ£¬±£´æµ½Êý×éZ£¨ÒòYÊý×é°´y×ø±êµÝÔöÅÅÐò£¬ZÊý×éÒ²Ò»Ñù£©    
+		// æ”¶é›†è·ç¦»ä¸­çº¿è·ç¦»å°äºŽdçš„å…ƒç´ ï¼Œä¿å­˜åˆ°æ•°ç»„Zï¼ˆå› Yæ•°ç»„æŒ‰yåæ ‡é€’å¢žæŽ’åºï¼ŒZæ•°ç»„ä¹Ÿä¸€æ ·ï¼‰    
 		for( i=0; i<=high-low; i++ )    
 			if( fabs( X[m].x - Y[i].x ) < d ) 
 				Z[k].x = Y[i].x, Z[k++].y = Y[i].y;
 		for( i=0; i<k; i++)
 		{
 			for( j=i+1; (j<k) && ( Z[j].y-Z[i].y<d ); j++ )
-			{     //   ÈôÇ°ºóÁ½µãyÖáµÄ¾àÀë³¬¹ýdÔò²»¿ÉÄÜÊ¹¾àÀëÐ¡ÓÚd£¬ÍË³ö
-				dl = dist( Z[i], Z[j] );                  //     ¼ÆËãÇ°ºóÁ½µãµÄ¾àÀë
-				if( dl<d ) a = Z[i], b = Z[j], d = dl;  //     ÈôÐ¡ÓÚd£¬Ôò¸üÐÂ
+			{     //   è‹¥å‰åŽä¸¤ç‚¹yè½´çš„è·ç¦»è¶…è¿‡dåˆ™ä¸å¯èƒ½ä½¿è·ç¦»å°äºŽdï¼Œé€€å‡º
+				dl = dist( Z[i], Z[j] );                  //     è®¡ç®—å‰åŽä¸¤ç‚¹çš„è·ç¦»
+				if( dl<d ) a = Z[i], b = Z[j], d = dl;  //     è‹¥å°äºŽdï¼Œåˆ™æ›´æ–°
 			}
 		}
 		delete SL;
@@ -88,30 +88,30 @@ void closest( POINT X[], A_POINT Y[], int low, int high, POINT &a, POINT &b, flo
 }
 
 /**********************************************
-* ÇóÆ½Ãæµã¼¯×î½üµã¶ÔµÄ·ÖÖÎËã·¨
+* æ±‚å¹³é¢ç‚¹é›†æœ€è¿‘ç‚¹å¯¹çš„åˆ†æ²»ç®—æ³•
 *
-* ÊäÈë£º´æ·ÅÆ½Ãæµã¼¯µãµÄÊý×éX[]£¬µãµÄ¸öÊýn
-* Êä³ö£º×î½üµã¶Ôa,b¼°¾àÀëd
+* è¾“å…¥ï¼šå­˜æ”¾å¹³é¢ç‚¹é›†ç‚¹çš„æ•°ç»„X[]ï¼Œç‚¹çš„ä¸ªæ•°n
+* è¾“å‡ºï¼šæœ€è¿‘ç‚¹å¯¹a,båŠè·ç¦»d
 **********************************************/
 void closest_pair(POINT X[], int n, POINT &a, POINT &b, float &d)
 {
 	if(n<2)
-	{        //      µ±µã¼¯¸öÊýÐ¡ÓÚ2Ê±²»´æÔÚ×î½üµã¶Ô
+	{        //      å½“ç‚¹é›†ä¸ªæ•°å°äºŽ2æ—¶ä¸å­˜åœ¨æœ€è¿‘ç‚¹å¯¹
 		d = 0;
 	}
 	else
 	{
-		sort(X,X+n, compareX);      //        ¶ÔxÊý×é½øÐÐµÝÔöÅÅÐò
-		A_POINT *Y = new A_POINT[n];    //  ³õÊ¼»¯¸¨ÖúµãÊý×éY
+		sort(X,X+n, compareX);      //        å¯¹xæ•°ç»„è¿›è¡Œé€’å¢žæŽ’åº
+		A_POINT *Y = new A_POINT[n];    //  åˆå§‹åŒ–è¾…åŠ©ç‚¹æ•°ç»„Y
 		for( int i = 0 ; i < n ;i ++)
 		{
 			Y[i].index = i;
 			Y[i].x = X[i].x;
 			Y[i].y = X[i].y;
 		}
-		sort(Y,Y+n, compareY);      //        ¶ÔyÊý×é½øÐÐµÝÔöÅÅÐò
-		closest(X,Y,0,n-1,a,b,d);              //     ÇóÇ×ÃÜµã¶Ô
-		d = sqrt(d);                //  ½«µÃµ½µÄd¿ªÆ½·½²ÅÊÇÁ½µã¼äÕæÕýµÄ¾àÀë
+		sort(Y,Y+n, compareY);      //        å¯¹yæ•°ç»„è¿›è¡Œé€’å¢žæŽ’åº
+		closest(X,Y,0,n-1,a,b,d);              //     æ±‚äº²å¯†ç‚¹å¯¹
+		d = sqrt(d);                //  å°†å¾—åˆ°çš„då¼€å¹³æ–¹æ‰æ˜¯ä¸¤ç‚¹é—´çœŸæ­£çš„è·ç¦»
 		delete Y;
 	}
 }
@@ -119,10 +119,10 @@ void closest_pair(POINT X[], int n, POINT &a, POINT &b, float &d)
 int main(){
 	int n;
 
-	cout<<"ÇëÊäÈëµã¸öÊý£º";
+	cout<<"è¯·è¾“å…¥ç‚¹ä¸ªæ•°ï¼š";
 	cin>>n;
 
-	cout<<"ÇëÊäÈë¸÷¸öµãµÄ×ø±ê£º"<<endl;
+	cout<<"è¯·è¾“å…¥å„ä¸ªç‚¹çš„åæ ‡ï¼š"<<endl;
 	POINT *X = new POINT[n];
 	for(int i=0; i<n; i++)
 	{
@@ -139,7 +139,7 @@ int main(){
 	}
 	else
 	{
-		printf("²»´æÔÚ×î½üµã¶Ô£¡\n");
+		printf("ä¸å­˜åœ¨æœ€è¿‘ç‚¹å¯¹ï¼\n");
 	}
 
 	delete X;

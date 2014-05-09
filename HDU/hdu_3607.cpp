@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
         for( int i = 1; i <= n; i++ )
         {
             tmp = query( h[i] - 1 ) + v[i]; 
-			// 查询[ 0, h[i]-1 ]的最大值加上v[i]
+			// 鏌ヨ[ 0, h[i]-1 ]鐨勬渶澶у�煎姞涓妚[i]
             if( tmp > ans ) ans = tmp;
             AddMax( h[i], tmp ); // 
         }

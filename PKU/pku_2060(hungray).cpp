@@ -1,4 +1,4 @@
-// ×îĞ¡Â·¾¶¸²¸Ç = N - ×î´óÆ¥Åä
+// æœ€å°è·¯å¾„è¦†ç›– = N - æœ€å¤§åŒ¹é…
 #include <cstdio>
 #include <iostream>
 #include <cstring>

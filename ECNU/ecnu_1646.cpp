@@ -36,7 +36,7 @@ void bfs ( )
 	{
 		head=que.front();
 		que.pop();
-		for ( j=1; j<=9; j+=2 )    //个位
+		for ( j=1; j<=9; j+=2 )    //涓綅
 		{
 			tt=head.state-head.state%10+j;
 			if ( tt==end )
@@ -51,7 +51,7 @@ void bfs ( )
 				que.push(temp);
 			}
 		}
-		for ( j=0; j<=9; j++ )    //十位
+		for ( j=0; j<=9; j++ )    //鍗佷綅
 		{
 			tt=head.state-head.state%100+head.state%10+j*10;
 			if ( tt==end )
@@ -66,7 +66,7 @@ void bfs ( )
 				que.push(temp);
 			}
 		}
-		for ( j=0; j<=9; j++ )   //百位
+		for ( j=0; j<=9; j++ )   //鐧句綅
 		{
 			tt=head.state-head.state%1000+head.state%100+j*100;
 			if ( tt==end )
@@ -81,7 +81,7 @@ void bfs ( )
 				que.push(temp);
 			}
 		}
-		for ( j=1; j<=9; j++ )   //千位
+		for ( j=1; j<=9; j++ )   //鍗冧綅
 		{
 			tt=head.state%1000+1000*j;
 			if ( tt==end )

@@ -29,7 +29,7 @@ struct circle
 struct node
 {
 	double area;
-	int flag;       // ±ê¼ÇÔ²»¡ÊÇ³¯ÉÏ»¹ÊÇ³¯ÏÂ
+	int flag;       // æ ‡è®°åœ†å¼§æ˜¯æœä¸Šè¿˜æ˜¯æœä¸‹
 	double y, y1, y2;
 };
 
@@ -37,12 +37,12 @@ circle c[maxn];
 vector<double> vec;
 double ans1, ans2;
 
-//¼ÆËã ab ºÍ ac µÄ²æ»ı
+//è®¡ç®— ab å’Œ ac çš„å‰ç§¯
 double det(const point& a, const point& b, const point& c){
 	return (b.x-a.x)*(c.y-a.y)-(c.x-a.x)*(b.y-a.y);
 }
 
-//¼ÆËã ab ºÍ ac µÄµã»ı
+//è®¡ç®— ab å’Œ ac çš„ç‚¹ç§¯
 double dot(point a,point b,point c){
 	return (b.x-a.x)*(c.x-a.x)+(b.y-a.y)*(c.y-a.y);
 }
@@ -59,7 +59,7 @@ double dis2(const point &a, const point &b){
 
 int dblcmp( double x ) { return ( x < -eps ? -1 : x > eps ); }
 
-//ÇóÖ±ÏßabºÍÖ±ÏßcdµÄ½»µã
+//æ±‚ç›´çº¿abå’Œç›´çº¿cdçš„äº¤ç‚¹
 point cross(const point &a, const point &b, const point &c, const point &d)
 {
 	point ret = a;
@@ -70,7 +70,7 @@ point cross(const point &a, const point &b, const point &c, const point &d)
 	return ret;
 }
 
-//¼ÆËãÖ±ÏßÓëÔ²µÄ½»µã,±£Ö¤Ö±ÏßÓëÔ²ÓĞ½»µã
+//è®¡ç®—ç›´çº¿ä¸åœ†çš„äº¤ç‚¹,ä¿è¯ç›´çº¿ä¸åœ†æœ‰äº¤ç‚¹
 void cross( const circle & b, const point &l1, const point &l2, point& p1, point& p2 )
 {
 	point p = b.p;
@@ -88,7 +88,7 @@ void cross( const circle & b, const point &l1, const point &l2, point& p1, point
 	p1.y = p.y - ( l2.y - l1.y ) * t;
 }
 
-//¼ÆËãÔ²ÓëÔ²µÄ½»µã,±£Ö¤Ô²ÓëÔ²ÓĞ½»µã,Ô²ĞÄ²»ÖØºÏ
+//è®¡ç®—åœ†ä¸åœ†çš„äº¤ç‚¹,ä¿è¯åœ†ä¸åœ†æœ‰äº¤ç‚¹,åœ†å¿ƒä¸é‡åˆ
 void cross(const circle & a,const circle & b, point& p1, point& p2)
 {
 	point u, v;
@@ -110,13 +110,13 @@ void solve( double x1, double x2, const int & n )
 	point p1, p2;
 	double x = ( x1 + x2 ) / 2, t;
 	vector<node> V;
-	node up, down;  // up ÉÏÔ²»¡³¯ÏÂ£¬ down ÏÂÔ²»¡³¯ÉÏ
+	node up, down;  // up ä¸Šåœ†å¼§æœä¸‹ï¼Œ down ä¸‹åœ†å¼§æœä¸Š
 	for( int i = 1; i <= n; i++ )
 	{
 		if( dblcmp( c[i].p.x - c[i].r - x2 ) >= 0 )continue;
 		if( dblcmp( c[i].p.x + c[i].r - x1 ) <= 0 )continue;
 
-		up.flag = 2; down.flag = 1;		// 2³¯ÏÂ£¬1³¯ÉÏ
+		up.flag = 2; down.flag = 1;		// 2æœä¸‹ï¼Œ1æœä¸Š
 		
 		cross( c[i], point( x1, 0 ), point( x1, 1 ), p1, p2 );
 		if( p1.y > p2.y ) swap( p1, p2 );
@@ -155,7 +155,7 @@ void solve( double x1, double x2, const int & n )
 		}
 		if( cnt > 0 )
 		{
-			// ¶ÔÓÚ ÏÂÒ»¸öÔ²»¡À´Ëµ£¬¹­ĞÎ²¿·ÖµÄÈ¡Éá¸ÕºÃÓëÇ°ÃæµÄÏà·´
+			// å¯¹äº ä¸‹ä¸€ä¸ªåœ†å¼§æ¥è¯´ï¼Œå¼“å½¢éƒ¨åˆ†çš„å–èˆåˆšå¥½ä¸å‰é¢çš„ç›¸å
 			if( V[i+1].flag == 1 ) tem += V[i+1].area;
 			else tem -= V[i+1].area;
 			tem += 0.5 * ( V[i].y1 - V[i+1].y1 + V[i].y2 - V[i+1].y2 ) * ( x2 - x1 );

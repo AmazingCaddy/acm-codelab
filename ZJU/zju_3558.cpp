@@ -22,7 +22,7 @@ const ll mod = 100000007;
 ll solve( ll n ) {
 	ll m = n - 1;
 	ll tmp = (int)sqrt( 1.0 * m );
-	// Ã¶¾ÙÉÌ
+	// æžšä¸¾å•†
 	ll sum = 0;
 	for( ll i = 1; i <= tmp; i++ ) {
 		ll l = m / ( i + 1 ) + 1;

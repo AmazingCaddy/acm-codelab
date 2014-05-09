@@ -1,19 +1,19 @@
 /*
 	author: AmazingCaddy
 	time: 2011/5/10  14:43
-	ÌâÒâ: ¸ø³öÒ»¿ÃÊ÷(ÎÞÏòÍ¼),ÈÃÄãÔÚÉÏÃæÑ¡µã·ÅËþ, 
-	Ëþ¸²¸Ç·¶Î§Îªµ±Ç°µãºÍÏàÁÚµÄµã,ÓÃ×îÐ¡µÄËþ¸²¸ÇËùÓÐµã
+	é¢˜æ„: ç»™å‡ºä¸€æ£µæ ‘(æ— å‘å›¾),è®©ä½ åœ¨ä¸Šé¢é€‰ç‚¹æ”¾å¡”, 
+	å¡”è¦†ç›–èŒƒå›´ä¸ºå½“å‰ç‚¹å’Œç›¸é‚»çš„ç‚¹,ç”¨æœ€å°çš„å¡”è¦†ç›–æ‰€æœ‰ç‚¹
 	
-	×ö·¨: ÇóÊ÷ÉÏµÄ×îÐ¡Ö§Åä¼¯ Ê÷ÐÎDP
-	dp[ i ][ 0 ], ±íÊ¾¸Ãµã²»·ÅËþ, ÇÒ±»×æÏÈ½áµã¸²¸Ç
-	dp[ i ][ 1 ], ±íÊ¾¸Ãµã²»·ÅËþ, ²»±»×æÏÈ¸²¸Ç
-	dp[ i ][ 2 ], ·ÅËþ
+	åšæ³•: æ±‚æ ‘ä¸Šçš„æœ€å°æ”¯é…é›† æ ‘å½¢DP
+	dp[ i ][ 0 ], è¡¨ç¤ºè¯¥ç‚¹ä¸æ”¾å¡”, ä¸”è¢«ç¥–å…ˆç»“ç‚¹è¦†ç›–
+	dp[ i ][ 1 ], è¡¨ç¤ºè¯¥ç‚¹ä¸æ”¾å¡”, ä¸è¢«ç¥–å…ˆè¦†ç›–
+	dp[ i ][ 2 ], æ”¾å¡”
 
-	uÎªiµÄ×Ó½áµãdp[ i ][ 0 ] = sum( min( dp[ u ][ 1 ], dp[ u ][ 2 ] ) );
+	uä¸ºiçš„å­ç»“ç‚¹dp[ i ][ 0 ] = sum( min( dp[ u ][ 1 ], dp[ u ][ 2 ] ) );
 	dp[ i ][ 2 ] = sum( min( dp[ u ][ 0 ], dp[ u ][ 2 ] ) ) + 1;
-	dp[ i ][ 1 ] Èç¹ûÆä×Ó½ÚµãÖÐÖÁÉÙÓÐÒ»¸öµãÊÇ·ÅËþ, ¼´´æÔÚ dp[ u ][ 2 ] <= dp[ u ][ 1 ] 
-	ÄÇÃ´ dp[ i ][ 1 ] = sum( min( dp[ u ][ 1 ], dp[ u ][ 2 ] ) );
-	·ñÔò Ã¶¾ÙÆäÖÐÒ»¸ö×Ó½áµã, ÔÚ¸Ã½áµã·ÅËþ( dp[ u ][ 2 ] ),ÆäËûÈÔ±£³Ödp[ u ][ 1 ]×´Ì¬
+	dp[ i ][ 1 ] å¦‚æžœå…¶å­èŠ‚ç‚¹ä¸­è‡³å°‘æœ‰ä¸€ä¸ªç‚¹æ˜¯æ”¾å¡”, å³å­˜åœ¨ dp[ u ][ 2 ] <= dp[ u ][ 1 ] 
+	é‚£ä¹ˆ dp[ i ][ 1 ] = sum( min( dp[ u ][ 1 ], dp[ u ][ 2 ] ) );
+	å¦åˆ™ æžšä¸¾å…¶ä¸­ä¸€ä¸ªå­ç»“ç‚¹, åœ¨è¯¥ç»“ç‚¹æ”¾å¡”( dp[ u ][ 2 ] ),å…¶ä»–ä»ä¿æŒdp[ u ][ 1 ]çŠ¶æ€
 */
 #include <cstdio>
 #include <complex>
@@ -72,7 +72,7 @@ void DFS( int u )
 			sum[ 0 ] += Min( dp[ v ][ 1 ], dp[ v ][ 2 ] );
 			sum[ 2 ] += Min( dp[ v ][ 0 ], dp[ v ][ 2 ] );
 			off = Min( off, dp[ v ][ 2 ] - dp[ v ][ 1 ] );
-			// ×îºóoff <= 0 Ôò´æÔÚ dp[ v ][ 2 ] <= dp[ v ][ 1 ]
+			// æœ€åŽoff <= 0 åˆ™å­˜åœ¨ dp[ v ][ 2 ] <= dp[ v ][ 1 ]
 		}
 	}
 	dp[ u ][ 0 ] = sum[ 0 ];

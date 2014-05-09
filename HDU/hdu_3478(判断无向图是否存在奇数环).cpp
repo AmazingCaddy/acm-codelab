@@ -34,10 +34,10 @@ void union_set( int p, int q )
 		f[b] = a, r[a] ++;
 }
 
-int BIPARTITE( )/*ÔÚBFSµÄ»ù´¡ÉÏÉÔ×÷ÐÞ¸Ä£¬´Ó¶¥µã±àºÅ0¿ªÊ¼¹ãËÑ,ÊÇ¶þ²¿Í¼·µ»Ø1,·ñÔò·µ»Ø0*/
+int BIPARTITE( )/*åœ¨BFSçš„åŸºç¡€ä¸Šç¨ä½œä¿®æ”¹ï¼Œä»Žé¡¶ç‚¹ç¼–å·0å¼€å§‹å¹¿æœ,æ˜¯äºŒéƒ¨å›¾è¿”å›ž1,å¦åˆ™è¿”å›ž0*/
 {
 	int i, j;
-	memset( dis, -1, sizeof( dis ) );/*³õÊ¼»¯¶¥µãÎ´·ÃÎÊ */
+	memset( dis, -1, sizeof( dis ) );/*åˆå§‹åŒ–é¡¶ç‚¹æœªè®¿é—® */
 	dis[0] = 0;
 	queue<int> que;
 	que.push( 0 );

@@ -1,12 +1,12 @@
-//ÏÂÃæÎÒÃÇÇó³öÐ¡ÓÚNÇÒÓëN»¥ÖÊµÄÕýÕûÊýÖ®ºÍ, ÉèÎªS.
-//²»·ÁÉèÕâÐ©ÊýÎªa[1], a[2], ..., a[ phi(N) ], ÆäÖÐphi(N)ÊÇNµÄÅ·À­º¯ÊýÖµ.
-//¶Ô1 <= i <= phi(N), ÓÉgcd(N, a[i]) = 1¿ÉÖªgcd(N, N - a[i]) = 1.
-//ÕâÀï¿ÉÒÔ²ÉÓÃ·´Ö¤: Éègcd(N, N - a[i]) = k > 1, 
-//Ôòk|N, k|(N - a[i]) -> k|a[i] -> k|gcd(N, a[i]), ¶øgcd(N, a[i]) = 1, Ã¬¶Ü.
-//ÕâÑù, N - a[1], N - a[2], ..., N - a[ phi(N) ]Ò²¶ÔÓ¦×ÅÔ­ÊýÁÐ, ÔòÓÐ:
+//ä¸‹é¢æˆ‘ä»¬æ±‚å‡ºå°äºŽNä¸”ä¸ŽNäº’è´¨çš„æ­£æ•´æ•°ä¹‹å’Œ, è®¾ä¸ºS.
+//ä¸å¦¨è®¾è¿™äº›æ•°ä¸ºa[1], a[2], ..., a[ phi(N) ], å…¶ä¸­phi(N)æ˜¯Nçš„æ¬§æ‹‰å‡½æ•°å€¼.
+//å¯¹1 <= i <= phi(N), ç”±gcd(N, a[i]) = 1å¯çŸ¥gcd(N, N - a[i]) = 1.
+//è¿™é‡Œå¯ä»¥é‡‡ç”¨åè¯: è®¾gcd(N, N - a[i]) = k > 1, 
+//åˆ™k|N, k|(N - a[i]) -> k|a[i] -> k|gcd(N, a[i]), è€Œgcd(N, a[i]) = 1, çŸ›ç›¾.
+//è¿™æ ·, N - a[1], N - a[2], ..., N - a[ phi(N) ]ä¹Ÿå¯¹åº”ç€åŽŸæ•°åˆ—, åˆ™æœ‰:
 //S = a[1] + a[2] + ... + a[ phi(N) ]
 //S = (N - a[1]) + (N - a[2]) + ... + (N - a[ phi[N] ])
-//Á½Ê½Ïà¼ÓµÃ: S = N * phi(N) / 2, ËùÇó½á¹û¼´Îª( N * (N - 1) / 2 - S) Mod 1000000007.
+//ä¸¤å¼ç›¸åŠ å¾—: S = N * phi(N) / 2, æ‰€æ±‚ç»“æžœå³ä¸º( N * (N - 1) / 2 - S) Mod 1000000007.
 
 #include <stdio.h>
 #include <iostream>

@@ -1,9 +1,9 @@
 /*
-CatalanÊıµÄ½â·¨
-CatalanÊıµÄ×éºÏ¹«Ê½Îª Cn=C(2n,n) / (n+1);
-´ËÊıµÄµİ¹é¹«Ê½Îª  h(n ) = h(n-1)*(4*n-2) / (n+1)
-Ğ¡Êı½â
-¶ÔÓÚ50ÒÔÏÂµÄĞ¡Êı½âÀ´Ëµ£¬Ê¹ÓÃÊı×é¾Í¿ÉÒÔÍê³É£¬´úÂëÈçÏÂ£º
+Catalanæ•°çš„è§£æ³•
+Catalanæ•°çš„ç»„åˆå…¬å¼ä¸º Cn=C(2n,n) / (n+1);
+æ­¤æ•°çš„é€’å½’å…¬å¼ä¸º  h(n ) = h(n-1)*(4*n-2) / (n+1)
+å°æ•°è§£
+å¯¹äº50ä»¥ä¸‹çš„å°æ•°è§£æ¥è¯´ï¼Œä½¿ç”¨æ•°ç»„å°±å¯ä»¥å®Œæˆï¼Œä»£ç å¦‚ä¸‹ï¼š
 */
 /*
 #include<iostream>
@@ -11,7 +11,7 @@ using namespace std;
 int main()
 {
      long long  int a[101][101],i,j,n;
-    for (i=0; i<101; i++)    //ÀûÓÃÊı×éÇó CatalanÊı
+    for (i=0; i<101; i++)    //åˆ©ç”¨æ•°ç»„æ±‚ Catalanæ•°
         a[i][0] = 1;
     for (i=1; i<101; i++)                    
     {
@@ -28,9 +28,9 @@ int main()
 /*
 	author: AmazingCaddy
 	time: 2011/4/13  13:52
-	´óÊı½â
-	¶ÔÓÚ´óÊıÀ´Ëµ£¬¾ÍÓ¦¸ÃÊ¹ÓÃÏÂÃæµÄ´óÊıËã·¨¡£
-	Ê¹ÓÃµÄ¹«Ê½Îª£ºh(n)  = h(n-1)*(4*n-2)/n+1;
+	å¤§æ•°è§£
+	å¯¹äºå¤§æ•°æ¥è¯´ï¼Œå°±åº”è¯¥ä½¿ç”¨ä¸‹é¢çš„å¤§æ•°ç®—æ³•ã€‚
+	ä½¿ç”¨çš„å…¬å¼ä¸ºï¼šh(n)  = h(n-1)*(4*n-2)/n+1;
 */
 #include <cstdio>
 #include <complex>
@@ -47,7 +47,7 @@ using namespace std;
 const int MAX = 100;
 const int BASE = 10000;
 
-void multiply(int a[],int Max,int b)  //´óÊı³Ë·¨
+void multiply(int a[],int Max,int b)  //å¤§æ•°ä¹˜æ³•
 {
     int i,array=0;
     for (i=Max-1; i>=0; i--)   
@@ -58,7 +58,7 @@ void multiply(int a[],int Max,int b)  //´óÊı³Ë·¨
     }
 }
  
-void divide(int a[], int Max, int b)  //´óÊı³ı·¨
+void divide(int a[], int Max, int b)  //å¤§æ•°é™¤æ³•
 {
     int i,div=0;
     for (i=0;i<Max; i++)   
@@ -76,14 +76,14 @@ int main()
     {
         memcpy(a[i],a[i-1],MAX*sizeof(int));      //h[I] = h[i-1];  
         multiply(a[i],MAX,4*i-2);               //h[i] *= (4*i-2);
-        divide(a[i],MAX,i+1);                  //h[i] /= £¨i+1£©;
+        divide(a[i],MAX,i+1);                  //h[i] /= ï¼ˆi+1ï¼‰;
     }
     while (cin>>n)   
     {
-        for (i=0; i<MAX && a[n][i]==0; i++);  //È¥µôÊı×éÇ°Îª0µÄÊı×Ö¡£
-        cout<<a[n][i++];             //Êä³öµÚÒ»¸ö·Ç0Êı
+        for (i=0; i<MAX && a[n][i]==0; i++);  //å»æ‰æ•°ç»„å‰ä¸º0çš„æ•°å­—ã€‚
+        cout<<a[n][i++];             //è¾“å‡ºç¬¬ä¸€ä¸ªé0æ•°
         for (; i<MAX; i++)   
-            printf("%04d",a[n][i]);       //Êä³öºóÃæµÄÊı£¬²¢Ã¿Î»¶¼±£³Ö5Î»³¤¶È
+            printf("%04d",a[n][i]);       //è¾“å‡ºåé¢çš„æ•°ï¼Œå¹¶æ¯ä½éƒ½ä¿æŒ5ä½é•¿åº¦
         cout<<endl;
     }
     return 0;

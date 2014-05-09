@@ -3,8 +3,8 @@ using namespace std;
 const int maxn = 100004;
 const int INF = -2000000001;
 
-int dp[maxn];   // dp[i] ÊÇÇ°i¸öÊı¾İ£¬±ØĞë°üÀ¨ a[i] ×îÓÅ×Ó¶ÎºÍ
-int best[maxn]; // best[i] Ç°i¸öÊı¾İ ×îÓÅ×Ó¶ÎºÍ
+int dp[maxn];   // dp[i] æ˜¯å‰iä¸ªæ•°æ®ï¼Œå¿…é¡»åŒ…æ‹¬ a[i] æœ€ä¼˜å­æ®µå’Œ
+int best[maxn]; // best[i] å‰iä¸ªæ•°æ® æœ€ä¼˜å­æ®µå’Œ
 int a[maxn], sum[maxn];
 int max( int a, int b ){ return ( a > b ? a : b ); }
 int main( )

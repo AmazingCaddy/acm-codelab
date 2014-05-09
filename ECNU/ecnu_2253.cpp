@@ -1,9 +1,9 @@
 #include<iostream>
 using namespace std;
 #define MAXN 30
-int dir[8][2]={{-1,-2},{1,-2},{-2,-1},{2,-1},{-2,1},{2,1},{-1,2},{1,2}};//°Ë¸ö·½Ïò
+int dir[8][2]={{-1,-2},{1,-2},{-2,-1},{2,-1},{-2,1},{2,1},{-1,2},{1,2}};//å…«ä¸ªæ–¹å‘
 bool visit[MAXN][MAXN];
-int x[MAXN],y[MAXN];     //·Ö±ğ¼ÇÂ¼xÖáºÍyÖá×ø±ê
+int x[MAXN],y[MAXN];     //åˆ†åˆ«è®°å½•xè½´å’Œyè½´åæ ‡
 int m,n;
 
 bool dfs( int p, int q, int step )
@@ -13,16 +13,16 @@ bool dfs( int p, int q, int step )
 	for( i=0; i<8; i++ )
 	{
 		newy=p+dir[i][0];newx=q+dir[i][1];    
-		//yÖáºÍxÖá×ø±ê,×¢ÒâËÑË÷µÄË³Ğò£¬ÒòÎª¶à¸öÂ·¾¶Ê±
-		//ÊÇÊä³ö°´ÕÕ×ÖµäĞòÅÅµÄÂ·¾¶£¬°´ÕÕA,B...ZµÄË³ĞòËÑË÷
+		//yè½´å’Œxè½´åæ ‡,æ³¨æ„æœç´¢çš„é¡ºåºï¼Œå› ä¸ºå¤šä¸ªè·¯å¾„æ—¶
+		//æ˜¯è¾“å‡ºæŒ‰ç…§å­—å…¸åºæ’çš„è·¯å¾„ï¼ŒæŒ‰ç…§A,B...Zçš„é¡ºåºæœç´¢
 		if( !visit[newy][newx] && newy>=0 && newy<m && newx>=0 && newx<n )
 		{
-			visit[newy][newx]=true;                    //±ê¼ÇÎªÒÑ¾­·ÃÎÊ¹ı
-			y[step]=newy;x[step]=newx;                 //¼ÇÂ¼Â·¾¶×ø±ê
+			visit[newy][newx]=true;                    //æ ‡è®°ä¸ºå·²ç»è®¿é—®è¿‡
+			y[step]=newy;x[step]=newx;                 //è®°å½•è·¯å¾„åæ ‡
 			if( dfs( newy, newx, step+1 ) )
 				return true;
 			visit[newy][newx]=false;
-			//Èç¹ûÃ»ÓĞÕÒµ½£¬±ê¼ÇÎªÃ»ÓĞ·ÃÎÊ¹ı£¬Í¨¹ı±ğµÄÂ·¾¶ÄÜ¹»ÔÙ´Î·ÃÎÊ
+			//å¦‚æœæ²¡æœ‰æ‰¾åˆ°ï¼Œæ ‡è®°ä¸ºæ²¡æœ‰è®¿é—®è¿‡ï¼Œé€šè¿‡åˆ«çš„è·¯å¾„èƒ½å¤Ÿå†æ¬¡è®¿é—®
 		}
 	}
 	return false;
@@ -40,8 +40,8 @@ int main()
 		memset(visit,false,sizeof(visit));
 		x[0]=0;y[0]=0;
 		visit[0][0]=true;
-		if( !dfs( 0, 0, 1 ) )         //Ëæ±ãÈ¡Ò»µã¿ªÊ¼ËÑË÷£¬Ò»°ãÈ¡[0,0]
-			printf("impossible");   //Ã»ÓĞÕÒµ½
+		if( !dfs( 0, 0, 1 ) )         //éšä¾¿å–ä¸€ç‚¹å¼€å§‹æœç´¢ï¼Œä¸€èˆ¬å–[0,0]
+			printf("impossible");   //æ²¡æœ‰æ‰¾åˆ°
 		else 
 			for( j=0; j<m*n; j++ )
 				printf("%c%c",x[j]+'A',y[j]+'1');

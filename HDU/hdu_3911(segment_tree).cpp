@@ -21,9 +21,9 @@ const int maxn = 100100;
 struct node
 {
 	int l, r;					
-	int bmax, bl, br;	//	×î³¤µÄÁ¬ĞøºÚÉ«
-	int wmax, wl, wr;	//	×î³¤µÄÁ¬Ğø°×É«
-	bool flag;			//	±ê¼ÇÊÇ·ñÈ¡·´
+	int bmax, bl, br;	//	æœ€é•¿çš„è¿ç»­é»‘è‰²
+	int wmax, wl, wr;	//	æœ€é•¿çš„è¿ç»­ç™½è‰²
+	bool flag;			//	æ ‡è®°æ˜¯å¦å–å
 };
 
 node tree[ maxn << 2 ];
@@ -44,28 +44,28 @@ void push_down( int sonv )
 
 void push_up( int v )
 {
-	//	ºÚÉ«²¿·Ö
-	//	×Ü³¤¶È
+	//	é»‘è‰²éƒ¨åˆ†
+	//	æ€»é•¿åº¦
 	tree[ v ].bmax = max( tree[ v << 1 ].bmax, tree[ v << 1 | 1 ].bmax );
 	tree[ v ].bmax = max( tree[ v ].bmax, tree[ v << 1 ].br + tree[ v << 1 | 1 ].bl );
-	//	×ó¶Ë
+	//	å·¦ç«¯
 	if( tree[ v << 1 ].bl == tree[ v << 1 ].r - tree[ v << 1 ].l )
 		tree[ v ].bl = tree[ v << 1 ].bl + tree[ v << 1 | 1 ].bl;
 	else tree[ v ].bl = tree[ v << 1 ].bl;
-	//	ÓÒ¶Ë
+	//	å³ç«¯
 	if( tree[ v << 1 | 1 ].br == tree[ v << 1 | 1 ].r - tree[ v << 1 | 1 ].l ) 
 		tree[ v ].br = tree[ v << 1 ].br + tree[ v << 1 | 1 ].br;
 	else tree[ v ].br = tree[ v << 1 | 1 ].br;
 
-	//	°×É«²¿·Ö
-	//	×Ü³¤¶È
+	//	ç™½è‰²éƒ¨åˆ†
+	//	æ€»é•¿åº¦
 	tree[ v ].wmax = max( tree[ v << 1 ].wmax, tree[ v << 1 | 1 ].wmax );
 	tree[ v ].wmax = max( tree[ v ].wmax, tree[ v << 1 ].wr + tree[ v << 1 | 1 ].wl );
-	//	×ó¶Ë
+	//	å·¦ç«¯
 	if( tree[ v << 1 ].wl == tree[ v << 1 ].r - tree[ v << 1 ].l ) 
 		tree[ v ].wl = tree[ v << 1 ].wl + tree[ v << 1 | 1 ].wl;
 	else tree[ v ].wl = tree[ v << 1 ].wl;
-	//	ÓÒ¶Ë
+	//	å³ç«¯
 	if( tree[ v << 1 | 1 ].wr == tree[ v << 1 | 1 ].r - tree[ v << 1 | 1 ].l ) 
 		tree[ v ].wr = tree[ v << 1 ].wr + tree[ v << 1 | 1 ].wr;
 	else tree[ v ].wr = tree[ v << 1 | 1 ].wr;
@@ -85,12 +85,12 @@ void make_tree( int v, int l, int r )
 	}
 	else
 	{
-		if( f[ l ] )//	ºÚÉ«
+		if( f[ l ] )//	é»‘è‰²
 		{
 			tree[ v ].bmax = tree[ v ].bl = tree[ v ].br = 1;
 			tree[ v ].wmax = tree[ v ].wl = tree[ v ].wr = 0;
 		}
-		else		//	°×É«
+		else		//	ç™½è‰²
 		{
 			tree[ v ].wmax = tree[ v ].wl = tree[ v ].wr = 1;
 			tree[ v ].bmax = tree[ v ].bl = tree[ v ].br = 0;

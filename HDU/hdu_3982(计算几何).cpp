@@ -88,19 +88,19 @@ double solve(){
     P.push_back( last );
 }
 
-//ÇóÁ½ÌõÖ±ÏßµÄ½»µã
+//æ±‚ä¸¤æ¡ç›´çº¿çš„äº¤ç‚¹
 point intersection( const point &u1, const point &u2, const point &v1, const point &v2) {
     double t = v1 - u1 ^ v2 - u1;
     double s = v2 - u2 ^ v1 - u2;
     return u1 + (u2 - u1) * t / (t + s);
 }
 
-//Çó½Çaob
+//æ±‚è§’aob
 double angle( point a, point b, point o ) {
     return atan2(a - o ^ b - o, a - o & b - o);
 }
 
-//ÇóÖ±ÏßºÍÔ²µÄ½»µã,µã´æÔÚpÖĞ
+//æ±‚ç›´çº¿å’Œåœ†çš„äº¤ç‚¹,ç‚¹å­˜åœ¨pä¸­
 void line_circle_intersect(point &l1, point &l2, point &c, double &r, vector<point> & p) {
     point q = intersection( l1, l2, c + prev(l1 - l2), c );
 //	if( !rapall( q, l1, l2 ) ) {
@@ -118,12 +118,12 @@ void line_circle_intersect(point &l1, point &l2, point &c, double &r, vector<poi
 	}
 }
 
-//ÅĞ¶ÏµãÊÇ·ñÔÚÏß¶ÎÉÏ,²»°üÀ¨¶Ëµã
+//åˆ¤æ–­ç‚¹æ˜¯å¦åœ¨çº¿æ®µä¸Š,ä¸åŒ…æ‹¬ç«¯ç‚¹
 bool point_on_seg(point &a, point &b, point &c) {
     return dcmp(b - a & c - a) < 0;
 }
 
-//ÇóÏß¶ÎºÍÔ²µÄ½»µã,µã´æÔÚpÖĞ
+//æ±‚çº¿æ®µå’Œåœ†çš„äº¤ç‚¹,ç‚¹å­˜åœ¨pä¸­
 void seg_circle_intersect(point & l1, point & l2, point & c, double &r, vector<point> & p)
 {
 	line_circle_intersect(l1, l2, c, r, p);
@@ -144,7 +144,7 @@ void seg_circle_intersect(point & l1, point & l2, point & c, double &r, vector<p
 	if( dcmp( abs(l2 - c) - r) <= 0)p.push_back(l2);
 }
 
-//ÇóÈı½ÇĞÎºÍÔ²Ïà½»µÄÃæ»ı.ÕâÀïµÄÈı½ÇĞÎÓĞÒ»¸ö¶¥µãºÍÔ²ĞÄÖØºÏ
+//æ±‚ä¸‰è§’å½¢å’Œåœ†ç›¸äº¤çš„é¢ç§¯.è¿™é‡Œçš„ä¸‰è§’å½¢æœ‰ä¸€ä¸ªé¡¶ç‚¹å’Œåœ†å¿ƒé‡åˆ
 double tri_circle_area(point & a, point & b, point & c, double & r)
 {
 	vector<point> p;
@@ -161,7 +161,7 @@ double tri_circle_area(point & a, point & b, point & c, double & r)
 	}
 }
 
-//ÇóÈÎÒâ¶à±ßĞÎºÍÔ²Ïà½»µÄÃæ»ı
+//æ±‚ä»»æ„å¤šè¾¹å½¢å’Œåœ†ç›¸äº¤çš„é¢ç§¯
 double poly_circle_area(vector<point> poly, point c, double r)
 {
     double area = 0; int sz = poly.size();

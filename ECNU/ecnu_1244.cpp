@@ -1,7 +1,7 @@
-// �趨F[i,j,k]��ʾ���õ�i����ľʱ���������ڵ�j�ѣ��õ�k�ַ�ʽ���õ������߶ȡ�
-// F[i,j,k]=Max{ F[a,j,b]|(i,k)�ܷ�����(a,b)��, F[a,j-1,b] (0<=a<=i-1,0<=b<=2) } + height(i,k)
-// height(i,k)Ϊ��i����ľ�Է�ʽk���õĸߡ�
-// F[i,j,k]=�������;(0<=i<=N,0<=j<=M,0<=k<=2)
+// 设定F[i,j,k]表示放置第i个积木时，把它放在第j堆，用第k种方式放置的总最大高度。
+// F[i,j,k]=Max{ F[a,j,b]|(i,k)能放置在(a,b)上, F[a,j-1,b] (0<=a<=i-1,0<=b<=2) } + height(i,k)
+// height(i,k)为第i个积木以方式k放置的高。
+// F[i,j,k]=负无穷大;(0<=i<=N,0<=j<=M,0<=k<=2)
 // F[0,0,0]=0;
 #include <iostream>
 #include <cstdio>

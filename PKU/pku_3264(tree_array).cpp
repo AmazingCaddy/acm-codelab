@@ -1,7 +1,7 @@
 /*
 	author: AmazingCaddy
 	time: 2011/5/13  18:26
-	树状数组
+	鏍戠姸鏁扮粍
 */
 #include <cstdio>
 #include <complex>
@@ -81,7 +81,7 @@ void Modify( int p, int v, int n )
     }
 }
 
-/* 此代码有问题
+/* 姝や唬鐮佹湁闂
 void Modify(int p,int v,int n){
     num[p]=v;
     for(int i=p;i<=n;i+=Lowbit(i)){

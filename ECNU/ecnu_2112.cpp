@@ -1,4 +1,4 @@
-// �������DFS������֦
+// 解答树，DFS搜索减枝
 #include<iostream>
 #include<algorithm>
 #define MAXN 102
@@ -51,7 +51,7 @@ double DFS( )
 			top--;
 		}
 		else if( stack[top].val+f( L-stack[top].time, stack[top].m ) > y )  
-			//����Լ۱���ߵ���Ʒ����õ���ֵ���ȵ�ǰ����ֵС����ô��֦
+			//如果性价比最高的物品加入得到的值都比当前最优值小，那么减枝
 		{
 			stack[top].m=stack[top].m+1;
 			{

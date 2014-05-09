@@ -14,10 +14,10 @@ const double inf = 10000;
 const double PI  = acos(-1.0);
 typedef complex<double> point;
 
-double operator^( point p0, point p1 ) { return imag( conj(p0) * p1 ); }//¼ÆËã²æ»ı
+double operator^( point p0, point p1 ) { return imag( conj(p0) * p1 ); }//è®¡ç®—å‰ç§¯
 int dcmp( double x ) { return x < -eps ? -1 : x > eps; }
 
-point rotation( point p1, point p2, double r ) // ÄæÊ±ÕëĞı×ª90¶È,³¤¶È±äÎªr
+point rotation( point p1, point p2, double r ) // é€†æ—¶é’ˆæ—‹è½¬90åº¦,é•¿åº¦å˜ä¸ºr
 {
 	point p;
 	double t = r / abs( p2 - p1 );
@@ -33,7 +33,7 @@ struct line
 	line( ){ }
 	line( point u, point v ):a(u), b(v)
 	{
-		angle = arg( b - a );   //¼ÆËã·ù½Ç
+		angle = arg( b - a );   //è®¡ç®—å¹…è§’
 	}
 	bool operator<( const line & l ) const
 	{
@@ -51,7 +51,7 @@ bool onLeft( point p, line l )
 	return dcmp( l.b - l.a ^ p - l.a ) >= 0;
 }
 
-point operator*( line l0, line l1 )  // ¼ÆËãÁ½Ö±ÏßµÄ½»µã
+point operator*( line l0, line l1 )  // è®¡ç®—ä¸¤ç›´çº¿çš„äº¤ç‚¹
 {
 	double t = l0.a - l1.a^ l0.b - l1.a;
     double s = l0.b - l1.b^ l0.a - l1.b;

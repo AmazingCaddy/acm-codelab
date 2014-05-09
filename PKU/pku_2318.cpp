@@ -1,4 +1,4 @@
-//叉积的应用判断位置关系，使用二分
+//鍙夌Н鐨勫簲鐢ㄥ垽鏂綅缃叧绯伙紝浣跨敤浜屽垎
 #include<iostream>
 #include<cmath>
 #define eps 1e-8

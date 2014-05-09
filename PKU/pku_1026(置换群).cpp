@@ -1,12 +1,12 @@
 /*
 	author: wwb
 	time: 2011/2/25 19:28
-	ÌâÒâ£º¸øÄã³¤¶ÈnµÄÒ»×éÐòÁÐa[i]  È»ºók²Ù×÷´ÎÊý ÔÙ¸øÄãÒ»×é×Ö·û´®  
-	      ×Ö·û´®³¤¶È²»×ãnµÄºóÃæ²¹¿Õ¸ñ
-    ²Ù×÷£º°Ñ×Ö·ûÔÚiÎ»ÖÃµÄ·Åµ½a[i]ÉÏ   Èç´Ë²Ù×÷k´Î
-    ·½·¨£ºÖ±½ÓÄ£Äâ¿Ï¶¨TLE
-	      Çó×Ö·û´®ÕûÌåÖÜÆÚT k=k%T  k»¹ÊÇºÜ´ó ³¬Ê±
-          ÇóÃ¿¸ö×Ö·û´®µÄÖÜÆÚ b[i]  È»ºó k=k%b[i]
+	é¢˜æ„ï¼šç»™ä½ é•¿åº¦nçš„ä¸€ç»„åºåˆ—a[i]  ç„¶åŽkæ“ä½œæ¬¡æ•° å†ç»™ä½ ä¸€ç»„å­—ç¬¦ä¸²  
+	      å­—ç¬¦ä¸²é•¿åº¦ä¸è¶³nçš„åŽé¢è¡¥ç©ºæ ¼
+    æ“ä½œï¼šæŠŠå­—ç¬¦åœ¨iä½ç½®çš„æ”¾åˆ°a[i]ä¸Š   å¦‚æ­¤æ“ä½œkæ¬¡
+    æ–¹æ³•ï¼šç›´æŽ¥æ¨¡æ‹Ÿè‚¯å®šTLE
+	      æ±‚å­—ç¬¦ä¸²æ•´ä½“å‘¨æœŸT k=k%T  kè¿˜æ˜¯å¾ˆå¤§ è¶…æ—¶
+          æ±‚æ¯ä¸ªå­—ç¬¦ä¸²çš„å‘¨æœŸ b[i]  ç„¶åŽ k=k%b[i]
 */
 #include <cstdio>
 #include <complex>

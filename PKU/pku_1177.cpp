@@ -7,15 +7,15 @@ struct segment
 {
 	int L,R;
 	int len,linenum,cover; 
-	// ÒÔµ±Ç°Çø¼äÎª¸ùµÄÊ÷±»¸²¸ÇµÄÇø¼äµÄ×Ü³¤¶È,
-	// ÒÔµ±Ç°Çø¼äÎª¸ùµÄÊ÷±»¸²¸ÇµÄÇø¼äÊıÄ¿£¬µ±Ç°Çø¼ä±»¸²¸ÇµÄ´ÎÊı£¬
+	// ä»¥å½“å‰åŒºé—´ä¸ºæ ¹çš„æ ‘è¢«è¦†ç›–çš„åŒºé—´çš„æ€»é•¿åº¦,
+	// ä»¥å½“å‰åŒºé—´ä¸ºæ ¹çš„æ ‘è¢«è¦†ç›–çš„åŒºé—´æ•°ç›®ï¼Œå½“å‰åŒºé—´è¢«è¦†ç›–çš„æ¬¡æ•°ï¼Œ
 	bool lcover,rcover;
 };
 
 struct line
 {
 	int x;
-	int flag;//¼ÇÂ¼×óÓÒ±ß
+	int flag;//è®°å½•å·¦å³è¾¹
 	bool operator<( const line &a )
 	{
 		return x<a.x;
@@ -53,14 +53,14 @@ void make_tree( int v, int l, int r )
 	}
 }
 
-void getline( int v ) // »ñµÃÒÔµ±Ç°½ÓµãÎª¸ùµÄÊ÷±»¸²¸ÇµÄÇø¼ä×Ü³¤¶È
+void getline( int v ) // è·å¾—ä»¥å½“å‰æ¥ç‚¹ä¸ºæ ¹çš„æ ‘è¢«è¦†ç›–çš„åŒºé—´æ€»é•¿åº¦
 {
 	if( tree[v].cover>0 )tree[v].len=Ypoint[tree[v].R].y-Ypoint[tree[v].L].y;
 	else if( tree[v].R-tree[v].L==1 )tree[v].len=0;
 	else tree[v].len=tree[v<<1].len+tree[(v<<1)+1].len;
 }
 
-void getlinenum( int v ) //»ñµÃÒÔµ±Ç°½ÚµãÎªÊ÷¸ùµÄ×ÓÊ÷±»¸²¸ÇÇø¼äµÄ×ÜÊı
+void getlinenum( int v ) //è·å¾—ä»¥å½“å‰èŠ‚ç‚¹ä¸ºæ ‘æ ¹çš„å­æ ‘è¢«è¦†ç›–åŒºé—´çš„æ€»æ•°
 {
 	if( tree[v].cover>0 )
 		tree[v].lcover=tree[v].rcover=true,tree[v].linenum=1;
@@ -110,11 +110,11 @@ int main( )
 			Xpoint[t1].num=-(i+1);
 			Xpoint[t2].num=i+1;
 			Ypoint[t1].y=y1;Ypoint[t2].y=y2;
-			Ypoint[t1].num=-(i+1);  //Êú±ßÏÂÃæµÄµã
-			Ypoint[t2].num=i+1;     //Êú±ßÉÏÃæµÄµã
+			Ypoint[t1].num=-(i+1);  //ç«–è¾¹ä¸‹é¢çš„ç‚¹
+			Ypoint[t2].num=i+1;     //ç«–è¾¹ä¸Šé¢çš„ç‚¹
 			yline[t1].x=x1;yline[t2].x=x2;
-			yline[t1].flag=1;//¸ººÅ¾ØĞÎ×ó±ß
-			yline[t2].flag=-1;//ÕıºÅ¾ØĞÎÓÒ±ß
+			yline[t1].flag=1;//è´Ÿå·çŸ©å½¢å·¦è¾¹
+			yline[t2].flag=-1;//æ­£å·çŸ©å½¢å³è¾¹
 		}
 		sort( yline, yline+(n<<1) );
 		sort( Xpoint, Xpoint+(n<<1) );
@@ -154,27 +154,27 @@ int main( )
 //
 //using namespace std;
 //
-//struct Node { //Ïß¶ÎÊ÷µÄ½Úµã
-//	int L,R; // µ±Ç°½Úµã±íÊ¾µÄÇø¼ä·¶Î§
-//	Node *Ls,*Rs; // ×óÓÒ¶ù×Ó
-//	int len,linenum,cover,sum; // µ±Ç°Çø¼äµÄ±íÊ¾µÄ³¤¶È£¬ÒÔµ±Ç°Çø¼äÎª¸ùµÄÊ÷±»¸²¸ÇµÄÇø¼äÊıÄ¿£¬   µ±Ç°Çø¼ä±»¸²¸ÇµÄ´ÎÊı£¬ÒÔµ±Ç°Çø¼äÎª¸ùµÄÊ÷±»¸²¸ÇµÄÇø¼äµÄ×Ü³¤¶È
-//	bool lcover,rcover;   //±ê¼Ç×óÓÒ¶ËµãÊÇ·ñ±»¸²¸Ç 
+//struct Node { //çº¿æ®µæ ‘çš„èŠ‚ç‚¹
+//	int L,R; // å½“å‰èŠ‚ç‚¹è¡¨ç¤ºçš„åŒºé—´èŒƒå›´
+//	Node *Ls,*Rs; // å·¦å³å„¿å­
+//	int len,linenum,cover,sum; // å½“å‰åŒºé—´çš„è¡¨ç¤ºçš„é•¿åº¦ï¼Œä»¥å½“å‰åŒºé—´ä¸ºæ ¹çš„æ ‘è¢«è¦†ç›–çš„åŒºé—´æ•°ç›®ï¼Œ   å½“å‰åŒºé—´è¢«è¦†ç›–çš„æ¬¡æ•°ï¼Œä»¥å½“å‰åŒºé—´ä¸ºæ ¹çš„æ ‘è¢«è¦†ç›–çš„åŒºé—´çš„æ€»é•¿åº¦
+//	bool lcover,rcover;   //æ ‡è®°å·¦å³ç«¯ç‚¹æ˜¯å¦è¢«è¦†ç›– 
 //	Node() {Ls = Rs = 0;L = R = 0;len = linenum = cover = sum = 0; lcover = rcover = false;}
 //};
-//struct  Line { // ´æ´¢¾ØĞÎµÄÊú±ß
-//	int start,end;// Êú±ßµÄÁ½¸öyÖµ
-//	int x;        // Êú±ßµÄx Öµ
-//	bool InOut;  // ±ê¼ÇÊÇ¾ØĞÎµÄ×ó±ß»¹ÊÇÓÒ±ß
+//struct  Line { // å­˜å‚¨çŸ©å½¢çš„ç«–è¾¹
+//	int start,end;// ç«–è¾¹çš„ä¸¤ä¸ªyå€¼
+//	int x;        // ç«–è¾¹çš„x å€¼
+//	bool InOut;  // æ ‡è®°æ˜¯çŸ©å½¢çš„å·¦è¾¹è¿˜æ˜¯å³è¾¹
 //	bool operator < (const Line & a) const{
 //		return x < a.x;
 //	}
 //};
-//Line YLine[Inf];  // ´æ´¢ËùÓĞ¾ØĞÎµÄµÄÊú±ß
-//int Index[Inf];  //´æ´¢ÀëÉ¢ºóµÄyÖµ 
-//Node *root;     // Ïß¶ÎÊ÷µÄÊ÷¸ù
-//int C_nt = 0;   // È¥ÖØºóµÄyÖµ¸öÊı
-//int Rnum;  // ¾ØĞÎµÄ¸öÊı
-//void Maketree(Node *&root, int L,int R){  //½¨Á¢Ïß¶ÎÊ÷
+//Line YLine[Inf];  // å­˜å‚¨æ‰€æœ‰çŸ©å½¢çš„çš„ç«–è¾¹
+//int Index[Inf];  //å­˜å‚¨ç¦»æ•£åçš„yå€¼ 
+//Node *root;     // çº¿æ®µæ ‘çš„æ ‘æ ¹
+//int C_nt = 0;   // å»é‡åçš„yå€¼ä¸ªæ•°
+//int Rnum;  // çŸ©å½¢çš„ä¸ªæ•°
+//void Maketree(Node *&root, int L,int R){  //å»ºç«‹çº¿æ®µæ ‘
 //	if(L < R){
 //		root = new Node;
 //		root->L = L;
@@ -188,7 +188,7 @@ int main( )
 //		}
 //	}
 //}
-//void GetLen(Node *&root){      // »ñµÃÒÔµ±Ç°½ÓµãÎª¸ùµÄÊ÷±»¸²¸ÇµÄÇø¼ä×Ü³¤¶È
+//void GetLen(Node *&root){      // è·å¾—ä»¥å½“å‰æ¥ç‚¹ä¸ºæ ¹çš„æ ‘è¢«è¦†ç›–çš„åŒºé—´æ€»é•¿åº¦
 //	if(root->cover > 0)
 //		root->sum = root->len;
 //	else if(root->R - root->L > 1)
@@ -196,7 +196,7 @@ int main( )
 //	else root->sum = 0;
 //
 //}
-//void GetLinenum(Node*&root){ //»ñµÃÒÔµ±Ç°½ÚµãÎªÊ÷¸ùµÄ×ÓÊ÷±»¸²¸ÇÇø¼äµÄ×ÜÊı
+//void GetLinenum(Node*&root){ //è·å¾—ä»¥å½“å‰èŠ‚ç‚¹ä¸ºæ ‘æ ¹çš„å­æ ‘è¢«è¦†ç›–åŒºé—´çš„æ€»æ•°
 //	if(root->cover > 0){
 //		root->lcover = root->rcover = true;
 //		root->linenum = 1;
@@ -212,7 +212,7 @@ int main( )
 //		root->linenum = 0;
 //	}
 //}
-//void Insert(Node *&root,int L,int R){  // ²åÈë¾ØĞÎ×ó±ß
+//void Insert(Node *&root,int L,int R){  // æ’å…¥çŸ©å½¢å·¦è¾¹
 //	if(L <= root->L && R >= root->R){
 //		root->cover++;
 //	}
@@ -221,11 +221,11 @@ int main( )
 //		if(L < middle) Insert(root->Ls,L,R);
 //		if(R > middle) Insert(root->Rs,L,R);
 //	}
-//	GetLen(root);  // ¸üĞÂÇø¼ä¸²¸Ç³¤¶ÈÒÔ¼°¸²¸ÇµÄÇø¼äÊıÄ¿
+//	GetLen(root);  // æ›´æ–°åŒºé—´è¦†ç›–é•¿åº¦ä»¥åŠè¦†ç›–çš„åŒºé—´æ•°ç›®
 //	GetLinenum(root);
 //}
 //
-//void Delete(Node *&root,int L,int R){ //É¾³ı¾ØĞÎµÄÓÒ±ß
+//void Delete(Node *&root,int L,int R){ //åˆ é™¤çŸ©å½¢çš„å³è¾¹
 //	if(L <= root->L && R >= root->R){
 //		root->cover--;
 //	}
@@ -234,18 +234,18 @@ int main( )
 //		if(L < middle) Delete(root->Ls,L,R);
 //		if(R > middle) Delete(root->Rs,L,R);
 //	}
-//	GetLen(root);// ¸üĞÂÇø¼ä¸²¸Ç³¤¶ÈÒÔ¼°¸²¸ÇµÄÇø¼äÊıÄ¿
+//	GetLen(root);// æ›´æ–°åŒºé—´è¦†ç›–é•¿åº¦ä»¥åŠè¦†ç›–çš„åŒºé—´æ•°ç›®
 //	GetLinenum(root);
 //}
 //
-//int Gindex(int key){ // ·µ»Økey µÄÏÂ±ê
+//int Gindex(int key){ // è¿”å›key çš„ä¸‹æ ‡
 //	return lower_bound(Index,Index + C_nt,key) - Index;
 //}
 //int main(){
 //	freopen("out1.txt","w",stdout);
 //	scanf("%d",&Rnum);
 //	int x1,x2,y1,y2;
-//	for(int i = 0; i < Rnum; i++) // ÊäÈë¾ØĞÎ£¬´æ´¢¾ØĞÎµÄÍâ±ßÒÔ¼°yÖµ×ø±ê
+//	for(int i = 0; i < Rnum; i++) // è¾“å…¥çŸ©å½¢ï¼Œå­˜å‚¨çŸ©å½¢çš„å¤–è¾¹ä»¥åŠyå€¼åæ ‡
 //	{
 //		scanf("%d %d %d %d",&x1,&y1,&x2,&y2);
 //		YLine[2*i].x = x1; YLine[2*i+1].x = x2;
@@ -256,21 +256,21 @@ int main( )
 //	}
 //	sort(Index,Index + Rnum*2);
 //	sort(YLine,YLine + Rnum*2);
-//	for(int i = 1; i < 2*Rnum; i++) { //È¥µôÖØ¸´µÄµã
+//	for(int i = 1; i < 2*Rnum; i++) { //å»æ‰é‡å¤çš„ç‚¹
 //		if(Index[i] != Index[i-1])
 //			Index[C_nt++] = Index[i-1];
 //	}
 //	Index[C_nt++] = Index[2*Rnum-1];
-//	Maketree(root,0,C_nt-1); // ½¨Ê÷
+//	Maketree(root,0,C_nt-1); // å»ºæ ‘
 //	int ans = 0,Lsum = 0;
-//	for(int i = 0; i < 2*Rnum - 1; i++){ // ´Ó×óµ½ÓÒ½øĞĞÉ¨Ãè 
+//	for(int i = 0; i < 2*Rnum - 1; i++){ // ä»å·¦åˆ°å³è¿›è¡Œæ‰«æ 
 //		if(YLine[i].InOut) Insert(root,Gindex(YLine[i].start),Gindex(YLine[i].end));
 //		else Delete(root,Gindex(YLine[i].start),Gindex(YLine[i].end));
 //
-//		//ÏÂÃæÁ½ĞĞºÜÖØÒª£¬ÓÃÀ´¼ÆËãÃ¿ÒÔÌõÊú±ß²åÈë»òÕßÉ¾³ıºóµÄ£¬×îºóĞÎ³ÉÍ¼ĞÎÔÚºá×ÅºÍÊú×ÅµÄ·½ÏòÊÇËùÔö¼ÓµÄÖÜ³¤£¨×Ô¼ºÌå»áÒ»ÏÂ¡£ÃèÊöÓĞµãÀ§ÄÑ^_^£©          
-//		ans += root->linenum*(YLine[i+1].x - YLine[i].x)*2; // ºáÔö¼Ó
+//		//ä¸‹é¢ä¸¤è¡Œå¾ˆé‡è¦ï¼Œç”¨æ¥è®¡ç®—æ¯ä»¥æ¡ç«–è¾¹æ’å…¥æˆ–è€…åˆ é™¤åçš„ï¼Œæœ€åå½¢æˆå›¾å½¢åœ¨æ¨ªç€å’Œç«–ç€çš„æ–¹å‘æ˜¯æ‰€å¢åŠ çš„å‘¨é•¿ï¼ˆè‡ªå·±ä½“ä¼šä¸€ä¸‹ã€‚æè¿°æœ‰ç‚¹å›°éš¾^_^ï¼‰          
+//		ans += root->linenum*(YLine[i+1].x - YLine[i].x)*2; // æ¨ªå¢åŠ 
 //		printf("%d\n",ans);
-//		ans += abs(root->sum - Lsum);// ÊúÔö¼ÓµÄ
+//		ans += abs(root->sum - Lsum);// ç«–å¢åŠ çš„
 //		printf("%d\n",ans);
 //		Lsum = root->sum;
 //	}

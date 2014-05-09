@@ -1,13 +1,13 @@
-// AC´óÅ£µÄ²©ÎÄ http://hi.baidu.com/aekdycoin/blog/item/63f633ec11c822d8b21cb168.html
-// µÃµ½ nÄÚµÄ ÖÜÆÚÊı£¬ÒÔ¼°Ã¿¸öÖÜÆÚÄÚµÄºÍ(²»ÄÑµÃµ½)
-// ÕâÀïµÄÖ÷ÒªÎÊÌâÊÇÇó ÖÜÆÚÊı
-// ÓÉÓÚ
-// n - spos ²»Ò»¶¨ÊÇ Slen µÄÕûÊı±¶,¶øÎÒÃÇĞèÒªµÄÊÇ
-// (n - Spos) / Slen  µÄÏòÏÂÈ¡ÕûµÄ½á¹û(ÍêÕûÖÜÆÚÊı)
-// (n - Spos) % Slen = C ±íÊ¾×îºóÊ£ÓàµÄÄÇ¸ö²»ÍêÕûÖÜÆÚ
+// ACå¤§ç‰›çš„åšæ–‡ http://hi.baidu.com/aekdycoin/blog/item/63f633ec11c822d8b21cb168.html
+// å¾—åˆ° nå†…çš„ å‘¨æœŸæ•°ï¼Œä»¥åŠæ¯ä¸ªå‘¨æœŸå†…çš„å’Œ(ä¸éš¾å¾—åˆ°)
+// è¿™é‡Œçš„ä¸»è¦é—®é¢˜æ˜¯æ±‚ å‘¨æœŸæ•°
+// ç”±äº
+// n - spos ä¸ä¸€å®šæ˜¯ Slen çš„æ•´æ•°å€,è€Œæˆ‘ä»¬éœ€è¦çš„æ˜¯
+// (n - Spos) / Slen  çš„å‘ä¸‹å–æ•´çš„ç»“æœ(å®Œæ•´å‘¨æœŸæ•°)
+// (n - Spos) % Slen = C è¡¨ç¤ºæœ€åå‰©ä½™çš„é‚£ä¸ªä¸å®Œæ•´å‘¨æœŸ
 
-// ¶øÓÉÓÚÖÜÆÚÊıºÜ´ó£¬Òò´ËÎÒÃÇÖ»ĞèÒª¼ÆËã ÖÜÆÚÊı  mod P
-// ÄÇÃ´¿ÉÒÔÕâÃ´×ª»¯
+// è€Œç”±äºå‘¨æœŸæ•°å¾ˆå¤§ï¼Œå› æ­¤æˆ‘ä»¬åªéœ€è¦è®¡ç®— å‘¨æœŸæ•°  mod P
+// é‚£ä¹ˆå¯ä»¥è¿™ä¹ˆè½¬åŒ–
 // ( n - Spos - C ) / Slen % P -> ( n - Spos - C ) % ( P * Slen ) / Slen
 
 #include <stdio.h>
@@ -73,7 +73,7 @@ ll Bpow_mod( ll a, ll b, ll c )
     return ans;
 }
 
-// ¼ÆËã 1 + Q + Q^2 + Q^3 + ... + Q^n;
+// è®¡ç®— 1 + Q + Q^2 + Q^3 + ... + Q^n;
 ll sum( ll n )
 {
     ll S;
@@ -98,14 +98,14 @@ int Read( )
 }
 
 // ( n - Spos - C ) / Slen % P -> ( n - Spos - C ) % ( P * Slen ) / Slen
-//  Spos×Ü¹é»áÊÇÒ»¸ö±È½ÏĞ¡µÄÊı
-ll cal( ll & res_seg )  // res_seg Îª C 
+//  Sposæ€»å½’ä¼šæ˜¯ä¸€ä¸ªæ¯”è¾ƒå°çš„æ•°
+ll cal( ll & res_seg )  // res_seg ä¸º C 
 {
     ll mod_res = ( pow_mod( 2, Y2, Slen ) + Z2 ) % Slen;
     res_seg = mod_res = MOD( mod_res - Spos, Slen );
     ll ret = Bpow_mod( 2, Y2, HP ) - Spos - mod_res + Z2; 
     ret = MOD( ret, HP ) / Slen;
-    return ret; // ·µ»ØÖÜÆÚÊı mod PÖ®ºóµÄÓàÊı
+    return ret; // è¿”å›å‘¨æœŸæ•° mod Pä¹‹åçš„ä½™æ•°
 }
 
 void solve( )
@@ -118,7 +118,7 @@ void solve( )
     Q = MOD( -Q, P );
     for( Spos = 0;  ; Spos++ )
         if( pow_mod( Q, Spos, P ) == pow_mod( Q, Spos + Slen, P ) )break;
-    if( Y2 <= 10 )   // µ±Êı¾İ±È½ÏĞ¡µÄÊ±ºòÖ±½Ó¼ÆËã
+    if( Y2 <= 10 )   // å½“æ•°æ®æ¯”è¾ƒå°çš„æ—¶å€™ç›´æ¥è®¡ç®—
     {
         limit = ( 1 << Y2 ) + Z2;
         for( ret = 0, v = 1 % P, i = 0; i < limit; v = v * Q % P, i++ )
@@ -127,17 +127,17 @@ void solve( )
         else printf("%I64d\n",P - ret);
         return ;
     }
-	// ·ÖÎªÈı¶Î¼ÆËã
+	// åˆ†ä¸ºä¸‰æ®µè®¡ç®—
     limit = Spos;
-    // µÚÒ»¶Î ¼ÆËã²»ÔÙÑ­»·ÖÜÆÚÖ®ÄÚµÄÊıÖ®ºÍ mod P
+    // ç¬¬ä¸€æ®µ è®¡ç®—ä¸å†å¾ªç¯å‘¨æœŸä¹‹å†…çš„æ•°ä¹‹å’Œ mod P
     for( ret = 0, v = 1 % P, i = 0; i < limit; v = v * Q % P, i++ )
         ret = ( ret + v ) % P;
-    // µÚ¶ş¶Î ¼ÆËãÒ»¸öÖÜÆÚÄÚµÄÊıÖ®ºÍ mod P
+    // ç¬¬äºŒæ®µ è®¡ç®—ä¸€ä¸ªå‘¨æœŸå†…çš„æ•°ä¹‹å’Œ mod P
     ll seg_sum = sum( Slen - 1 ) * pow_mod( Q, Spos, P ) % P;
     ll res_seg;
     ss = cal( res_seg );
     ret = ( ret + seg_sum * ss % P ) % P;
-	// µÚÈı¶Î ¼ÆËãÊ£ÏÂµÄ²»ÍêÕûÖÜÆÚÄÚµÄºÍ
+	// ç¬¬ä¸‰æ®µ è®¡ç®—å‰©ä¸‹çš„ä¸å®Œæ•´å‘¨æœŸå†…çš„å’Œ
     ret = ( ret + sum ( res_seg - 1 ) * pow_mod( Q, Spos, P ) % P ) % P;
     if( Z2 & 1 ) printf("%I64d\n",ret);
     else printf("%I64d\n",P-ret);

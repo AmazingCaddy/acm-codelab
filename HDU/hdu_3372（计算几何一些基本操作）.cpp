@@ -21,7 +21,7 @@ bool com( point p1, point p2 )
 }
 point p[MAXN],np[MAXN],out[MAXN];
 int N,Ns;
-int num1[MAXN],num2[MAXN];//¼ÇÂ¼ÄÄ¼¸¸öµã±»Ê¹ÓÃÁË
+int num1[MAXN],num2[MAXN];//è®°å½•å“ªå‡ ä¸ªç‚¹è¢«ä½¿ç”¨äº†
 
 int compute( int n, int q )
 {
@@ -32,9 +32,9 @@ int compute( int n, int q )
         else num2[k++] = j; 
         q >>= 1;
     }
-    return i;   //·µ»ØÑ¡³öÀ´Ô²µÄ¸öÊı
+    return i;   //è¿”å›é€‰å‡ºæ¥åœ†çš„ä¸ªæ•°
 }
-//ÇóÍ¹°ü
+//æ±‚å‡¸åŒ…
 void convex_hull( int n )
 {
     int i,k;
@@ -50,7 +50,7 @@ void convex_hull( int n )
     for( i=0; i<n; i++ )
     {
         while( Ns >= 2 && dblcmp( np[Ns-1] - np[Ns-2] ^ p[i] - np[Ns-1] ) <= 0 )
-            Ns--;             //Ö»ÓĞ¼«µã£¬¸ÄÎª<Ôò°üÀ¨ËùÓĞ¹²Ïßµã
+            Ns--;             //åªæœ‰æç‚¹ï¼Œæ”¹ä¸º<åˆ™åŒ…æ‹¬æ‰€æœ‰å…±çº¿ç‚¹
         np[Ns++] = p[i];
     }
     k = Ns;
@@ -63,7 +63,7 @@ void convex_hull( int n )
     Ns--;
 }
 
-//µãµ½Ïß¶Î¾àÀë   pµ½Ïß¶Îl1l2¾àÀë
+//ç‚¹åˆ°çº¿æ®µè·ç¦»   påˆ°çº¿æ®µl1l2è·ç¦»
 double disptoseg( point p0, point l1, point l2 )
 {
     point t = p0;
@@ -150,7 +150,7 @@ int main( )
                 for( j = 0; j < k; j++ )
                     p[j] = pp[ num1[j] ];
 
-                for( j = 0; j < q; j++ )  //Íâ²¿µÄµã
+                for( j = 0; j < q; j++ )  //å¤–éƒ¨çš„ç‚¹
                     out[j] = pp[ num2[j] ];
 
                 convex_hull( k );

@@ -10,7 +10,7 @@ Input consists of multiple problem instances.For each instance, first line conta
 
 Output
 
-For each problem instance, one line for each query. If no path between two cities, output ¡°Not connected¡±, otherwise output the length of the shortest path between them.
+For each problem instance, one line for each query. If no path between two cities, output â€œNot connectedâ€, otherwise output the length of the shortest path between them.
 
 Hint
 
@@ -33,7 +33,7 @@ Not connected
 
 Source
 
-¶àĞ£ÁªºÏ±ÈÈüBNUÕ¾
+å¤šæ ¡è”åˆæ¯”èµ›BNUç«™
 
 
 

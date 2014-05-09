@@ -1,4 +1,4 @@
-// ��� С��n���뻥�ص����ĳ˻�ģ��n��ֵ
+// 求解 小于n且与互素的数的乘积模上n的值
 #include <stdio.h>
 #include <iostream>
 #include <algorithm>

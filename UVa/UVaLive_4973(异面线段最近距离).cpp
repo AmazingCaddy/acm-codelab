@@ -60,12 +60,12 @@ point operator -(const point &a, const point &b) {
     return point(a.x - b.x, a.y - b.y, a.z - b.z);
 }
 
-// ÏòÁ¿³¤¶ÈµÄÆ½·½
+// å‘é‡é•¿åº¦çš„å¹³æ–¹
 ll distance(const point &p) {
     return ( p.x * p.x + p.y * p.y + p.z * p.z);
 }
 
-// µãµ½Ïß¶ÎµÄ¾àÀë
+// ç‚¹åˆ°çº¿æ®µçš„è·ç¦»
 node dis(const point &p, const point &a, const point &b) {
     if ((p - a & b - a) >= 0 && (p - b & a - b) >= 0) {
     	ll fenzi = distance((a - p) ^ (b - p));
@@ -80,7 +80,7 @@ node lineToline( const point &a, const point &b, const point &c, const point &d 
 	return min( min( dis( a, c, d ), dis( b, c, d ) ), min( dis( c, a, b ), dis( d, a, b ) ) );
 }
 
-// ÅĞ¶ÏÁ½ÒìÃæÏß¶ÎµÄ¹²´¹Ïß¶ÎÊÇ·ñ´æÔÚ
+// åˆ¤æ–­ä¸¤å¼‚é¢çº¿æ®µçš„å…±å‚çº¿æ®µæ˜¯å¦å­˜åœ¨
 int nearLL(const point &p1, const point &p2, const point &p3, const point &p4) {
 	ll d1 = p1 - p3 & p4 - p3; 	//1343
 	ll d2 = p4 - p3 & p2 - p1; 	//4321

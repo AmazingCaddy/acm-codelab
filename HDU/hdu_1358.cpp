@@ -1,4 +1,4 @@
-// KMP ʧ������ֵ
+// KMP 失败连接值
 // hdu 1358
 
 #include<iostream>

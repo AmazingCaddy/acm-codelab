@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 	while( cas-- )
 	{
 		scanf( "%d %d %d", &x, &y, &z );
-		// ¹ØÓÚµã(5,5,5)ÖÐÐÄ¶Ô³Æ
+		// å…³äºŽç‚¹(5,5,5)ä¸­å¿ƒå¯¹ç§°
 		if( x < 5 ) x = 10 - x;
 		if( y < 5 ) y = 10 - y;
 		if( z < 5 ) z = 10 - z;

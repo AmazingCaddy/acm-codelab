@@ -25,19 +25,19 @@ double operator ^ ( point a, point b ){ return a.x * b.y - b.x * a.y;  }
 
 double abs( const point& p ){ return sqrt(p.x * p.x + p.y * p.y); }
 
-//¼ÆËã ab ºÍ ac µÄ²æ»ı
+//è®¡ç®— ab å’Œ ac çš„å‰ç§¯
 double det( const point& a, const point& b, const point& c ){
 	return (b.x - a.x) * (c.y - a.y) - (c.x - a.x) * (b.y - a.y);
 }
-//¼ÆËã ab ºÍ ac µÄµã»ı
+//è®¡ç®— ab å’Œ ac çš„ç‚¹ç§¯
 double dot( const point& a, const point& b, const point& c ){
 	return (b.x - a.x) * (c.x - a.x) + (b.y - a.y) * (c.y - a.y);
 }
-//Á½µã¼ä¾àÀë
+//ä¸¤ç‚¹é—´è·ç¦»
 double dis( const point &a, const point &b ){
 	return sqrt((a.x-b.x)*(a.x-b.x) + (a.y-b.y)*(a.y-b.y));
 }
-//Á½µã¼ä¾àÀëµÄÆ½·½
+//ä¸¤ç‚¹é—´è·ç¦»çš„å¹³æ–¹
 double dis2( const point &a, const point &b ){
 	return (a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y);
 }
@@ -78,7 +78,7 @@ int inPoly( point r, poly & g, int onEdge = 1 ){
 	return count&1;
 }
 
-//µãµ½Ïß¶Î¾àÀë
+//ç‚¹åˆ°çº¿æ®µè·ç¦»
 double disSeg( const point& p, const point& l1, const point& l2 ){
 	point t = p;
 	t.x += l1.y - l2.y, t.y += l2.x - l1.x;
@@ -87,13 +87,13 @@ double disSeg( const point& p, const point& l1, const point& l2 ){
 	return fabs( det( p, l1, l2 ) ) / dis( l1, l2 );
 }
 
-//ÅĞÁ½Ö±ÏßÆ½ĞĞ
+//åˆ¤ä¸¤ç›´çº¿å¹³è¡Œ
 int parallel( const point& u1, const point& u2, const point& v1, const point& v2 ){
 	return D( ( u1.x - u2.x ) * ( v1.y - v2.y ) - ( v1.x - v2.x ) * ( u1.y - u2.y ) ) == 0;
 }
 
-//¼ÆËãÁ½Ö±Ïß½»µã,×¢ÒâÊÂÏÈÅĞ¶ÏÖ±ÏßÊÇ·ñÆ½ĞĞ!
-//Ïß¶Î½»µãÇëÁíÍâÅĞÏß¶ÎÏà½»(Í¬Ê±»¹ÊÇÒªÅĞ¶ÏÊÇ·ñÆ½ĞĞ!)
+//è®¡ç®—ä¸¤ç›´çº¿äº¤ç‚¹,æ³¨æ„äº‹å…ˆåˆ¤æ–­ç›´çº¿æ˜¯å¦å¹³è¡Œ!
+//çº¿æ®µäº¤ç‚¹è¯·å¦å¤–åˆ¤çº¿æ®µç›¸äº¤(åŒæ—¶è¿˜æ˜¯è¦åˆ¤æ–­æ˜¯å¦å¹³è¡Œ!)
 point cross( const point& u1, const point& u2, const point& v1, const point& v2){
 	point ret = u1;
 	double t = ( ( u1.x - v1.x ) * ( v1.y - v2.y ) - ( u1.y - v1.y ) * ( v1.x - v2.x ) )
@@ -103,7 +103,7 @@ point cross( const point& u1, const point& u2, const point& v1, const point& v2)
 	return ret;
 }
 
-//µãµ½Ö±ÏßµÄ×î½üµã
+//ç‚¹åˆ°ç›´çº¿çš„æœ€è¿‘ç‚¹
 point nearPosLine( const point& p, const point& l1, const point& l2 ){
 	point t = p;
 	t.x += l1.y - l2.y, t.y += l2.x - l1.x;
@@ -118,7 +118,7 @@ bool yes( poly& g, point c, double R )
 	return true;
 }
 
-// µãµã
+// ç‚¹ç‚¹
 bool test1( poly & g, int i, int j, double R )
 {
 	double d = R * R - dis2( g.p[i], g.p[j] ) / 4.0;
@@ -130,7 +130,7 @@ bool test1( poly & g, int i, int j, double R )
 	return yes( g, base + dir * d, R ) || yes( g, base - dir * d, R );
 }
 
-// ÏßÏß
+// çº¿çº¿
 bool test2( poly & g, int i, int j, double R )
 {
 	point d1 = ( g.p[i+1] - g.p[i] ).turnLeft( ); d1 = d1 / abs(d1) * R;
@@ -141,7 +141,7 @@ bool test2( poly & g, int i, int j, double R )
 	return yes( g, cross( p1, p2, p3, p4 ), R );
 }
 
-// µãÏß
+// ç‚¹çº¿
 bool test3( poly & g, int i, int j, double R )
 {
 	point d1 = ( g.p[i+1] - g.p[i] ).turnLeft( ); d1 = d1 / abs(d1) * R;

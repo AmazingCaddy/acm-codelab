@@ -1,7 +1,7 @@
-//Çó×î´ó×Ó¶ÎºÍ,¸´ÔÓ¶ÈO(n)
-//´«Èë´®³¤n ºÍÄÚÈİlist[]
-//·µ»Ø×î´ó×Ó¶ÎºÍ,ÖØÔØ·µ»Ø×Ó¶ÎÎ»ÖÃ(maxsum=list[start]+...+list[end])
-//¿É¸ü¸ÄÔªËØÀàĞÍ
+//æ±‚æœ€å¤§å­æ®µå’Œ,å¤æ‚åº¦O(n)
+//ä¼ å…¥ä¸²é•¿n å’Œå†…å®¹list[]
+//è¿”å›æœ€å¤§å­æ®µå’Œ,é‡è½½è¿”å›å­æ®µä½ç½®(maxsum=list[start]+...+list[end])
+//å¯æ›´æ”¹å…ƒç´ ç±»å‹
 #include<iostream>
 #define MAXN 100002
 using namespace std;
@@ -11,7 +11,7 @@ elem_t maxsum( int n, elem_t* list, int& start, int& end )
 {
 	elem_t ret,sum=0;
 	int s,i;
-	for( ret=list[start=end=s=i=0]; i<n; i++, s=( sum>=0?s:i ) )//ÓĞ¶à¸ö½âÊ±£¬Çó³ö×îÇ°ÃæµÄ
+	for( ret=list[start=end=s=i=0]; i<n; i++, s=( sum>=0?s:i ) )//æœ‰å¤šä¸ªè§£æ—¶ï¼Œæ±‚å‡ºæœ€å‰é¢çš„
 		if( ( sum=( sum>=0?sum:0 )+list[i] ) > ret )
 			ret=sum,start=s,end=i;
 	return ret;

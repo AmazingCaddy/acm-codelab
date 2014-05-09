@@ -1,7 +1,7 @@
 /*
 	author : AmazingCaddy
 	time : 2011-06-01 15:17:39 
-	״̬ѹ��DP
+	状态压缩DP
 */
 #include <iostream>
 #include <cstdio>

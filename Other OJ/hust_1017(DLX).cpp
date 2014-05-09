@@ -8,10 +8,10 @@ const int maxn = 1010;
 const int maxm = 1010;
 const int maxt = 1010*110;
 
-int S[maxm], O[maxn]; // S[] ÁĞÁ´±íÖĞ½áµãµÄ×ÜÊı  O[] ¼ÇÂ¼ËÑË÷½á¹û
-int L[maxt], R[maxt], U[maxt], D[maxt];  // ËÄ¸ö·½Ïò
-int C[maxt], W[maxt];  // C[]ÁĞÖ¸ÕëÍ·  W[]ĞĞÖ¸ÕëÍ·
-int mat[maxn][110];  // Ï¡Êè¾ØÕó ÁÚ½Ó±íµÄĞÎÊ½
+int S[maxm], O[maxn]; // S[] åˆ—é“¾è¡¨ä¸­ç»“ç‚¹çš„æ€»æ•°  O[] è®°å½•æœç´¢ç»“æœ
+int L[maxt], R[maxt], U[maxt], D[maxt];  // å››ä¸ªæ–¹å‘
+int C[maxt], W[maxt];  // C[]åˆ—æŒ‡é’ˆå¤´  W[]è¡ŒæŒ‡é’ˆå¤´
+int mat[maxn][110];  // ç¨€ç–çŸ©é˜µ é‚»æ¥è¡¨çš„å½¢å¼
 int ANS;
 
 void build( int n, int m )

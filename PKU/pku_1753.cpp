@@ -7,7 +7,7 @@ struct Node
 	int steps;
 };
 bool visit[65540];
-int Change( int num, int i ) //¸Ä±äµÚKÎ»£¬´ÓµÚÁãÎ»¿ªÊ¼
+int Change( int num, int i ) //æ”¹å˜ç¬¬Kä½ï¼Œä»ç¬¬é›¶ä½å¼€å§‹
 {
 	num ^= ( 1 << i );
 	if( i - 4 >= 0 )
@@ -52,7 +52,7 @@ int Search( int oo )
 int main( )
 {
 	char s[6];
-	int x=0,i,t; //´æ´¢×´Ì¬
+	int x=0,i,t; //å­˜å‚¨çŠ¶æ€
 	int counts=0;  
 	while( scanf("%s",s) != EOF )
 	{   

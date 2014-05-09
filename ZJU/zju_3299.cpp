@@ -5,7 +5,7 @@ using namespace std;
 struct NODE
 {
 	int l,r;
-	int ID,num;// �ֱ��¼��cnt��ľ�� �� ש������
+	int ID,num;// 分别记录第cnt条木板 和 砖块数量
 }tree[MAXN*12];
 struct Board
 {
@@ -192,12 +192,12 @@ int main( )
 
 //#include<iostream>
 //using namespace std;
-////�߶��� 
-////�����ϵ�����һЩ����ᱻ�嵲ס������ͬ�߶��ϣ�û�а����໥�ص��� 
-////���Ƚ�board�ӵ͵�������Ȼ����룬����������ǩ
-////Ȼ���brick���룬�ڲ�������У����ϰ�ֵ���ݸ�����
-////���ͳ�Ƶ���Ҷ�ӵ���� 
-//int n,m;//n��ש��m��ľ��
+////线段树 
+////从天上掉下来一些货物，会被板挡住，在相同高度上，没有板是相互重叠的 
+////首先将board从低到高排序，然后插入，对区间贴标签
+////然后把brick插入，在插入过程中，不断把值传递给孩子
+////最后统计的是叶子的情况 
+//int n,m;//n块砖，m块木板
 //const int maxn=120000;
 //typedef struct brick
 //{

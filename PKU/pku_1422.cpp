@@ -1,5 +1,5 @@
 // poj 1422 Air Raid
-// P×P的有向图中，求最小的路径覆盖 ans=|P|-对应的无向图的最大匹配数
+// P脳P鐨勬湁鍚戝浘涓紝姹傛渶灏忕殑璺緞瑕嗙洊 ans=|P|-瀵瑰簲鐨勬棤鍚戝浘鐨勬渶澶у尮閰嶆暟
 
 #include<iostream>
 #define MAXN 125

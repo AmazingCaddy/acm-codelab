@@ -104,7 +104,7 @@ ll log_mod( ll a, ll b, ll n )
 	return -1;
 }
 
-// 离散对数 a^x=b( mod n )，x返回大于0的值（有解时）
+// 绂绘暎瀵规暟 a^x=b( mod n )锛寈杩斿洖澶т簬0鐨勫�硷紙鏈夎В鏃讹級
 ll non_prime_log_mod( ll a, ll b, ll n )
 {
 	ll g, r=0;
@@ -127,11 +127,11 @@ int main( )
 	ll K, P, N, D;
 	while( scanf( "%I64d %I64d %I64d", &K, &P, &N ) != EOF )
 	{
-		if( N >= P ) printf( "Orz,I can’t find D!\n" );
+		if( N >= P ) printf( "Orz,I can鈥檛 find D!\n" );
 		else
 		{
 			ll D = non_prime_log_mod( K, N, P );
-			if( D == -1 ) printf( "Orz,I can’t find D!\n" );
+			if( D == -1 ) printf( "Orz,I can鈥檛 find D!\n" );
 			else printf( "%I64d\n", D );
 		}
 	}

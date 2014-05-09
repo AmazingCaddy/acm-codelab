@@ -20,8 +20,8 @@ void add_edge( int from, int to )
     p->from=from;
     p->to=to;
     p->next=head[from];
-    head[from]=p;     //Í·½áµã´æÓÐÊý¾Ý
-}//½«±ß¼ÓÔÚÁ´±íµÄÇ°Ãæ£¬½ÚÊ¡ËÑË÷Á´±íÎ²²¿µÄÊ±¼ä
+    head[from]=p;     //å¤´ç»“ç‚¹å­˜æœ‰æ•°æ®
+}//å°†è¾¹åŠ åœ¨é“¾è¡¨çš„å‰é¢ï¼ŒèŠ‚çœæœç´¢é“¾è¡¨å°¾éƒ¨çš„æ—¶é—´
 
 void DFS( int now )
 {

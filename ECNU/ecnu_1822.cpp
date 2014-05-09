@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-	__int64 a[120],b[60];       //aÎªÎŞĞòÒÆ·¨£¬bÎªÓĞĞòÒÆ·¨
+	__int64 a[120],b[60];       //aä¸ºæ— åºç§»æ³•ï¼Œbä¸ºæœ‰åºç§»æ³•
 	int n,i;
 	while(scanf("%d",&n)!=EOF)
 	{

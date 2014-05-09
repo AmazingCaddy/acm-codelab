@@ -39,8 +39,8 @@ int topsort( int nodenum )
 	NODE *p;
 	cnt=0;
 	flag=-2;
-	//���ҳ���ʼ״̬�����Ϊ0�ĵ�
-	//����ж�������־Ϊ-1
+	//先找出初始状态下入度为0的点
+	//如果有多个点则标志为-1
 	for( i=0; i<SIZE; i++ )
 	{
 		temp[i]=degree[i];
@@ -50,7 +50,7 @@ int topsort( int nodenum )
 			if( top>0 )flag=-1;
 		}
 	}
-	//��¼���У����ж��Ƿ��ж�������
+	//记录序列，并判断是否有多个解存在
 	while( top != -1 )
 	{
 		que[cnt++]=(char)(stack[top]+'A');
@@ -66,9 +66,9 @@ int topsort( int nodenum )
 			p=p->next;
 		}
 	}
-	if( cnt<nodenum )//�л����ڣ��򷵻�0
+	if( cnt<nodenum )//有环存在，则返回0
 		return 0;
-	if( cnt==num && flag != -1 )//��ȷ�����У�����1
+	if( cnt==num && flag != -1 )//能确定序列，返回1
 		flag=1;
 	return flag;
 }
@@ -104,14 +104,14 @@ int main( )
 				else if( flag==1 )ans=i;
 			}
 		}
-		if( flag==1 )//��ȷ���н�
+		if( flag==1 )//先确定有解
 		{
 			que[cnt]=0;
 			printf("Sorted sequence determined after %d relations: %s.\n",ans,que);
 		}
-		else if( circle )//�л�
+		else if( circle )//有环
 			printf("Inconsistency found after %d relations.\n",ans);
-		else printf("Sorted sequence cannot be determined.\n");//����ȷ��  
+		else printf("Sorted sequence cannot be determined.\n");//不能确定  
 	}
 	return 0;
 }

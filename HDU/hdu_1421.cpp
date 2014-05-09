@@ -24,7 +24,7 @@ int main( )
 		for( i = 2; i <= n; i++ )
 			for( j = 1; j * 2 <= i; j++ )
 				dp[i][j] = min( dp[i-2][j-1] + a[i-1], dp[i-1][j] );
-		        // ״̬ת�Ʒ���
+		        // 状态转移方程
 		printf("%d\n",dp[n][k]);
 	}
 	return 0;

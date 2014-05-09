@@ -27,7 +27,7 @@ void prime( )
 	}
 }
 
-int num_factor( __int64 n )   //ÔÚÓĞËØÊı±íµÄÇ°ÌáÏÂµÄËØÒòÊı·Ö½â
+int num_factor( __int64 n )   //åœ¨æœ‰ç´ æ•°è¡¨çš„å‰æä¸‹çš„ç´ å› æ•°åˆ†è§£
 {
 	int i,j=0;
 	for( i=0; (__int64)p[i] * p[i] <= n; i++ )

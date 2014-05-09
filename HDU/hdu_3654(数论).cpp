@@ -55,10 +55,10 @@ void DFS( int dep, ll tmp, int len ) {
 	ll temp = 1;
 	for( int i = 0; i <= num[ dep ]; i++ ) {
 		if( tmp * 1.0 * temp > inf ) {
-			return;						// ¼õÖ¦
+			return;						// å‡æ
 		}
 		if( l == 16 && tmp * temp > ans[ l ] ) {
-			return;						// ¼õÖ¦
+			return;						// å‡æ
 		}
 		DFS( dep + 1, tmp * temp, len );
 		temp *= p[ dep ];

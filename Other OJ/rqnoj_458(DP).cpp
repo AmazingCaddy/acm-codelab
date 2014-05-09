@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 
 		for( int i = 0; i < 2 * n; i++ )
 			meet[ i ][ i + 1 ] = 1;
-		for( int k = 2; k <= n; k++ )	// ±íÊ¾¼ä¸ôµÄÈËÊý
+		for( int k = 2; k <= n; k++ )	// è¡¨ç¤ºé—´éš”çš„äººæ•°
 		{
 			for( int i = 0; i < 2 * n - k; i++ )
 			{

@@ -40,7 +40,7 @@ void make_tree( int L, int R, int v )
 			tree[v+1][rcnt++] = tree[v][i];
 			sum[v][i] = sum[v][i-1];
 		}
-		// Õâ¸öĞ´µÃÆ¯ÁÁ
+		// è¿™ä¸ªå†™å¾—æ¼‚äº®
 		Left[v][i] = Left[v][L-1] + lcnt - L;
 	}
 	make_tree( L, mid, v + 1 );
@@ -55,7 +55,7 @@ ll query( int L, int R, int l, int r, int v, int k, ll & S )
 	if( cnt >= k )
 	{
 		off = Left[v][l-1] - Left[v][L-1];
-		// ÖØĞÂ¼ÆËã²éÕÒÇø¼ä
+		// é‡æ–°è®¡ç®—æŸ¥æ‰¾åŒºé—´
 		return query( L, mid, L + off, L + off + cnt - 1, v + 1, k, S );
 	}
 	else
@@ -64,7 +64,7 @@ ll query( int L, int R, int l, int r, int v, int k, ll & S )
 		off = ( l - L ) - ( Left[v][l-1] - Left[v][L-1] );
 		k = k - cnt;
 		cnt = r - l + 1 - cnt;
-		// ÖØĞÂ¼ÆËã²éÕÒÇø¼ä
+		// é‡æ–°è®¡ç®—æŸ¥æ‰¾åŒºé—´
 		return query( mid + 1, R, mid + 1 + off, mid + off + cnt, v + 1, k, S );
 	}
 }
@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
 		for( int i = 0; i < m; i++ )
 		{
 			scanf("%d%d",&l,&r);
-			S = 0;    // S ÇóµÃÊÇ ½«Çø¼ä[l,r]ÖĞµÄÊıÅÅĞòÖ®ºó£¬×îĞ¡µÄÊıµ½ÖĞÎ»ÊıÇ°Ò»¸öÊıÖ®ºÍ
+			S = 0;    // S æ±‚å¾—æ˜¯ å°†åŒºé—´[l,r]ä¸­çš„æ•°æ’åºä¹‹åï¼Œæœ€å°çš„æ•°åˆ°ä¸­ä½æ•°å‰ä¸€ä¸ªæ•°ä¹‹å’Œ
 			mid = query( 1, n, l + 1, r + 1, 0, ( r - l ) / 2 + 1, S );
 			ans = ( r - l ) / 2 * mid - S;
 			S = total[r+1] - total[l] - S - mid;

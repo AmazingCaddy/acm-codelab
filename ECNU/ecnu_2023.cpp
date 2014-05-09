@@ -23,7 +23,7 @@ int main()
 					max=a[j];
 					maxj=j;
 				}
-			}               //ÕÒ³ö×î´óµÄÊý
+			}               //æ‰¾å‡ºæœ€å¤§çš„æ•°
 
 			printf("%d\n",maxj+1);
 			for(j=0;j<n;j++)

@@ -1,7 +1,7 @@
 /*
     author: AmazingCaddy
     time:   
-	solve:	¼ÆËã¼¸ºÎ
+	solve:	è®¡ç®—å‡ ä½•
 */
 #include <iostream>
 #include <cstdio>
@@ -154,8 +154,8 @@ int main(int argc, char *argv[]) {
         for( int i = 0; i < n; i++ ) {
             p3[ i ].input( );
         }
-        source.input( );         // ¹âÔ´
-        point3d N( a, b, c );     // ·¨ÏòÁ¿
+        source.input( );         // å…‰æº
+        point3d N( a, b, c );     // æ³•å‘é‡
         d2 = -( a * source.x + b * source.y + c * source.z );
         point3d cd, ef, gh;
         if( D( a ) != 0 ) {

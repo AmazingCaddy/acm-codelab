@@ -1,6 +1,6 @@
-//×÷Èý½ÇÐÎµÄÍâ½ÓÔ²£¨Ô²ÐÄÊÇO£©Éè½ÇAÊÇÈý½ÇÐÎABCÖÐ×î´óµÄÄÚ½Ç£¬×÷AD´¹Ö±BCÓÚD£¬
-//Á¬½ÓAO²¢ÑÓ³¤½»Ô²OÓÚE£¬Á¬½ÓBE£¬È»ºóÖ¤Ã÷Èý½ÇÐÎABEÓëÈý½ÇÐÎADCÏàËÆ£¬
-//µÃAB:AE=AD:AC,¼´AD=£¨AB*AC)/AE,ÓÖS=1/2BC*AD,AE=2R£¬ËùÒÔS=1/2BC*£¨AB*AC)/AE= abc/4R
+//ä½œä¸‰è§’å½¢çš„å¤–æŽ¥åœ†ï¼ˆåœ†å¿ƒæ˜¯Oï¼‰è®¾è§’Aæ˜¯ä¸‰è§’å½¢ABCä¸­æœ€å¤§çš„å†…è§’ï¼Œä½œADåž‚ç›´BCäºŽDï¼Œ
+//è¿žæŽ¥AOå¹¶å»¶é•¿äº¤åœ†OäºŽEï¼Œè¿žæŽ¥BEï¼Œç„¶åŽè¯æ˜Žä¸‰è§’å½¢ABEä¸Žä¸‰è§’å½¢ADCç›¸ä¼¼ï¼Œ
+//å¾—AB:AE=AD:AC,å³AD=ï¼ˆAB*AC)/AE,åˆS=1/2BC*AD,AE=2Rï¼Œæ‰€ä»¥S=1/2BC*ï¼ˆAB*AC)/AE= abc/4R
 #include<cmath>
 #include<iostream>
 #define pi 3.141592653589793

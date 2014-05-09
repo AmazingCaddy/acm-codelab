@@ -18,7 +18,7 @@ inline double xmulit( point p0, point p1, point p2 )
 {  
 	return ( p1.x-p0.x )*( p2.y-p0.y )-( p1.y-p0.y )*( p2.x-p0.x );
 }
-//Ö±Ïß½»µã
+//ç›´çº¿äº¤ç‚¹
 point Intersection( point u1, point u2, point v1, point v2 )
 {
 	point ret=u1;
@@ -28,23 +28,23 @@ point Intersection( point u1, point u2, point v1, point v2 )
 	ret.y+=(u2.y-u1.y)*t;
 	return ret;
 }
-// °´ÕÕÏóÏŞÅÅĞò
+// æŒ‰ç…§è±¡é™æ’åº
 bool com( int x, int y )
 {
 	if( dblcmp( at2[x]-at2[y] ) == 0 )
 		return dblcmp( xmulit( ls[y].a, ls[y].b, ls[x].b ) )>0;
 	return at2[x]<at2[y];
 }
-// ÅĞ¶Ï°ëÆ½ÃæµÄ½»µãÊÇ·ñÔÚµ±Ç°°ëÆ½ÃæµÄÀïÃæ( °ëÆ½Ãæ×ó±ß )
+// åˆ¤æ–­åŠå¹³é¢çš„äº¤ç‚¹æ˜¯å¦åœ¨å½“å‰åŠå¹³é¢çš„é‡Œé¢( åŠå¹³é¢å·¦è¾¹ )
 bool In_half_plane( int x, int y, int z )
 {
 	point pnt=Intersection( ls[x].a, ls[x].b, ls[y].a, ls[y].b );
 	return dblcmp( xmulit( ls[z].a, ls[z].b, pnt ) )<0;
 }
-// °ëÆ½Ãæ½»
+// åŠå¹³é¢äº¤
 polygon HalfPlaneIntersection( )
 {
-	//Ô¤´¦Àí
+	//é¢„å¤„ç†
 	int n=ls.size( ),tmpn,i;
 	int top,bot;
 	for( i=0; i<n; i++ )
@@ -68,7 +68,7 @@ polygon HalfPlaneIntersection( )
 	while( bot<top && In_half_plane( dq[top-1], dq[top], dq[bot] ) )top--;
 	while( bot<top && In_half_plane( dq[bot+1], dq[bot], dq[top] ) )bot++;
 	dq[--bot]=dq[top];
-	//Çó¶à±ßĞÎ
+	//æ±‚å¤šè¾¹å½¢
 	polygon pg;
 	pg.n=0;
 	for( i=bot+1; i<=top; i++ )

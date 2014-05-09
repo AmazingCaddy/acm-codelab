@@ -1,7 +1,7 @@
 /*
 	author:	AmazingCaddy
 	time:	2011/3/14  20:12
-	ÀëÉ¢»¯£¬Çø¼ä [ a, b ) ×ó±ÕÓÒ¿ª£¬segment_tree
+	ç¦»æ•£åŒ–ï¼ŒåŒºé—´ [ a, b ) å·¦é—­å³å¼€ï¼Œsegment_tree
 */
 #include <cstdio>
 #include <cstdlib>
@@ -108,7 +108,7 @@ void update( int v, int s, int t, int color )
 		update( v << 1 | 1, lisan[ mid ], t, color );
 	}
 
-	// ¸üĞÂ×óÖµ ºÍ ÓÒÖµ
+	// æ›´æ–°å·¦å€¼ å’Œ å³å€¼
 	if( tree[ v << 1 ].left == lisan[ tree[ v << 1 ].r ] )
 		tree[ v ].left = tree[ v << 1 | 1 ].left;
 	else tree[ v ].left = tree[ v << 1 ].left;
@@ -117,7 +117,7 @@ void update( int v, int s, int t, int color )
 		tree[ v ].right = tree[ v << 1 ].right;
 	else tree[ v ].right = tree[ v << 1 | 1 ].right;
 
-	// ¸üĞÂ×î´ó¶Î¼°Æä×îÓÒÖµ
+	// æ›´æ–°æœ€å¤§æ®µåŠå…¶æœ€å³å€¼
 	tree[ v ].maxlen = tree[ v << 1 ].maxlen;
 	tree[ v ].minright = tree[ v << 1 ].minright;
 	if( tree[ v ].maxlen < tree[ v << 1 | 1 ].left - tree[ v << 1 ].right )

@@ -1,7 +1,7 @@
 /*
     author: AmazingCaddy
     time:    
-	solve:	¼ÆËã¼¸ºÎ
+	solve:	è®¡ç®—å‡ ä½•
 */
 #include <iostream>
 #include <cstdio>

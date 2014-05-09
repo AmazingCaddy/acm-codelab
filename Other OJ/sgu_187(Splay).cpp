@@ -49,7 +49,7 @@ struct SplayTree
 		if( goal == 0 ) root = x;
 	}
 
-    // °ÑµÚ k Î»µÄÊı×ªµ½ goalÏÂ±ß
+    // æŠŠç¬¬ k ä½çš„æ•°è½¬åˆ° goalä¸‹è¾¹
 	void RotateTo( int k, int goal )
 	{   
 		int x = root;
@@ -87,7 +87,7 @@ struct SplayTree
 
 	void init( )
 	{
-		// ¼ÓÈëÁ½¸ö¶îÍâµÄ½Úµã
+		// åŠ å…¥ä¸¤ä¸ªé¢å¤–çš„èŠ‚ç‚¹
 		pre[0] = sz[0] = 0;
 		pre[1] = 0, pre[2] = 1;
 		ch[1][1] = 2;

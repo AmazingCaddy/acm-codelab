@@ -1,7 +1,7 @@
 /*
 	author: AmazingCaddy
 	time: 2011/4/2  1:19
-	×î½üµã¶Ô
+	æœ€è¿‘ç‚¹å¯¹
 */ 
 #include <cstdio>
 #include <complex>

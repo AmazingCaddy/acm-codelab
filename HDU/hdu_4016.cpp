@@ -1,4 +1,4 @@
-// µÃµ½×îÓÅ½â£¬µ«ÊÇĞ§ÂÊ½ÏµÍ£¬¿ÉÒÔ¼Ó¶ş·ÖÓÅ»¯
+// å¾—åˆ°æœ€ä¼˜è§£ï¼Œä½†æ˜¯æ•ˆç‡è¾ƒä½ï¼Œå¯ä»¥åŠ äºŒåˆ†ä¼˜åŒ–
 #include <stdio.h>
 #include <memory.h>
 #include <iostream>
@@ -10,10 +10,10 @@ const int maxn = 50;
 const int maxm = 70;
 const int maxt = 50 * 70;
 
-int S[maxm], O[maxn]; // S[] ÁĞÁ´±íÖĞ½áµãµÄ×ÜÊı  O[] ¼ÇÂ¼ËÑË÷½á¹û
-int L[maxt], R[maxt], U[maxt], D[maxt];  // ËÄ¸ö·½Ïò
-int C[maxt], W[maxt];  // C[]ÁĞÖ¸ÕëÍ·  W[]ĞĞÖ¸ÕëÍ·
-int mat[maxn][maxm];  // Ï¡Êè¾ØÕó
+int S[maxm], O[maxn]; // S[] åˆ—é“¾è¡¨ä¸­ç»“ç‚¹çš„æ€»æ•°  O[] è®°å½•æœç´¢ç»“æœ
+int L[maxt], R[maxt], U[maxt], D[maxt];  // å››ä¸ªæ–¹å‘
+int C[maxt], W[maxt];  // C[]åˆ—æŒ‡é’ˆå¤´  W[]è¡ŒæŒ‡é’ˆå¤´
+int mat[maxn][maxm];  // ç¨€ç–çŸ©é˜µ
 int ANS;
 
 void build( int n, int m ) {

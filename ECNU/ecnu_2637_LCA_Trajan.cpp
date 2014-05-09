@@ -5,7 +5,7 @@ using namespace std;
 const int maxn = 10005;
 const int maxm = 1000005;
 struct Node {
-    int v, w;	// wÓĞÁ½¸öÓÃ´¦£¬Ò»¸öÊÇ¼ÇÂ¼±ßµÄÈ¨Öµ£¬Ò»¸öÊÇ¼ÇÂ¼ÎÊÌâµÄidºÅ
+    int v, w;	// wæœ‰ä¸¤ä¸ªç”¨å¤„ï¼Œä¸€ä¸ªæ˜¯è®°å½•è¾¹çš„æƒå€¼ï¼Œä¸€ä¸ªæ˜¯è®°å½•é—®é¢˜çš„idå·
     Node( int a = 0, int b = 0 ) : v( a ), w( b ) { }
 };
 

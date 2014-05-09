@@ -30,7 +30,7 @@ void prime( )
 	}
 }
 
-void num_factor( ll n )   //ÔÚÓĞËØÊı±íµÄÇ°ÌáÏÂµÄËØÒòÊı·Ö½â
+void num_factor( ll n )   //åœ¨æœ‰ç´ æ•°è¡¨çš„å‰æä¸‹çš„ç´ å› æ•°åˆ†è§£
 {
 	int i;
 	flen = 0;

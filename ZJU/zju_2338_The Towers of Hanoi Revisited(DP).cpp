@@ -1,9 +1,9 @@
-// ¼Çf[n][m]Îªn¸ödisc£¬m¸öpegµÄHanoiÎÊÌâ£¬
-// ÔòÓĞdp¹«Ê½f[n][m]=min{f[n-k][m-1]+2*f[k][m]}¡£
-// ¼´°ÑÉÏÃæµÄk¸ödiscÀûÓÃm¸öpeg×ªÒÆÄ³¸öÖĞ¼äpeg£¬
-// ÔÙ°ÑÏÂÃæµÄn-k¸ödiscÀûÓÃm-1¸öpeg×ªÒÆµ½Ä¿±êpeg£¬
-// ×îºó°ÑÉÏÃæµÄk¸ödiscÀûÓÃm¸öpegÒÆµ½Ä¿±êpeg¡£
-// dp¹ı³Ì¼ÇÏÂÊ¹µÃf[n][m]×îĞ¡µÄg[n][m]=kÓÃÓÚ·´Ïò´òÓ¡ÒÆ¶¯¹ı³Ì¡£
+// è®°f[n][m]ä¸ºnä¸ªdiscï¼Œmä¸ªpegçš„Hanoié—®é¢˜ï¼Œ
+// åˆ™æœ‰dpå…¬å¼f[n][m]=min{f[n-k][m-1]+2*f[k][m]}ã€‚
+// å³æŠŠä¸Šé¢çš„kä¸ªdiscåˆ©ç”¨mä¸ªpegè½¬ç§»æŸä¸ªä¸­é—´pegï¼Œ
+// å†æŠŠä¸‹é¢çš„n-kä¸ªdiscåˆ©ç”¨m-1ä¸ªpegè½¬ç§»åˆ°ç›®æ ‡pegï¼Œ
+// æœ€åæŠŠä¸Šé¢çš„kä¸ªdiscåˆ©ç”¨mä¸ªpegç§»åˆ°ç›®æ ‡pegã€‚
+// dpè¿‡ç¨‹è®°ä¸‹ä½¿å¾—f[n][m]æœ€å°çš„g[n][m]=kç”¨äºåå‘æ‰“å°ç§»åŠ¨è¿‡ç¨‹ã€‚
 #include <cstdio>
 #include <iostream>
 #include <map>
@@ -27,14 +27,14 @@ int vis[ maxn ];
 
 void move( int a, int b )
 {
-	int x = top[ a ][ has[ a ] ];  // ´ÓaÖù×Ó¶¥È¡³öÅÌ×Ó 
-	has[ a ]--;                    // has¼ÇÂ¼µÄÊÇÕâ¸ùÖù×ÓµÄÅÌ×ÓµÄ¸öÊı 
+	int x = top[ a ][ has[ a ] ];  // ä»aæŸ±å­é¡¶å–å‡ºç›˜å­ 
+	has[ a ]--;                    // hasè®°å½•çš„æ˜¯è¿™æ ¹æŸ±å­çš„ç›˜å­çš„ä¸ªæ•° 
 	if( has[ b ] == 0 ) printf("move %d from %d to %d\n",x,a,b);
 	else printf("move %d from %d to %d atop %d\n",x,a,b,top[b][has[b]]);
 	top[ b ][ ++has[ b ] ] = x;
 }
 
-// cnt ÅÌ×ÓÊı    dep Ê¹ÓÃµÄÖù×ÓÊı
+// cnt ç›˜å­æ•°    dep ä½¿ç”¨çš„æŸ±å­æ•°
 void dfs( int cnt, int a, int b, int dep )
 {
 	if( cnt == 0 ) return ;

@@ -1,11 +1,11 @@
 /*
 	author: AmazingCaddy
 	time:	2011/9/5	13:49
-	±¾ÌâÊÇÇófibonacciÊýÁÐmod PµÄÑ­»·½Ú³¤¶È S(P)
-	¿ÉÒÔÖªµÀ¶ÔÓÚÒ»¸öËØÊýpiÀ´Ëµ
+	æœ¬é¢˜æ˜¯æ±‚fibonacciæ•°åˆ—mod Pçš„å¾ªçŽ¯èŠ‚é•¿åº¦ S(P)
+	å¯ä»¥çŸ¥é“å¯¹äºŽä¸€ä¸ªç´ æ•°piæ¥è¯´
 	S(pi^ci) = S(pi) * pi^(ci - 1)
-	¶ø S(P) = LCM( S(pi^ci) ) 
-	ÓÉÓÚ±¾ÌâÖÐ±£Ö¤ÁËpiºÜÐ¡( <= 10^6),ÓÚÊÇ¿ÉÒÔ±©Á¦»ñµÃS(pi)
+	è€Œ S(P) = LCM( S(pi^ci) ) 
+	ç”±äºŽæœ¬é¢˜ä¸­ä¿è¯äº†piå¾ˆå°( <= 10^6),äºŽæ˜¯å¯ä»¥æš´åŠ›èŽ·å¾—S(pi)
 */
 #include <cstdio>
 #include <complex>

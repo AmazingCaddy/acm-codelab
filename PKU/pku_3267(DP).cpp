@@ -1,7 +1,7 @@
 /*
 	author: AmazingCaddy
 	time: 2011/4/3  18:28
-	dp[ i ] ¼ÇÂ¼Ç°i¸ö×Ö·ûÒªÉ¾³ıµÄ×îĞ¡¸öÊı
+	dp[ i ] è®°å½•å‰iä¸ªå­—ç¬¦è¦åˆ é™¤çš„æœ€å°ä¸ªæ•°
 */
 #include <cstdio>
 #include <complex>

@@ -1,8 +1,8 @@
 /*
 	author: AmazingCaddy
 	time: 2011/3/5  14:09
-	ÕâÌâµÄÉè¼Æ»¹ÊÇºÜÇÉÃîµÄ£¬ÓÃÁË2´Îburnside£¬ÕâÌâµÄ¹Ø¼üÔÚÓÚ a ºÜ´ó£¬
-	²»ÄÜÖ±½ÓÃ¶¾Ù b £¬µ«ÆäÖÐb * b = a * a - 1£¬×ª»¯Îª·Ö½â(a + 1)ºÍ(a - 1)
+	è¿™é¢˜çš„è®¾è®¡è¿˜æ˜¯å¾ˆå·§å¦™çš„ï¼Œç”¨äº†2æ¬¡burnsideï¼Œè¿™é¢˜çš„å…³é”®åœ¨äºŽ a å¾ˆå¤§ï¼Œ
+	ä¸èƒ½ç›´æŽ¥æžšä¸¾ b ï¼Œä½†å…¶ä¸­b * b = a * a - 1ï¼Œè½¬åŒ–ä¸ºåˆ†è§£(a + 1)å’Œ(a - 1)
 */
 #include <cstdio>
 #include <complex>

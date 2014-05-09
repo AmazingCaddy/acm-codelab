@@ -59,7 +59,7 @@ ll dis( point a, point b )
 
 void search_nearpoint( node * q, const point & a )
 {
-	// Ê×ÏÈÕÒµ½Ò¶½áµã
+	// é¦–å…ˆæ‰¾åˆ°å¶ç»“ç‚¹
 	if( q == NULL ) return;
 	
 	int tmp, s;
@@ -72,7 +72,7 @@ void search_nearpoint( node * q, const point & a )
 	ll d = dis( q -> mid, a );
 	if( d && d < ans ) ans = d;
 
-	if( (ll)( tmp - s ) * ( tmp - s ) < ans )  // ²éÕÒÁíÒ»°ëÆ½Ãæ
+	if( (ll)( tmp - s ) * ( tmp - s ) < ans )  // æŸ¥æ‰¾å¦ä¸€åŠå¹³é¢
 	{
 		if( s <= tmp )search_nearpoint( q -> ch[1], a ); 
 		else search_nearpoint( q -> ch[0], a );

@@ -133,7 +133,7 @@ void DFS( int dep, ll tem )
 	}
 }
 
-ll find_g( ll p )   // ╠╘а╕урт╜╦Ы
+ll find_g( ll p )   // Ф ╢Е┼⌡Ф┴╬Е▌÷Ф═╧
 {
 	ll phi = p - 1;
 	cnt = 0;

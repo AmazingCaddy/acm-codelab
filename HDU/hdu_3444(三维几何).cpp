@@ -17,12 +17,12 @@ point3D operator - ( point3D p1, point3D p2 ){ return point3D( p1.x - p2.x, p1.y
 point3D operator * ( point3D p1, double x )  { return point3D( p1.x * x, p1.y * x, p1.z * x ); }
 point3D operator / ( point3D p1, double y )  { return point3D( p1.x / y, p1.y / y, p1.z / y ); }
 
-// 三维叉积
+// 涓夌淮鍙夌Н
 point3D operator ^ ( point3D p1, point3D p2 )
 {
 	return point3D( p1.y * p2.z - p1.z * p2.y, p2.x * p1.z - p2.z * p1.x, p1.x * p2.y - p1.y * p2.x );
 }
-// 三维点积
+// 涓夌淮鐐圭Н
 double operator & ( point3D p1, point3D p2 )
 {
 	return p1.x * p2.x + p1.y * p2.y + p1.z * p2.z;

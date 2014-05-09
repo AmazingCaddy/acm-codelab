@@ -1,12 +1,12 @@
 /*
 	author: AmazingCaddy
 	time: 2011/4/10  12:50
-	µÚÒ»¸öÔªËØºÜºÃµÃ³ö£¬¼´b[1]+1¼´¿É¡£
-	b[i]ºÍb[i+1]µÄ²î±ðÊÇb[i+1]±Èb[i]¶à³öÁËa[i+1]ÓëºóÃæËùÓÐ±ÈËüÐ¡µÄÔªËØ²úÉúµÄÄæÐò¶Ô¸öÊýx,
-	ÉÙÁËa[i+1]ÓëÇ°ÃæËùÓÐ´óµÄÔªËØ²úÉúµÄÄæÐò¶Ô¸öÊýy, ¼´b[i]-b[i+1]=x-y.
-	È»ºóµÚi¸öÊýºóÃæÓÐn-i¸öÊý×Ö,ÆäÖÐÓÐx¸ö±ÈËüÐ¡,n-i-x¸ö±ÈËü´ó£¬
-	ÄÇÃ´Õâ¸öÊý×ÖÔÚÕân¸öÊý×ÖÀïÃæÓÐÒ»¹²ÓÐn-i-x+y¸öÊý×Ö±ÈËü´ó£¬
-	¼´a[i] = n-(n-i-x+y)=i+x-y Êä³ö¼´¿É¡£
+	ç¬¬ä¸€ä¸ªå…ƒç´ å¾ˆå¥½å¾—å‡ºï¼Œå³b[1]+1å³å¯ã€‚
+	b[i]å’Œb[i+1]çš„å·®åˆ«æ˜¯b[i+1]æ¯”b[i]å¤šå‡ºäº†a[i+1]ä¸ŽåŽé¢æ‰€æœ‰æ¯”å®ƒå°çš„å…ƒç´ äº§ç”Ÿçš„é€†åºå¯¹ä¸ªæ•°x,
+	å°‘äº†a[i+1]ä¸Žå‰é¢æ‰€æœ‰å¤§çš„å…ƒç´ äº§ç”Ÿçš„é€†åºå¯¹ä¸ªæ•°y, å³b[i]-b[i+1]=x-y.
+	ç„¶åŽç¬¬iä¸ªæ•°åŽé¢æœ‰n-iä¸ªæ•°å­—,å…¶ä¸­æœ‰xä¸ªæ¯”å®ƒå°,n-i-xä¸ªæ¯”å®ƒå¤§ï¼Œ
+	é‚£ä¹ˆè¿™ä¸ªæ•°å­—åœ¨è¿™nä¸ªæ•°å­—é‡Œé¢æœ‰ä¸€å…±æœ‰n-i-x+yä¸ªæ•°å­—æ¯”å®ƒå¤§ï¼Œ
+	å³a[i] = n-(n-i-x+y)=i+x-y è¾“å‡ºå³å¯ã€‚
 */
 #include <cstdio>
 #include <complex>

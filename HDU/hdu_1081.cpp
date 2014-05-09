@@ -1,4 +1,4 @@
-//求最大子阵和,复杂度O(n^3)
+//姹傛渶澶у瓙闃靛拰,澶嶆潅搴(n^3)
 #include<iostream>
 using namespace std;
 #define MAXN 103

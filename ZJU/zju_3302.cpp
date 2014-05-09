@@ -1,6 +1,6 @@
 //// Q1: n+1             Q2: (A1*A2...*An*n!) / ( sum...(sum-n+1) )
 //// Q3: sum-min+1       Q4: ( min! * cnt ) / ( sum...(sum-min+1) )
-//// sum=A1+A2+...+An    cnt 表示A[1..n]中最小值的个数
+//// sum=A1+A2+...+An    cnt 琛ㄧずA[1..n]涓渶灏忓�肩殑涓暟
 //
 //#include<iostream>
 //#define MAXN 101

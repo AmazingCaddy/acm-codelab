@@ -42,7 +42,7 @@ point segcross( const point &a, const point &b, const point &c, const point &d )
 	return a + ( b - a ) * s / ( s + t );
 }
 
-// ¼ÆËã½Çaob
+// è®¡ç®—è§’aob
 double angle( const point &a, const point &b, const point &o )
 {
 	return atan2( ( a - o ) ^ ( b - o ), ( a - o ) & ( b - o ) );
@@ -54,13 +54,13 @@ void line_cir_inter( point &l1, point &l2, point &c, double r, vector< point > &
 	if( D( r - abs( q - c ) ) == 0 ) p.push_back( q );
 	else if( D( r - abs( q - c ) ) > 0 )
 	{
-		double t = sqrt( r * r - norm( q - c ) ) / abs( l1 - l2 ); // norm is abs µÄÆ½·½
+		double t = sqrt( r * r - norm( q - c ) ) / abs( l1 - l2 ); // norm is abs çš„å¹³æ–¹
 		p.push_back( q + ( l2 - l1 ) * t );
 		p.push_back( q - ( l2 - l1 ) * t );
 	}
 }
 
-// ÅĞ¶ÏµãaÊÇ·ñÔÚÏß¶ÎbcÉÏ£¬²»°üÀ¨¶Ëµã
+// åˆ¤æ–­ç‚¹aæ˜¯å¦åœ¨çº¿æ®µbcä¸Šï¼Œä¸åŒ…æ‹¬ç«¯ç‚¹
 bool point_on_seg( const point &a, const point &b, const point &c )
 {
 	return D( a - b ^ a - c ) == 0 && D( b - a & c - a ) < 0; 

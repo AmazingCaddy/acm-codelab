@@ -121,7 +121,7 @@ double Dis( const point & a, const point & b ) {
 double Dis_point_line( const point & p, const point & a, const point & b ) {
     return fabs( a - p ^ b - p ) / Dis( a, b );
 }
-// Ç°Ìá£¬ÒÑ¾­¹²Ïß
+// å‰æï¼Œå·²ç»å…±çº¿
 bool on_segment( const point & p, const point & a, const point & b ) {
     return D( a - p & b - p ) <= 0;
 }
@@ -153,13 +153,13 @@ int check( const circle & c1, const circle & c2 ) {
     if( D( d - ( c1.r + c2.r ) ) > 0 || D( d - fabs( c1.r - c2.r ) ) < 0 ) {
         return 0;
     }
-    if( D( d - ( c1.r + c2.r ) ) == 0 ) {     // ÍâÇĞ
+    if( D( d - ( c1.r + c2.r ) ) == 0 ) {     // å¤–åˆ‡
         return 1;
     }
-    if( D( d - fabs( c1.r - c2.r ) ) == 0 ) {     // ÄÚÇĞ
+    if( D( d - fabs( c1.r - c2.r ) ) == 0 ) {     // å†…åˆ‡
         return 2;
     }
-    return 3;            // Ïà½»
+    return 3;            // ç›¸äº¤
 }
 
 int check( point p[ ], int n, int len ) {

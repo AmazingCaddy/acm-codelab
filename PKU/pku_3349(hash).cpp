@@ -45,10 +45,10 @@ int cmp( const snow & s, const snow & t )
 	return 0;
 }
 
-//保证hash值在[0, maxn)之间
+//淇濊瘉hash鍊煎湪[0, maxn)涔嬮棿
 int f( const snow & s )
 {
-	// hash函数
+	// hash鍑芥暟
 	int sum = 0;
 	for( int i = 0; i < 6; i++ )
 		sum += s.fl[ i ];

@@ -104,7 +104,7 @@ bool cmp( const Point &a, const Point &b )
 Point p[maxn], np[maxn];
 int N, Ns;
  
-void Convex_Hull( )   // N ÒªÇó´óÓÚ2 
+void Convex_Hull( )   // N è¦æ±‚å¤§äº2 
 { 
 	int i,k;
 	sort( p, p+N, cmp );
@@ -112,7 +112,7 @@ void Convex_Hull( )   // N ÒªÇó´óÓÚ2
 	for( i=0; i<N; ++i )
 	{
 		while( Ns>=2 && dcmp( det( np[Ns-2], np[Ns-1], p[i] ) ) <=0 )
-			Ns--;          //°üÀ¨ËùÓĞ¹²Ïßµã£¬¸ÄÎª<=ÔòÖ»ÓĞ¼«µã
+			Ns--;          //åŒ…æ‹¬æ‰€æœ‰å…±çº¿ç‚¹ï¼Œæ”¹ä¸º<=åˆ™åªæœ‰æç‚¹
 		np[Ns++]=p[i];
 	}
 	k=Ns;

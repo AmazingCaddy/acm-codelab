@@ -23,7 +23,7 @@ struct circle
 struct node
 {
     double area;
-    int flag; // ±ê¼ÇÔ²»¡ÊÇ³¯ÉÏ»¹ÊÇ³¯ÏÂ
+    int flag; // æ ‡è®°åœ†å¼§æ˜¯æœä¸Šè¿˜æ˜¯æœä¸‹
     double y1, y2, mid;
 };
 
@@ -142,13 +142,13 @@ double solve( double x1, double x2, const int & n )
         tmp.y1 = imag( p1 );
         tmp.y2 = imag( p2 );
 		tmp.mid = imag( c[i].p ) - d;
-        tmp.flag = -1;  // Ô²»¡³¯ÉÏ
+        tmp.flag = -1;  // åœ†å¼§æœä¸Š
         V.push_back( tmp );
 
         tmp.y1 = imag( c[i].p ) + d1;
         tmp.y2 = imag( c[i].p ) + d2;
 		tmp.mid = imag( c[i].p ) + d;
-        tmp.flag = 1;  // Ô²»¡³¯ÏÂ
+        tmp.flag = 1;  // åœ†å¼§æœä¸‹
         V.push_back( tmp );
     }
     sort( V.begin( ), V.end( ), cmp );

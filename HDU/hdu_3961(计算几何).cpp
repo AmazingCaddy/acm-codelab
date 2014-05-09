@@ -59,7 +59,7 @@ double Distance( const point &a, const point &b ) {
 	return sqrt( p.x * p.x + p.y * p.y );
 }
 
-// ÄæÊ±ÕëĞı×ª angle
+// é€†æ—¶é’ˆæ—‹è½¬ angle
 point rotate( const point &o, const point &p, const double & angle, const double &scale ) {
 	point pp = p - o;
 	double cosx = cos( angle ), sinx = sin( angle );
@@ -123,14 +123,14 @@ int main(int argc, char *argv[])
 //	freopen( "out", "w", stdout );
 	point sun, earth;
 	double r;
-	int t1, t2, t, n;	// t1¹«×ª t2×Ô×ª
+	int t1, t2, t, n;	// t1å…¬è½¬ t2è‡ªè½¬
 	while( sun.input( ), earth.input( ), scanf( "%lf", &r ) != EOF ) {
 		scanf( "%d%d%d%d", &n, &t1, &t2, &t );
 		point block_g = init( n );
 		double angle1 = ( t % t1 ) * 1.0 / t1 * pi * 2;
 		double angle2 = ( t % t2 ) * 1.0 / t2 * pi * 2;
 		
-		// ×Ô×ªºÍ¹«×ªÖ®ºóµÄblock
+		// è‡ªè½¬å’Œå…¬è½¬ä¹‹åçš„block
 		point new_block_g = rotate( earth, block_g, angle1, 1 );
 		n = block.size( );
 		for( int i = 0; i < n; i++ ) {
@@ -140,7 +140,7 @@ int main(int argc, char *argv[])
 		double angle = acos( r / sedis );
 		double angle_re = pi / 2 - angle;
 		double ans;
-		// block ÔÚµØÇòµÄ±³Ãæ
+		// block åœ¨åœ°çƒçš„èƒŒé¢
 		if( D( new_block_g - earth & sun - earth ) <= 0 ) {
 			ans = 2 * angle * r;
 			printf( "%lf\n", ans );

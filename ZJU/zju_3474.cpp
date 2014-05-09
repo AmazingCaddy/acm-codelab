@@ -29,13 +29,13 @@ int dp[ 10 ];
 
 int Min( int a, int b ) { return ( a < b ? a : b ); }
 
-// ÏûºÄÌåÁ¦ÉıĞòÅÅÁĞ
+// æ¶ˆè€—ä½“åŠ›å‡åºæ’åˆ—
 bool cmp1( const node &a, const node &b )
 {
 	return a.co < b.co;
 }
 
-// »Ö¸´ÌåÁ¦½µĞòÅÅÁĞ
+// æ¢å¤ä½“åŠ›é™åºæ’åˆ—
 bool cmp2( const node &a, const node &b )
 {
 	return a.re > b.re;

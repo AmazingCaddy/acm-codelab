@@ -1,4 +1,4 @@
-//  tower[0..n-1][0..n-1]£¬ÊıËş¿¿ÓÒ´æ´¢£¬tower[0..n-1][n]=0¡£
+//  tower[0..n-1][0..n-1]ï¼Œæ•°å¡”é å³å­˜å‚¨ï¼Œtower[0..n-1][n]=0ã€‚
 
 #include<iostream>
 #define MAXN 505

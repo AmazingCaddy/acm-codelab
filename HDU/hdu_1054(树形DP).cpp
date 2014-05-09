@@ -1,13 +1,13 @@
 /*
 	author: AmazingCaddy
 	time: 2011/5/9  19:04
-	dp0[ i ] ±íÊ¾ÔÚi½Úµã·ÅÒ»¸öÊ¿±øÊØ×¡Õû¸ö×ÓÊ÷ËùĞèÊ¿±øÊı
-	dp1[ i ] ±íÊ¾ÊØ×¡ÒÔiÎª¸ù½ÚµãµÄ×ÓÊ÷ËùĞèµÄÊ¿±øÊı
+	dp0[ i ] è¡¨ç¤ºåœ¨ièŠ‚ç‚¹æ”¾ä¸€ä¸ªå£«å…µå®ˆä½æ•´ä¸ªå­æ ‘æ‰€éœ€å£«å…µæ•°
+	dp1[ i ] è¡¨ç¤ºå®ˆä½ä»¥iä¸ºæ ¹èŠ‚ç‚¹çš„å­æ ‘æ‰€éœ€çš„å£«å…µæ•°
 	
 	leaf node k : dp0[ k ] = 1, dp1[ k ] = 0
 	non-leaf node i :
-	dp0[ i ] = 1 + sigma( dp1[ j ] ) jÊÇiµÄ×Ó½Úµã
-	dp1[ i ] = Min( dp0[ i ], sigma( dp0[ j ] ) ) jÊÇi×Ó½Úµã
+	dp0[ i ] = 1 + sigma( dp1[ j ] ) jæ˜¯içš„å­èŠ‚ç‚¹
+	dp1[ i ] = Min( dp0[ i ], sigma( dp0[ j ] ) ) jæ˜¯iå­èŠ‚ç‚¹
 */
 #include <cstdio>
 #include <complex>

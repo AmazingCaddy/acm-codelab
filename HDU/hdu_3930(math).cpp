@@ -2,12 +2,12 @@
 	author: AmazingCaddy
 	time:	2011/8/13   13:41
 	x^k = b mod p, p is prime
-	1)	ÏÈ±©Á¦ÇópµÄÔ­¸ùg
-	2)	´ó²½Ð¡²½Çóg^t1 = b mod p
-	3)	Ôòg^(t1+n*t2) = b mod p, t2 = p - 1
-	4)	Éèx = g^y mod p, x^k = (g^y)^k = g^(yk) = g^(t1+n*t2)
-		ÄÇÃ´¾ÍÊÇÇóÍ¬Óà·½³Ì yk = t1( mod t2 )
-		Çó³öyÖ®ºó´øµ½x = g^y mod p,½â³öx
+	1)	å…ˆæš´åŠ›æ±‚pçš„åŽŸæ ¹g
+	2)	å¤§æ­¥å°æ­¥æ±‚g^t1 = b mod p
+	3)	åˆ™g^(t1+n*t2) = b mod p, t2 = p - 1
+	4)	è®¾x = g^y mod p, x^k = (g^y)^k = g^(yk) = g^(t1+n*t2)
+		é‚£ä¹ˆå°±æ˜¯æ±‚åŒä½™æ–¹ç¨‹ yk = t1( mod t2 )
+		æ±‚å‡ºyä¹‹åŽå¸¦åˆ°x = g^y mod p,è§£å‡ºx
 */
 #include <cstdio>
 #include <complex>

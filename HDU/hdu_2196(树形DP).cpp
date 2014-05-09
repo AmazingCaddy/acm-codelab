@@ -19,7 +19,7 @@ const int maxn = 10004;
 
 int head[ maxn ], next[ maxn << 1 ], ev[ maxn << 1 ], ew[ maxn << 1 ];
 int len;
-int f[ maxn ], g[ maxn ], h[ maxn ]; // ×îÓÅ ´ÎÓÅ À´×Ô¸¸½Úµã
+int f[ maxn ], g[ maxn ], h[ maxn ]; // æœ€ä¼˜ æ¬¡ä¼˜ æ¥è‡ªçˆ¶èŠ‚ç‚¹
 int vis[ maxn ], lst[ maxn ];
 
 int Max( int a, int b ) { return ( a > b ? a : b ); }

@@ -45,10 +45,10 @@ int main(int argc, char *argv[])
 		{
 			int k = j + i;
 			dp[j][k] = inf;
-			// SÐÎÈç(S¡¯)»òÕß[S¡¯]: dp[j][k] = min( dp[j][k], dp[j+1,k-1] );
+			// Så½¢å¦‚(Sâ€™)æˆ–è€…[Sâ€™]: dp[j][k] = min( dp[j][k], dp[j+1,k-1] );
 			if( ch[j] == '(' && ch[k] == ')' || ch[j] == '[' && ch[k] == ']' )
 				if( dp[j][k] > dp[j+1][k-1] ) dp[j][k] = dp[j+1][k-1], path[j][k] = -1;
-			//³¤¶È´óÓÚ1: dp[j][k] = min( dp[j][k], dp[j,p]+d[p+1,k] ) { j <= p <= k-1 }
+			//é•¿åº¦å¤§äºŽ1: dp[j][k] = min( dp[j][k], dp[j,p]+d[p+1,k] ) { j <= p <= k-1 }
 			for( int p = j; p < k; p++ )
 			{
 				if( dp[j][k] > dp[j][p] + dp[p+1][k] )

@@ -58,7 +58,7 @@ ll solve( int b, int d, int k )
 	ll ans;
 	if( k == 0 )return 0;
 	b /= k, d /= k;
-	if( b > d ) tmp = d, d = b, b = tmp;  // ʹ d > b
+	if( b > d ) tmp = d, d = b, b = tmp;  // 使 d > b
 	ans = 0;
 	for( i = 1; i <= d; i++ )
 		ans += compute( i, min( i, b ) );

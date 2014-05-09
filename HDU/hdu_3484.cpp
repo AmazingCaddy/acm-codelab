@@ -1,9 +1,9 @@
 #include<iostream>
 #include<cstdio>
 #include<cstring>
-//����ͼ���ƥ��,hungary�㷨,�ڽ�����ʽ,���Ӷ�O(m*m*n)
-//�������ƥ����,�������ͼ��Сm,n���ڽ���mat,����Ԫ�ر�ʾ�б�
-//match1,match2����һ�����ƥ��,δƥ�䶥��matchֵΪ-1
+//二分图最大匹配,hungary算法,邻接阵形式,复杂度O(m*m*n)
+//返回最大匹配数,传入二分图大小m,n和邻接阵mat,非零元素表示有边
+//match1,match2返回一个最大匹配,未匹配顶点match值为-1
 #include <string.h>
 #define MAXN 102
 #define _clr(x) memset(x,0xff,sizeof(int)*MAXN)

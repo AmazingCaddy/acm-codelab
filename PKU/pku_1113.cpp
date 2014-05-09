@@ -11,7 +11,7 @@
 //	double x,y;
 //};
 //point stack[MAXN],p[MAXN];
-//int top;     //Õ»¶¥Ö¸Õë
+//int top;     //æ ˆé¡¶æŒ‡é’ˆ
 //int dblcmp( double x )
 //{
 //	if( fabs(x)<esp )return 0;
@@ -26,7 +26,7 @@
 //
 //double multi( const point & p0, const point & p1, const point & p2 )
 //{
-//	//´óÓÚ0£¬Op1ÔÚOp2Ë³Ê±Õë·½Ïò
+//	//å¤§äº0ï¼ŒOp1åœ¨Op2é¡ºæ—¶é’ˆæ–¹å‘
 //	return (p1.x-p0.x)*(p2.y-p0.y)-(p1.y-p0.y)*(p2.x-p0.x);
 //}
 //
@@ -34,24 +34,24 @@
 //{
 //	point c=*( point* )a;
 //	point d=*( point* )b;
-//	int k=dblcmp( multi( p[0], c, d ) );//k>0£¬ocÔÚodË³Ê±Õë·½Ïò£¬²»ÓÃ½»»»
+//	int k=dblcmp( multi( p[0], c, d ) );//k>0ï¼Œocåœ¨odé¡ºæ—¶é’ˆæ–¹å‘ï¼Œä¸ç”¨äº¤æ¢
 //	return k==0?dblcmp( Distance( p[0], c )-Distance( p[0], d ) ):-k;
 //}
 //
-//void graham( int n )//ÄæÊ±ÕëËã·¨
+//void graham( int n )//é€†æ—¶é’ˆç®—æ³•
 //{
 //	int i,k,d,index=0;
 //	double miny=p[0].y;
 //	point temp;
-//	for( i=1; i<n; i++ )//ÕÒ×óÏÂ½Ç¶¥µã
-//		if( dblcmp( miny-p[i].y ) == 1 ) miny=p[i].y,index=i;//ÕÒy×ø±êĞ¡µÄ
+//	for( i=1; i<n; i++ )//æ‰¾å·¦ä¸‹è§’é¡¶ç‚¹
+//		if( dblcmp( miny-p[i].y ) == 1 ) miny=p[i].y,index=i;//æ‰¾yåæ ‡å°çš„
 //		else if( dblcmp( miny-p[i].y )==0 && dblcmp( p[i].x-p[index].x )==-1 )
 //			index=i;
-//		//yÏàµÈ£¬ÕÒx×ø±êĞ¡µÄ
+//		//yç›¸ç­‰ï¼Œæ‰¾xåæ ‡å°çš„
 //	temp=p[index];
 //	p[index]=p[0];
 //	p[0]=temp;
-//	qsort( p+1, n-1, sizeof(point), convex_com );//p[1:n-1]°´Ïà¶Ôp[0]µÄ¼«½Ç´ÓĞ¡µ½´óÅÅĞò
+//	qsort( p+1, n-1, sizeof(point), convex_com );//p[1:n-1]æŒ‰ç›¸å¯¹p[0]çš„æè§’ä»å°åˆ°å¤§æ’åº
 //	stack[0]=p[n-1];
 //	stack[1]=p[0];
 //	top=1;
@@ -59,9 +59,9 @@
 //	while( k<n )
 //	{
 //		d=dblcmp( multi( stack[top], stack[top-1], p[k] ) );
-//		if( d!=1 )    //p[k]ÔÚµ±Ç°±ßµÄË³Ê±Õë·½ÏòÑ¹ÈëÕ»ÖĞ,²»Ëã¹²ÏßµÄµã
+//		if( d!=1 )    //p[k]åœ¨å½“å‰è¾¹çš„é¡ºæ—¶é’ˆæ–¹å‘å‹å…¥æ ˆä¸­,ä¸ç®—å…±çº¿çš„ç‚¹
 //			stack[++top]=p[k],k++;
-//		else top--;   //·ñÔòµ¯³öÕ»¶¥ÔªËØ
+//		else top--;   //å¦åˆ™å¼¹å‡ºæ ˆé¡¶å…ƒç´ 
 //	}
 //}
 //	
@@ -143,7 +143,7 @@ bool cmp( const Point &a, const Point &b )
 Point p[maxn], np[maxn];
 int N, Ns;
  
-void Convex_Hull( )   // N ÒªÇó´óÓÚ2 
+void Convex_Hull( )   // N è¦æ±‚å¤§äº2 
 { 
 	int i,k;
 	sort( p, p+N, cmp );
@@ -151,7 +151,7 @@ void Convex_Hull( )   // N ÒªÇó´óÓÚ2
 	for( i=0; i<N; ++i )
 	{
 		while( Ns>=2 && dcmp( det( np[Ns-2], np[Ns-1], p[i] ) ) <0 )
-			Ns--;          //°üÀ¨ËùÓĞ¹²Ïßµã£¬¸ÄÎª<=ÔòÖ»ÓĞ¼«µã
+			Ns--;          //åŒ…æ‹¬æ‰€æœ‰å…±çº¿ç‚¹ï¼Œæ”¹ä¸º<=åˆ™åªæœ‰æç‚¹
 		np[Ns++]=p[i];
 	}
 	k=Ns;

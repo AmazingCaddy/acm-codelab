@@ -15,7 +15,7 @@ void build_tree( int L, int R, int v )
 	int mid = ( L + R ) >> 1;
 	if( L == R ) return;
 	int m = sorted[mid];
-	int same = mid - L + 1;     // same±íÊ¾ºÍm = sorted[mid] ÏàµÈÇÒ·Öµ½×ó±ßµÄ
+	int same = mid - L + 1;     // sameè¡¨ç¤ºå’Œm = sorted[mid] ç›¸ç­‰ä¸”åˆ†åˆ°å·¦è¾¹çš„
 	for( int i = L; i <= R; i++ )
 		if( tree[v][i] < m ) same--;
 	int lpos = L;
@@ -53,8 +53,8 @@ int query( int L, int R, int l, int r, int k, int v )
 {
 	int mid = ( L + R ) >> 1;
 	if( l == r ) return tree[v][l];
-	int off;      // off±íÊ¾ [ L, l-1 ]ÓĞ¶àÉÙ¸ö·Öµ½×ó±ß
-	int cnt;      // cnt±íÊ¾ [ l, r ]ÓĞ¶àÉÙ¸ö·Öµ½×ó±ß
+	int off;      // offè¡¨ç¤º [ L, l-1 ]æœ‰å¤šå°‘ä¸ªåˆ†åˆ°å·¦è¾¹
+	int cnt;      // cntè¡¨ç¤º [ l, r ]æœ‰å¤šå°‘ä¸ªåˆ†åˆ°å·¦è¾¹
 	if( l == L )
 	{
 		off = 0;
@@ -65,7 +65,7 @@ int query( int L, int R, int l, int r, int k, int v )
 		off = Left[v][l-1];
 		cnt = Left[v][r] - Left[v][l-1];
 	}
-	if( cnt >= k ) //ÓĞ¶àÓÚk¸ö·Öµ½×ó±ß,ÏÔÈ»È¥×ó¶ù×ÓÇø¼äÕÒµÚk¸ö
+	if( cnt >= k ) //æœ‰å¤šäºkä¸ªåˆ†åˆ°å·¦è¾¹,æ˜¾ç„¶å»å·¦å„¿å­åŒºé—´æ‰¾ç¬¬kä¸ª
 	{
 		int lnew = L + off;
 		int rnew = lnew + cnt - 1;
@@ -73,9 +73,9 @@ int query( int L, int R, int l, int r, int k, int v )
 	}
 	else 
 	{
-		off = l - L - off;      // off±íÊ¾ [ L, l-1 ]ÓĞ¶àÉÙ¸ö·Öµ½ÓÒ±ß
+		off = l - L - off;      // offè¡¨ç¤º [ L, l-1 ]æœ‰å¤šå°‘ä¸ªåˆ†åˆ°å³è¾¹
 		k = k - cnt;
-		cnt = r - l + 1 - cnt;  // cnt±íÊ¾ [ l, r ]ÓĞ¶àÉÙ¸ö·Öµ½ÓÒ±ß
+		cnt = r - l + 1 - cnt;  // cntè¡¨ç¤º [ l, r ]æœ‰å¤šå°‘ä¸ªåˆ†åˆ°å³è¾¹
 		int lnew = mid + 1 + off;
 		int rnew = lnew + cnt - 1;
 		return query( mid + 1, R, lnew, rnew, k, v + 1 );

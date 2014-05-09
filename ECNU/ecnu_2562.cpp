@@ -47,7 +47,7 @@ int main()
 		for( i=0; i<F; i++ )
 		{
 			cin>>n1>>n2;
-			//将人的名字与数字对应起来
+			//灏嗕汉鐨勫悕瀛椾笌鏁板瓧瀵瑰簲璧锋潵
 			if( s.find(n1)==s.end() )
 				s[n1]=num++;				
 			if( s.find(n2)==s.end() )

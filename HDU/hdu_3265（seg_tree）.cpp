@@ -131,7 +131,7 @@ int main( )
 			ans += (__int64)tree[1].len * ( yline[i].x - yline[i-1].x );
 			left = bin_search( yline[i].y1 );
 			right = bin_search( yline[i].y2 );
-			if( left != right )  //ÓÐÏß¶Î³¤¶ÈÎª0µÄÇé¿ö
+			if( left != right )  //æœ‰çº¿æ®µé•¿åº¦ä¸º0çš„æƒ…å†µ
 				update( 1, left, right, yline[i].flag );
 		}
 		printf("%I64d\n",ans);

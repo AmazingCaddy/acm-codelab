@@ -11,9 +11,9 @@ struct node
 struct segment
 {
 	int l,r;
-	int left,right; // ¼ÇÂ¼Çø¼äÁ½¶ËµÄ¸ß¶È
-	int flag;       // ¼ÇÂ¼Õû¶ÎÇø¼ä±»ÏÂÑ¹µÄ´ÎÊı
-	int count;      // ¼ÇÂ¼Çø¼äÖĞ´¦ÓÚ¸ß¶È0µÄÌõÊı
+	int left,right; // è®°å½•åŒºé—´ä¸¤ç«¯çš„é«˜åº¦
+	int flag;       // è®°å½•æ•´æ®µåŒºé—´è¢«ä¸‹å‹çš„æ¬¡æ•°
+	int count;      // è®°å½•åŒºé—´ä¸­å¤„äºé«˜åº¦0çš„æ¡æ•°
 };
 
 const int maxn = 21000;
@@ -43,12 +43,12 @@ void update( int v, int s, int t, int c )
 		tree[v].flag += c;
 		tree[v].left += c;
 		tree[v].right += c;
-		if( tree[v].flag )    // Èç¹ûÇø¼ä¸ß¶È²»ÊÇ0£¬ËµÃ÷±»ÏÂÑ¹£¬Ã»ÓĞ0Ïß¶Î
+		if( tree[v].flag )    // å¦‚æœåŒºé—´é«˜åº¦ä¸æ˜¯0ï¼Œè¯´æ˜è¢«ä¸‹å‹ï¼Œæ²¡æœ‰0çº¿æ®µ
 			tree[v].count = 0; 
-		else                  // Ò¶×Ó½Úµã 
+		else                  // å¶å­èŠ‚ç‚¹ 
 			if( tree[v].l + 1 == tree[v].r ) 
 				tree[v].count = 1;
-			else                  // Ò»°ã½Úµã
+			else                  // ä¸€èˆ¬èŠ‚ç‚¹
 				tree[v].count = tree[v<<1].count + tree[(v<<1)+1].count -
 				( tree[v<<1].right == 0 && tree[(v<<1)+1].left == 0 );
 		return ;

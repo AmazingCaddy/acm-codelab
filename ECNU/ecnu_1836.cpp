@@ -12,7 +12,7 @@ int f[MAXN],sr;
 int Calc( int l, int r )
 {
 	int i,k,min=INF;
-	for( i=r; i>=l; i-- )  //ÓÉÓÚÓÐ¡°-¡±£¬¹ÊÒª´ÓÓÒÏò×óÉ¨Ãè
+	for( i=r; i>=l; i-- )  //ç”±äºŽæœ‰â€œ-â€ï¼Œæ•…è¦ä»Žå³å‘å·¦æ‰«æ
 	{
 		if( min>f[i] )
 		{

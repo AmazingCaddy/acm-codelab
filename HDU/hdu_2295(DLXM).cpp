@@ -11,10 +11,10 @@ const int maxt = 55*55;
 const double inf = 1e4;
 const double eps = 1e-7;
 
-int S[maxm], O[maxn]; // S[] ÁĞÁ´±íÖĞ½áµãµÄ×ÜÊı  O[] ¼ÇÂ¼ËÑË÷½á¹û
-int L[maxt], R[maxt], U[maxt], D[maxt];  // ËÄ¸ö·½Ïò
-int C[maxt], W[maxt];  // C[]ÁĞÖ¸ÕëÍ·  W[]ĞĞÖ¸ÕëÍ·
-int mat[maxn][maxm];  // Ï¡Êè¾ØÕó
+int S[maxm], O[maxn]; // S[] åˆ—é“¾è¡¨ä¸­ç»“ç‚¹çš„æ€»æ•°  O[] è®°å½•æœç´¢ç»“æœ
+int L[maxt], R[maxt], U[maxt], D[maxt];  // å››ä¸ªæ–¹å‘
+int C[maxt], W[maxt];  // C[]åˆ—æŒ‡é’ˆå¤´  W[]è¡ŒæŒ‡é’ˆå¤´
+int mat[maxn][maxm];  // ç¨€ç–çŸ©é˜µ
 int ANS;
 
 struct point

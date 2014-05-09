@@ -18,7 +18,7 @@ const int maxn = 36000;
 int b[5] = { 0, 0, 0, 0 };
 int w[5] = { 2, 3, 4679, 35617 }; // 999911658 = 2 * 3 * 4679 * 35617 ;
 int s[2][101];
-int c[4][maxn];  // ÓÃÓÚ±£´æ ( n! ) mod wi( i = 0, 1, 2, 3 )
+int c[4][maxn];  // ç”¨äºä¿å­˜ ( n! ) mod wi( i = 0, 1, 2, 3 )
 int N, G;
 
 void Extend_Eulid( int a, int b, int &d, int &x, int &y )// ax+by=gcd(a,b);
@@ -31,7 +31,7 @@ void Extend_Eulid( int a, int b, int &d, int &x, int &y )// ax+by=gcd(a,b);
 	}
 }
 
-int china( int n , int a[], int m[] )// X mod m[i]=a[i] £¬Çó½â X ,m[i]Á½Á½»¥ËØ 
+int china( int n , int a[], int m[] )// X mod m[i]=a[i] ï¼Œæ±‚è§£ X ,m[i]ä¸¤ä¸¤äº’ç´  
 {
 	int i, w;
 	int M = 1, d, y, x;
@@ -41,7 +41,7 @@ int china( int n , int a[], int m[] )// X mod m[i]=a[i] £¬Çó½â X ,m[i]Á½Á½»¥ËØ
 	{
 		w = M / m[i];
 		Extend_Eulid( m[i], w, d, x, y );      // don 't care about others
-		X = ( X + (ll)y * w * a[i] ) % M;      // accumulate e*µÄºÍa
+		X = ( X + (ll)y * w * a[i] ) % M;      // accumulate e*çš„å’Œa
 	}
 	return ( M + X % M ) % M; // adjust to [0,M-1]
 }
@@ -63,12 +63,12 @@ int pow_mod( ll a, int b, int p )
 int cnk( int a, int b, int cur )
 {
 	int ans = c[cur][a], p = w[cur];
-	ans = ans * pow_mod( c[cur][b], p - 2, p ) % p;    // Çó k! mod p µÄÄæÔª
-	ans = ans * pow_mod( c[cur][a-b], p - 2, p ) % p;  // Çó (n-k)! mod p µÄÄæÔª
+	ans = ans * pow_mod( c[cur][b], p - 2, p ) % p;    // æ±‚ k! mod p çš„é€†å…ƒ
+	ans = ans * pow_mod( c[cur][a-b], p - 2, p ) % p;  // æ±‚ (n-k)! mod p çš„é€†å…ƒ
 	return ans;
 }
 
-//  Çó  PI ( C( ni, mi ) ) % pj 
+//  æ±‚  PI ( C( ni, mi ) ) % pj 
 int C( int n, int k, int cur )
 {
 	int i, x, len[2] = { 0, 0 };

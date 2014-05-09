@@ -1,5 +1,5 @@
-// вН╨С╣дееапн╙╡╩об╫╣пРап╩Руъ╡╩иоиЩпРапё╛
-// кЫртгСЁЖпРапжпря╬╜йг╢Фтз╣д╡╩об╫╣пРапlen3 ╩Руъ ╡╩иоиЩпРапlen4ё╛йёоб╣д╬мйгр╙пч╦д╣д
+// Ф°─Е░▌Г └Ф▌▓Е┬≈Д╦╨Д╦█Д╦▀И≥█Е╨▐Е┬≈Ф┬√Х─┘Д╦█Д╦┼Е█┤Е╨▐Е┬≈О╪▄
+// Ф┴─Д╩╔Ф╠┌Е┤╨Е╨▐Е┬≈Д╦╜Е╥╡Г╩▐Ф≤╞Е╜≤Е°╗Г └Д╦█Д╦▀И≥█Е╨▐Е┬≈len3 Ф┬√Х─┘ Д╦█Д╦┼Е█┤Е╨▐Е┬≈len4О╪▄Е┴╘Д╦▀Г └Е╟╠Ф≤╞Х╕│Д©╝Ф■╧Г └
 // ans=n-max{ len3, len4 }
 #include<iostream>
 #define MAXN 30003
@@ -7,7 +7,7 @@ using namespace std;
 int a[MAXN],d3[MAXN],d4[MAXN];
 int len3,len4;
 
-int search3( int len, int n ) //╡╩об╫╣╣д╤Ч╥ж╨╞йЩ
+int search3( int len, int n ) //Д╦█Д╦▀И≥█Г └Д╨▄Е┬├Е┤╫Ф∙╟
 {
 	int low=1,high=len,mid;
 	while(low<=high)
@@ -19,7 +19,7 @@ int search3( int len, int n ) //╡╩об╫╣╣д╤Ч╥ж╨╞йЩ
 	return low;
 }
 
-void LNDS( int b[], int n ) //вНЁ╓╡╩об╫╣вспРап
+void LNDS( int b[], int n ) //Ф°─И∙©Д╦█Д╦▀И≥█Е╜░Е╨▐Е┬≈
 {
 	int i,t;
 	len3=1;
@@ -35,7 +35,7 @@ void LNDS( int b[], int n ) //вНЁ╓╡╩об╫╣вспРап
 	}
 }
 
-int search4( int len, int n )//╡╩иоиЩ╣д╤Ч╥ж╨╞йЩ
+int search4( int len, int n )//Д╦█Д╦┼Е█┤Г └Д╨▄Е┬├Е┤╫Ф∙╟
 {
 	int low=1,high=len,mid;
 	while(low<=high)
@@ -47,7 +47,7 @@ int search4( int len, int n )//╡╩иоиЩ╣д╤Ч╥ж╨╞йЩ
 	return low;
 }
 
-void LNIS( int b[], int n ) //вНЁ╓╡╩иоиЩвспРап
+void LNIS( int b[], int n ) //Ф°─И∙©Д╦█Д╦┼Е█┤Е╜░Е╨▐Е┬≈
 {
 	int i,t;
 	len4=1;

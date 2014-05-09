@@ -1,7 +1,7 @@
 /*
     author: AmazingCaddy
     time: 27/05/2011 18:53:40 
-    ´óÕýÊý && ¸ß¾«¶È¸¡µãÊý
+    å¤§æ­£æ•° && é«˜ç²¾åº¦æµ®ç‚¹æ•°
 */
 #include <iostream>
 #include <complex>

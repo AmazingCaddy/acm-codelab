@@ -4,9 +4,9 @@ using namespace std;
 struct node
 {
 	int l,r;
-	__int64 total;//记录整个区间的改变量
-	__int64 val;  //记录区间及子区间的该变量
-	__int64 sum;  //记录区间的初始量
+	__int64 total;//璁板綍鏁翠釜鍖洪棿鐨勬敼鍙橀噺
+	__int64 val;  //璁板綍鍖洪棿鍙婂瓙鍖洪棿鐨勮鍙橀噺
+	__int64 sum;  //璁板綍鍖洪棿鐨勫垵濮嬮噺
 }tree[MAXN*4];
 int a[MAXN];
 

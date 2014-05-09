@@ -44,8 +44,8 @@ void DFS( int u )
 {
 	if( head[ u ] == 0 )
 	{
-		dp[ 0 ][ u ] = 0;			// ��ȡ
-		dp[ 1 ][ u ] = val[ u ];	// ȡ
+		dp[ 0 ][ u ] = 0;			// 不取
+		dp[ 1 ][ u ] = val[ u ];	// 取
 		return;
 	}
 	int sum[ 2 ] = { 0 };

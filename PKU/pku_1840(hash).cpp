@@ -18,8 +18,8 @@ struct Hash{
 
 int flg[maxn],top,idx;
 
-int f(int key){//保证hash值在[0, maxn)之间
-	// hash函数
+int f(int key){//淇濊瘉hash鍊煎湪[0, maxn)涔嬮棿
+	// hash鍑芥暟
 	if( key < 0 ) key = -key;
 	return key % P;
 }

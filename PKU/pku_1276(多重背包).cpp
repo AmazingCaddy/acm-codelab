@@ -8,7 +8,7 @@
 using namespace std;
 
 const int maxn = 100004;
-// ¶àÖØ±³°ü ¼ÓÒ»¸öÏŞÖÆ
+// å¤šé‡èƒŒåŒ… åŠ ä¸€ä¸ªé™åˆ¶
 int dp[maxn], num[maxn];
 int val[12], cnt[12];
 

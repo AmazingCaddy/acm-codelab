@@ -29,7 +29,7 @@ void solve( int & win, int & goal1, int & goal2 )
 		win = 0, goal1 = home[3], goal2 = aa;
 		return;
 	}
-	// 4 Çò
+	// 4 çƒ
 	if( home[4] - aa > 2 )
 	{
 		win = 1, goal1 = home[4], goal2 = aa;
@@ -51,7 +51,7 @@ void solve( int & win, int & goal1, int & goal2 )
 		win = 0, goal1 = home[4], goal2 = aa;
 		return ;
 	}
-	// 5 Çò
+	// 5 çƒ
 	if( home[5] - aa >= 2 )
 	{
 		win = 1, goal1 = home[5], goal2 = aa;

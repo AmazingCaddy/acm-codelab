@@ -1,4 +1,4 @@
-// ·ÑÂí½µ½×·¨  ¡¶ÊýÂÛ¸ÅÂÛ¡· P123
+// è´¹é©¬é™é˜¶æ³•  ã€Šæ•°è®ºæ¦‚è®ºã€‹ P123
 #include <cstdio>
 #include <iostream>
 #include <cstring>

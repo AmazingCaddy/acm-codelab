@@ -29,7 +29,7 @@ void init( )
 	}
 }
 
-ll mul_mod( llu a, llu b, llu m ) //tсп©идэ╢О╣╫2m-1 кЫрт m < 2^63 
+ll mul_mod( llu a, llu b, llu m ) //tФ°┴Е▐╞Х┐╫Х╬╬Е┬╟2m-1 Ф┴─Д╩╔ m < 2^63 
 {
 	ll t=0;
 	a %= m, b %= m;
@@ -50,7 +50,7 @@ ll pow_mod( llu a, llu n, ll p )
 	}while( n >>= 1 );
 	return ans;
 }
-//  я╟уря╜╩╥╫з  D^P = D^(T+P)( mod C );
+//  Е╞╩Ф┴╬Е╬╙Г▌╞Х┼┌  D^P = D^(T+P)( mod C );
 void find_cycle( ll D, ll p, ll &T, ll &P )
 {
 	int vis[MAXN];

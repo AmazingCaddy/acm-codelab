@@ -40,7 +40,7 @@ struct SplayTree{
 			y = x;
 			if( k < val[x] ) x = ch[x][0];
 			else if( k > val[x] ) x = ch[x][1];
-			else return y; // ÒÑ¾­´æÔÚ
+			else return y; // å·²ç»å­˜åœ¨
 		}
 		return -1; // 
 	}
@@ -79,13 +79,13 @@ struct SplayTree{
 		if( ch[root][1] )t2 = findmin( ch[root][1] );
 		return 1;
 	}
-	//ÒÔÏÂÊÇÌâÄ¿µÄÌØ¶¨º¯Êı:
+	//ä»¥ä¸‹æ˜¯é¢˜ç›®çš„ç‰¹å®šå‡½æ•°:
 	void NewNode( int &x ){
-		if( top2 ) x = ss[--top2];//ÓÃÕ»ÊÖ¶¯Ñ¹µÄÄÚ´æ³Ø
+		if( top2 ) x = ss[--top2];//ç”¨æ ˆæ‰‹åŠ¨å‹çš„å†…å­˜æ± 
 		else x = ++top1;
 		ch[x][0] = ch[x][1] = pre[x] = 0;
 	}
-	/*ÕâÊÇÌâÄ¿ÌØ¶¨º¯Êı*/
+	/*è¿™æ˜¯é¢˜ç›®ç‰¹å®šå‡½æ•°*/
 	void init( ){
 		ch[0][0] = ch[0][1] = pre[0] =  0;
 		root = top1 = top2 = 0;

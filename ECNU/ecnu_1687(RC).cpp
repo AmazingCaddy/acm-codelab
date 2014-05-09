@@ -1,7 +1,7 @@
 /*
 	author: AmazingCaddy
 	time: 2011/5/5  18:06
-	��ת���ǣ���͹����ε���С�����Ӿ���
+	旋转卡壳，求凸多边形的最小面积外接矩形
 */
 #include <cstdio>
 #include <complex>

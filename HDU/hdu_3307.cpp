@@ -82,7 +82,7 @@ int get_hash( int a )
 	return -1;
 }
 
-// 离散对数 a^x=b( mod n )，x返回大于0的值（有解时）
+// 绂绘暎瀵规暟 a^x=b( mod n )锛寈杩斿洖澶т簬0鐨勫�硷紙鏈夎В鏃讹級
 LL log_mod( LL a, LL b, LL n )
 {
 	LL m,v,e,i;

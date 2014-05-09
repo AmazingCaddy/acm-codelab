@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
 		scanf("%lf%lf%lf",&v.x,&v.y,&v.z);
 		for( int i = 0; i < 8; i++ )
 			scanf("%lf%lf%lf",&p[i].x,&p[i].y,&p[i].z);
-		// 平面ABCD的法向量
+		// 骞抽潰ABCD鐨勬硶鍚戦噺
 		point n = p[4] - p[0];
 		if( dblcmp( v & n ) <= 0 )
 			printf("Case %d: Intelligent Larrionda!!!\n",q);

@@ -1,7 +1,7 @@
 /*
 	author:	AmazingCaddy
 	time:	2011/10/29	2:26
-	solve:	trieÊ÷¹¹Ôì×´Ì¬×ªÒÆ
+	solve:	trieæ ‘æ„é€ çŠ¶æ€è½¬ç§»
 */
 #include <cstdio>
 #include <cstdlib>

@@ -102,7 +102,7 @@ int query( int v, int l, int r ) {
     }
 
     int mid = ( tree[ v ].l + tree[ v ].r ) >> 1;
-    // �����ѯ���ǵ㣬���бض���ȫ��mid����ߣ������ұ�
+    // 本题查询的是点，所有必定完全在mid的左边，或者右边
     if( r <= mid ) {
         return query( v << 1, l, r );
     }

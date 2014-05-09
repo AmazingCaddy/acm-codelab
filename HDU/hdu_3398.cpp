@@ -9,8 +9,8 @@ using namespace std;
 typedef __int64 ll;
 // ans = C( m + n, m ) - C( m + n, m - 1 ) ( mod 20100501 )
 // C( m + n, m ) - C( m + n, m - 1 ) = (m+n)! /( m!*(n+1)! )*(n-m+1)
-// ÓÉÓÚ20100501²»ÊÇsquare-free-number£¬²»ÄÜÊ¹ÓÃLucas¶¨Àí
-// n ²¢²»ÊÇºÜ´ó£¬¹Ê¿ÉÒÔÊ¹ÓÃ·Ö½âÖÊÒòÊıµÄ°ì·¨À´×ö¡£
+// ç”±äº20100501ä¸æ˜¯square-free-numberï¼Œä¸èƒ½ä½¿ç”¨Lucaså®šç†
+// n å¹¶ä¸æ˜¯å¾ˆå¤§ï¼Œæ•…å¯ä»¥ä½¿ç”¨åˆ†è§£è´¨å› æ•°çš„åŠæ³•æ¥åšã€‚
 const int maxn = 2000003;
 const int P = 20100501;
 int p[maxn], vis[maxn];

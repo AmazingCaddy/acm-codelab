@@ -1,5 +1,5 @@
 // poj 1325 Machine Schedule
-// 最小点覆盖 转换次数=最小点覆盖-1
+// 鏈�灏忕偣瑕嗙洊 杞崲娆℃暟=鏈�灏忕偣瑕嗙洊-1
 
 #include<iostream>
 #define MAXN 102

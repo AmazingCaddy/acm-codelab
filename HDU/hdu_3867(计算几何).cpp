@@ -50,8 +50,8 @@ point base;
 struct INFO
 {
 	point st, ed;
-	int flag;	// 0Æðµã£¬1ÖÕµã
-	int sgid;	// Ïß¶ÎID
+	int flag;	// 0èµ·ç‚¹ï¼Œ1ç»ˆç‚¹
+	int sgid;	// çº¿æ®µID
 	INFO( ) { }
 	INFO( point _st, point _ed, int _flag, int _sgid ) : 
 		st( _st ), ed( _ed ), flag( _flag ), sgid( _sgid ) { }

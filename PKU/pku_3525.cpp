@@ -18,7 +18,7 @@ struct TPoint{
 	void IN(){scanf("%lf%lf",&x,&y);}
 }a[MAXN],cp[MAXN];
 struct TLine{
-	DB a;//¼«½Ç
+	DB a;//æè§’
 	TPoint k,d;
 	TLine(){}
 	TLine(TPoint kk,TPoint dd):k(kk),d(dd),a(atan2(kk.y,kk.x)){}
@@ -43,9 +43,9 @@ bool CrossLine(TLine &i,TLine &j,TPoint &c){
 	RET true;
 }
 /*
- *´«ÈëÇĞ¸îÖ±Ïß L[],ÇĞ¸îÖ±Ïß¼¯ºÏ´óĞ¡n,ÇĞ¸î½á¹û¼¯ºÏcp[],¶ÓÁĞµÄ¿ªÍ·ºÍ½áÎ²
- *Ë³ĞòÈÎÒâ
- *¸´ÔÓ¶ÈO(nlogn)
+ *ä¼ å…¥åˆ‡å‰²ç›´çº¿ L[],åˆ‡å‰²ç›´çº¿é›†åˆå¤§å°n,åˆ‡å‰²ç»“æœé›†åˆcp[],é˜Ÿåˆ—çš„å¼€å¤´å’Œç»“å°¾
+ *é¡ºåºä»»æ„
+ *å¤æ‚åº¦O(nlogn)
  */
 bool Cut_HP(TLine L[],int n,TPoint cp[],int Q[MAXN],int &s,int &t){
 	int i,j;
@@ -69,13 +69,13 @@ bool Cut_HP(TLine L[],int n,TPoint cp[],int Q[MAXN],int &s,int &t){
 	}
 	if (!CrossLine(L[Q[s]],L[Q[t]],cp[s])) RET false;
 	cp[t+1] = cp[s];
-	RET s + 1 < t;/*²»µÈÊ½°üº¬µÈºÅ¿ÉĞĞÓò¿ÉÒÔÎªÒ»¸öµã*/
+	RET s + 1 < t;/*ä¸ç­‰å¼åŒ…å«ç­‰å·å¯è¡ŒåŸŸå¯ä»¥ä¸ºä¸€ä¸ªç‚¹*/
 	/*DB area = 0.0;
 	for (i = s;i <= t;i++)
 		area += cp[i].cross(cp[i+1]);
-	RET sign(area / 2);/*²»µÈÊ½Îª²»µÈºÅ*/
+	RET sign(area / 2);/*ä¸ç­‰å¼ä¸ºä¸ç­‰å·*/
 }
-void process(TLine L[],int n,DB d)//Ñ¹Ëõd...
+void process(TLine L[],int n,DB d)//å‹ç¼©d...
 {
 	int i;
 	for(i=0;i<n;++i)
@@ -97,7 +97,7 @@ int main(){
 			if (i > 0) area += a[i-1].cross(a[i]);
 		}
 		area += a[n-1].cross(a[n] = a[0]);
-		if (sign(area) > 0) cs = 1,i = 0;else cs = -1,i = n;//ÅĞ¶ÏË³Ê±Õë(<0) orÄæÊ±Õë
+		if (sign(area) > 0) cs = 1,i = 0;else cs = -1,i = n;//åˆ¤æ–­é¡ºæ—¶é’ˆ(<0) oré€†æ—¶é’ˆ
 		for (j = 0;j < n;i += cs,j++)L[j] = TLine(a[i+cs]-a[i],a[i]);
 		if(!Cut_HP(L,n,cp,Q,s,t)){puts("0.000000");continue;}
 		cp[t+1] = cp[s];

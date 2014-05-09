@@ -16,8 +16,8 @@ void da( int *r, int *sa, int n, int m )
 	for( i=n-1; i>=0; i-- ) sa[--wu[x[i]]]=i;
 	for( j=1,p=1; p<n; j*=2, m=p )
 	{
-		for( p=0, i=n-j; i<n; i++ ) y[p++]=i;//长度溢出部分
-		for( i=0; i<n; i++ ) if( sa[i]>=j ) y[p++]=sa[i]-j;//起始位置为sa[i]-j
+		for( p=0, i=n-j; i<n; i++ ) y[p++]=i;//闀垮害婧㈠嚭閮ㄥ垎
+		for( i=0; i<n; i++ ) if( sa[i]>=j ) y[p++]=sa[i]-j;//璧峰浣嶇疆涓簊a[i]-j
 		for( i=0; i<n; i++ ) wv[i]=x[y[i]];
 		for( i=0; i<m; i++ ) wu[i]=0;
 		for( i=0; i<n; i++ ) wu[wv[i]]++;
@@ -37,7 +37,7 @@ void calheight( int *r, int *sa, int n )
 		for( k ? k-- : 0, j=sa[rank[i]-1]; r[i+k]==r[j+k]; k++ );
 	return;
 }
-int sa[maxn],r[maxn];//sa[0..n-1], sa[i]记录排名为i+1的后缀数组在原数组中的下标
+int sa[maxn],r[maxn];//sa[0..n-1], sa[i]璁板綍鎺掑悕涓篿+1鐨勫悗缂�鏁扮粍鍦ㄥ師鏁扮粍涓殑涓嬫爣
 char s[maxn];
 int main( int argc, char *argv[] )
 {

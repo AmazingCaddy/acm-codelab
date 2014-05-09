@@ -33,7 +33,7 @@ int main()
 	{
 		l=bisearch(a,i,n-1,s-a[i]);
 		while(a[l]+a[i]<=s&&l<n-1)l++;
-		while(a[l]+a[i]>s&&l>0)l--;	//两个while先后顺序不能调换
+		while(a[l]+a[i]>s&&l>0)l--;	//涓や釜while鍏堝悗椤哄簭涓嶈兘璋冩崲
 		sum+=l-i;
 	}
 

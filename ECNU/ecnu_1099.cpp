@@ -1,4 +1,4 @@
-//¸¡µã¼¸ºÎº¯Êı¿â
+//æµ®ç‚¹å‡ ä½•å‡½æ•°åº“
 #include<iostream>
 #include<cmath>
 #define eps 1e-8
@@ -13,13 +13,13 @@ double distance( point p1, point p2 )
 {
 	return sqrt( ( p1.x-p2.x )*( p1.x-p2.x )+( p1.y-p2.y )*( p1.y-p2.y ) );
 }
-//ÅĞÁ½Ö±ÏßÆ½ĞĞ
+//åˆ¤ä¸¤ç›´çº¿å¹³è¡Œ
 int parallel( point u1, point u2, point v1, point v2 )
 {
 	return zero( ( u1.x-u2.x )*( v1.y-v2.y )-( v1.x-v2.x )*( u1.y-u2.y ) );
 }
-//¼ÆËãÁ½Ö±Ïß½»µã,×¢ÒâÊÂÏÈÅĞ¶ÏÖ±ÏßÊÇ·ñÆ½ĞĞ!
-//Ïß¶Î½»µãÇëÁíÍâÅĞÏß¶ÎÏà½»(Í¬Ê±»¹ÊÇÒªÅĞ¶ÏÊÇ·ñÆ½ĞĞ!)
+//è®¡ç®—ä¸¤ç›´çº¿äº¤ç‚¹,æ³¨æ„äº‹å…ˆåˆ¤æ–­ç›´çº¿æ˜¯å¦å¹³è¡Œ!
+//çº¿æ®µäº¤ç‚¹è¯·å¦å¤–åˆ¤çº¿æ®µç›¸äº¤(åŒæ—¶è¿˜æ˜¯è¦åˆ¤æ–­æ˜¯å¦å¹³è¡Œ!)
 point intersection( point u1, point u2, point v1, point v2 )
 {
 	point ret=u1;

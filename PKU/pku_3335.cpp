@@ -1,5 +1,5 @@
 //// poj 3335 
-//// ¿ÉÒÔÍ¬Ê±´¦ÀíË³Ê±ÕëºÍÄæÊ±ÕëÊäÈë£¬Ğ§ÂÊ(n^2)
+//// å¯ä»¥åŒæ—¶å¤„ç†é¡ºæ—¶é’ˆå’Œé€†æ—¶é’ˆè¾“å…¥ï¼Œæ•ˆç‡(n^2)
 //#include<iostream>
 //#include<cmath>
 //#define MAXN 800
@@ -29,7 +29,7 @@
 //	ret.y+=(u2.y-u1.y)*t;
 //	return ret;
 //}
-//// ¶à±ßĞÎµÄµãÊÇË³Ê±ÕëµÄ
+//// å¤šè¾¹å½¢çš„ç‚¹æ˜¯é¡ºæ—¶é’ˆçš„
 //polygon polygon_cut( point p1, point p2, const polygon &poly )
 //{
 //	int i,j;
@@ -105,7 +105,7 @@
 //		for( i=0; i<input.n; i++ )
 //			scanf("%lf%lf",&input.p[i].x,&input.p[i].y);
 //
-//		//ÈôÊÇÄæÊ±Õë×ª»¯ÎªË³Ê±Õë
+//		//è‹¥æ˜¯é€†æ—¶é’ˆè½¬åŒ–ä¸ºé¡ºæ—¶é’ˆ
 //		if( polygonArea(input)>0 ) ChangeClockwise( input );
 //		input.p[input.n]=input.p[0];
 //		ret=input;

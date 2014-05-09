@@ -1,7 +1,7 @@
 /*
 	author: AmazingCaddy
 	time: 2011/4/7  20:19
-	d[ i ][ v ] ¼ÇÂ¼ Ê¹ÓÃÁËi¸ö jump µ½vµÄ×î¶Ì¾àÀë
+	d[ i ][ v ] è®°å½• ä½¿ç”¨äº†iä¸ª jump åˆ°vçš„æœ€çŸ­è·ç¦»
 */
 #include <cstdio>
 #include <complex>

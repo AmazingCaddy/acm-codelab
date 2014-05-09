@@ -29,12 +29,12 @@ bool BFS( int source )
 	{
 		int v=queue[first++];
 		for ( int u =1; u<=sink; u++ )
-			if ( visit[u]==false && res_capacity[v][u]>0 ) //±ê¼ÇÊÇ·ñ·ÃÎÊ¹ı£¬·ÀÖ¹ĞÎ³É»·Í¼
+			if ( visit[u]==false && res_capacity[v][u]>0 ) //æ ‡è®°æ˜¯å¦è®¿é—®è¿‡ï¼Œé˜²æ­¢å½¢æˆç¯å›¾
 			{
 				if( min_capacity[v]==-1 )
 					min_capacity[u]=res_capacity[v][u];
 				else min_capacity[u]=minn(min_capacity[v],res_capacity[v][u]);
-				parent[u]=v;    //¼ÇÂ¼uµÄ¸¸½Úµã
+				parent[u]=v;    //è®°å½•uçš„çˆ¶èŠ‚ç‚¹
 				visit[u]=true;
 				if ( u == sink ) return true;
 				queue[last++]=u;
@@ -50,9 +50,9 @@ void maxFlow( )
 	max_flow=0;
 	for ( i=1; i<=sink; i++ )
 		for( j=1; j<=sink; j++ )
-			res_capacity[i][j]=capacity[i][j];  //³õÊ¼»¯£¬¿ªÊ¼Ê±Ê£ÓàÁ÷Á¿¾ÍÊÇ×ÜµÄÈİÁ¿
+			res_capacity[i][j]=capacity[i][j];  //åˆå§‹åŒ–ï¼Œå¼€å§‹æ—¶å‰©ä½™æµé‡å°±æ˜¯æ€»çš„å®¹é‡
 
-	while( BFS(source) )    //ÄÜ¹»ÕÒµ½Ò»ÌõÂ·¾¶
+	while( BFS(source) )    //èƒ½å¤Ÿæ‰¾åˆ°ä¸€æ¡è·¯å¾„
 	{
 		max_flow+=min_capacity[sink];
 		int v=sink,u;

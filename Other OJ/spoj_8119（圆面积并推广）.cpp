@@ -1,8 +1,8 @@
 /*
 	author: AmazingCaddy
 	time: 2011/3/5  20:58
-	ÌâÒâ£º¸ø³öN¸ö²»Í¬µÄÔ²£¬Çó³ö±»¸²¸ÇÇ¡ºÃK´ÎµÄÃæ»ı£¬²¢Ë³ĞòÊä³ö
-	ÖÁÉÙ¸²¸ÇÒ»´ÎµÄ£¬ÖÁÉÙ¸²¸ÇÁ½´ÎµÄ£¬Ò»Ö±µ½ÖÁÉÙ¸²¸Çn´ÎµÄ¡£¡£¡£È»ºó×ö²î
+	é¢˜æ„ï¼šç»™å‡ºNä¸ªä¸åŒçš„åœ†ï¼Œæ±‚å‡ºè¢«è¦†ç›–æ°å¥½Kæ¬¡çš„é¢ç§¯ï¼Œå¹¶é¡ºåºè¾“å‡º
+	è‡³å°‘è¦†ç›–ä¸€æ¬¡çš„ï¼Œè‡³å°‘è¦†ç›–ä¸¤æ¬¡çš„ï¼Œä¸€ç›´åˆ°è‡³å°‘è¦†ç›–næ¬¡çš„ã€‚ã€‚ã€‚ç„¶ååšå·®
 */
 #include <cstdio>
 #include <complex>
@@ -24,7 +24,7 @@ struct point{
 	point(double x,double y):x(x),y(y){}
 	double len2(){ return x*x + y*y;}
 
-	point normal(double k)//½«ËûÊÓÎªÏòÁ¿£¬½«Ä£³¤±ä³É k 
+	point normal(double k)//å°†ä»–è§†ä¸ºå‘é‡ï¼Œå°†æ¨¡é•¿å˜æˆ k 
 	{
 		double dist = sqrt(x*x + y*y);
 		return point(x * k / dist, y * k / dist);
@@ -59,7 +59,7 @@ double det( const point& a, const point& b, const point& c )
 	return ( b.x - a.x ) * ( c.y - a.y ) - ( c.x - a.x ) * ( b.y - a.y );
 }
 
-//ÇóÖ±ÏßabºÍÖ±ÏßcdµÄ½»µã
+//æ±‚ç›´çº¿abå’Œç›´çº¿cdçš„äº¤ç‚¹
 point cross(const point &a, const point &b, const point &c, const point &d)
 {
 	point ret = a;
@@ -70,7 +70,7 @@ point cross(const point &a, const point &b, const point &c, const point &d)
 	return ret;
 }
 
-//¼ÆËãÖ±ÏßÓëÔ²µÄ½»µã,±£Ö¤Ö±ÏßÓëÔ²ÓĞ½»µã
+//è®¡ç®—ç›´çº¿ä¸åœ†çš„äº¤ç‚¹,ä¿è¯ç›´çº¿ä¸åœ†æœ‰äº¤ç‚¹
 void cross(const circle & b,const point &l1,const point &l2,point& p1,point& p2){
 	point p=b.c;
 	double t;
@@ -84,7 +84,7 @@ void cross(const circle & b,const point &l1,const point &l2,point& p1,point& p2)
 	p1.y=p.y - (l2.y - l1.y) * t;
 }
 
-//¼ÆËãÔ²ÓëÔ²µÄ½»µã,±£Ö¤Ô²ÓëÔ²ÓĞ½»µã,Ô²ĞÄ²»ÖØºÏ
+//è®¡ç®—åœ†ä¸åœ†çš„äº¤ç‚¹,ä¿è¯åœ†ä¸åœ†æœ‰äº¤ç‚¹,åœ†å¿ƒä¸é‡åˆ
 void cross(const circle & a,const circle & b, point& p1, point& p2){
 	point u,v;
 	double t;
@@ -96,7 +96,7 @@ void cross(const circle & a,const circle & b, point& p1, point& p2){
 	cross(a,u,v,p1,p2);
 }
 
-/*==================Ô²µÄÃæ»ı ½» & ²¢ =========================================*/
+/*==================åœ†çš„é¢ç§¯ äº¤ & å¹¶ =========================================*/
 const int maxn = 1005;
 
 struct Event{
@@ -112,7 +112,7 @@ Event E[maxn << 1];
 circle cir[maxn]; int n; 
 double area[ maxn ];
 
-//////Ãæ»ı²¢
+//////é¢ç§¯å¹¶
 void areaUnion()
 {
 	int i, j, k = 0, cnt; point p1, p2; double a, b;
@@ -123,13 +123,13 @@ void areaUnion()
 		for(cnt = 1, j = k = 0; j < n; j++)
 		{
 			a = dis(cir[i].c, cir[j].c);
-			//ÍâÀë»òÕßÍâÇĞ»òÕß×Ô¼º»òÕßÔ²iÄÚº¬»òÕßÄÚÇĞÔ²j
+			//å¤–ç¦»æˆ–è€…å¤–åˆ‡æˆ–è€…è‡ªå·±æˆ–è€…åœ†iå†…å«æˆ–è€…å†…åˆ‡åœ†j
 			if(i==j ||D(a - cir[i].r - cir[j].r) >= 0||D(cir[i].r - cir[j].r - a) >= 0) 
 				continue;
 			if(D(cir[j].r - a - cir[i].r) >= 0)
 			{
 				cnt++;
-				continue; //Ô²jÄÚº¬»òÕßÄÚÇĞÔ²i
+				continue; //åœ†jå†…å«æˆ–è€…å†…åˆ‡åœ†i
 			}
 			cross(cir[i], cir[j], p1, p2);
 			if(det(cir[i].c, cir[j].c, p1) > 0)swap(p1, p2);

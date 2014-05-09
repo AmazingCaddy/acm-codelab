@@ -21,7 +21,7 @@ double Calc( int l, int r )
 {
 	int i, k, min = INF;
 	if( r < l ) return 0.0;
-	for( i = r; i >= l; i-- )  //ÓÉÓÚÓÐ¡°-¡±£¬¹ÊÒª´ÓÓÒÏò×óÉ¨Ãè
+	for( i = r; i >= l; i-- )  //ç”±äºŽæœ‰â€œ-â€ï¼Œæ•…è¦ä»Žå³å‘å·¦æ‰«æ
 	{
 		if( min > f[i] )
 		{

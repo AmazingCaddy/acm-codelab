@@ -1,10 +1,10 @@
 /*
 	author: AmazingCaddy
 	time: 2011/5/9  20:00
-	dp[ 0 ][ i ] ��ʾ��ȡ��i����, �õ����������
-	dp[ 1 ][ i ] ��ʾȡ�˵�i����, �õ����������
-	dup[ 0 ][ i ] ��ʾ��ȡ��i�����Ƿ�Ψһ��
-	dup[ 1 ][ i ] ��ʾȡ�˵�i�����Ƿ�Ψһ��
+	dp[ 0 ][ i ] 表示不取第i个人, 得到的最大人数
+	dp[ 1 ][ i ] 表示取了第i个人, 得到的最大人数
+	dup[ 0 ][ i ] 表示不取第i个人是否唯一解
+	dup[ 1 ][ i ] 表示取了第i个人是否唯一解
 */
 #include <cstdio>
 #include <complex>

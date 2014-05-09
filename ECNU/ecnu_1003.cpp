@@ -1,5 +1,5 @@
-#include <iostream>
-#include <string.h>
+#include<iostream>
+#include<string.h>
 #define MAXN 2002
 #define  LB   3
 #define  RB   (-3)

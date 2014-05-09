@@ -52,7 +52,7 @@ int BFS( int st, int ed )
 		if( t == ed ) return step;
 		vis[ t ] = 1;
 		tt = t - t % 10;
-		for( int i = 1; i < 10; i += 2 ) // 涓綅
+		for( int i = 1; i < 10; i += 2 ) // 个位
 		{
 			nst = tt + i;
 			if( !vis[ nst ] && !p[ nst ] )
@@ -64,7 +64,7 @@ int BFS( int st, int ed )
 		}
 
 		tt = t - t % 100 + t % 10;
-		for( int i = 0; i < 10; i++ ) // 鍗佷綅
+		for( int i = 0; i < 10; i++ ) // 十位
 		{
 			nst = tt + i * 10;
 			if( !vis[ nst ] && !p[ nst ] )

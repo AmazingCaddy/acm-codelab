@@ -1,4 +1,4 @@
-// 缁忓吀dp 绫讳技浜庢渶闀垮叕鍏卞瓙搴忓垪
+// 经典dp 类似于最长公共子序列
 #include <cstdio>
 #include <iostream>
 #include <cmath>

@@ -114,7 +114,7 @@ ll log_mod( ll a, ll b, ll n )
 	return -1;
 }
 
-// 绂绘暎瀵规暟 a^x=b( mod n )锛寈杩斿洖澶т簬0鐨勫�硷紙鏈夎В鏃讹級
+// 离散对数 a^x=b( mod n )，x返回大于0的值（有解时）
 ll non_prime_log_mod( ll a, ll b, ll n )
 {
 	ll g, r=0;

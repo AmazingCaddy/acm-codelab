@@ -35,7 +35,7 @@ void prime( )
 	}
 }
 
-void num_factor( ll n )   //ÔÚÓĞËØÊı±íµÄÇ°ÌáÏÂµÄËØÒòÊı·Ö½â
+void num_factor( ll n )   //åœ¨æœ‰ç´ æ•°è¡¨çš„å‰æä¸‹çš„ç´ å› æ•°åˆ†è§£
 {
 	int i;
 	flen = 0;
@@ -74,7 +74,7 @@ void ex_gcd( ll a, ll b, ll & d, ll & x, ll & y )
 	}
 }
 
-ll china ( ll a[ ], ll m[ ], ll n ) // X mod m[i]=a[i] £¬Çó½â X ,m[i]Á½Á½»¥ËØ 
+ll china ( ll a[ ], ll m[ ], ll n ) // X mod m[i]=a[i] ï¼Œæ±‚è§£ X ,m[i]ä¸¤ä¸¤äº’ç´  
 {
 	ll M = 1, d, y, x, X;
 	for( int i = 0; i < n; i++ )
@@ -84,7 +84,7 @@ ll china ( ll a[ ], ll m[ ], ll n ) // X mod m[i]=a[i] £¬Çó½â X ,m[i]Á½Á½»¥ËØ
 	{
 		ll w = M / m[ i ];
 		ex_gcd( m[ i ], w, d, x, y );      // don 't care about others
-		X = ( X + y * w * a[ i ] ) % M;      // accumulate e*µÄºÍa
+		X = ( X + y * w * a[ i ] ) % M;      // accumulate e*çš„å’Œa
 	}
 	return mod( X, M ) ? mod( X, M ) : M;                    // adjust to [0,M-1]
 }
@@ -112,7 +112,7 @@ void DFS( int dep, ll tem )
     }
 }
 
-void find_g( )   // ±©Á¦ÕÒÔ­¸ù
+void find_g( )   // æš´åŠ›æ‰¾åŸæ ¹
 {
 	for( int j = 0; j <= K; j++ )
 	{
